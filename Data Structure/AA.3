@@ -1,0 +1,55 @@
+###C++
+
+class Solution {
+public:
+    static int largest(const vector<int>& arr) {
+        if (arr.empty()) {
+            throw invalid_argument("Array cannot be empty");
+        }
+
+        int max = arr[0];
+        for (size_t i = 1; i < arr.size(); i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        return max;
+    }
+};
+
+###JAVA
+class Solution {
+    public static int largest(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            throw new IllegalArgumentException("Array cannot be null or empty");
+        }
+
+        int max = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        return max;
+    }
+}
+
+
+###PYTHON
+
+class Solution:
+    def largest(self, arr : List[int]) -> int:
+        if not arr:
+            raise ValueError("Array cannot be empty")
+
+        max_value = arr[0]
+        for num in arr[1:]:
+            if num > max_value:
+                max_value = num
+
+        return max_value
+        
+
