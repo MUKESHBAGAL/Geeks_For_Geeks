@@ -1,0 +1,30 @@
+###C++
+
+class Solution {
+public:
+    pair<long long, long long> getMinMax(vector<long long int> arr) {
+        if (arr.empty()) {
+            throw invalid_argument("Array cannot be empty");
+        }
+
+        long long minVal = numeric_limits<long long>::max();
+        long long maxVal = numeric_limits<long long>::min();
+
+        for (long long int num : arr) {
+            if (num < minVal) {
+                minVal = num;
+            }
+            if (num > maxVal) {
+                maxVal = num;
+            }
+        }
+
+        return make_pair(minVal, maxVal);
+    }
+};
+
+###JAVA
+
+
+
+###PYTHON
