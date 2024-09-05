@@ -1,0 +1,97 @@
+##########################################################ARRAY[A]#####################################################################
+						
+A]Basic
+
+AA.1	Array Search
+AA.2	Check Equal Arrays
+AA.3	Largest Element in Array
+AA.4	Min and Max in Array
+AA.5	Rotate Array by One
+AA.6	Alternates in an Array
+AA.7	Immediate Smaller Element
+AA.8	Palindromic Array
+AA.9	Searching a number
+AA.10	Third largest element
+AA.11	Binary Array Sorting
+AA.12	Find the smallest and second smallest element
+AA.13	Sum of Array
+AA.14	Count of smaller elements
+AA.15	Count Odd Even
+AA.16	Last index of One
+AA.17	Print Elements of Array
+AA.18	Replace all 0's with 5
+AA.19	Display longest name
+AA.20	Find element at a given Index
+AA.21	Palindrome Array
+AA.22	Elements in the Range
+AA.23	Segregate Even and Odd numbers
+
+B]Easy
+
+AB.1	Second Largest
+AB.2	Two Sum - Pair with Given Sum
+AB.3	Move all zeroes to end of array
+
+
+C]Medium
+
+AC.1	Kth Smallest
+
+
+D]Hard
+
+##########################################################Linked Lists[LL]###########################################################
+
+A]Basic
+
+LLA.1	Linked List Insertion At End
+LLA.2	Count Linked List Nodes
+LLA.3	Identical Linked Lists
+LLA.4	Print Linked List elements
+LLA.5	Insert in Middle of Linked Lis...
+LLA.6	Is Linked List Length Even?
+LLA.7	Modular Node
+
+B]Easy
+
+LLB.1	Kth from End of Linked List
+LLB.2	Middle of a Linked List
+LLB.3	Reverse a linked list
+LLB.4	Remove Duplicates from a Sorted Linked List
+LLB.5	Remove duplicates from an unsorted Linked List
+LLB.6	Delete a Node in Single Linked List
+LLB.7	Intersection Sorted Linked List
+LLB.8	Insert in a Sorted List
+LLB.9	Delete Middle of Linked List
+LLB.10	Count Pairs whose sum is equal to X
+LLB.11	Node at a given index in linked list
+
+
+C]Medium
+
+LLC.1	Detect Loop in linked list
+LLC.2	Intersection Point in Y Shaped Linked Lists
+LLC.3	Merge two sorted linked lists
+
+D]Hard
+
+
+############################################################ String[S]  #############################################################
+						
+
+A]Basic
+
+SA.1	Reverse a String
+SA.2	Implement strstr
+SA.3	Check for Binary
+SA.4	Convert String to LowerCase
+SA.5	Display longest name
+SA.6	Remove Spaces
+
+
+
+B]Easy
+
+C]Medium
+
+D]Hard
