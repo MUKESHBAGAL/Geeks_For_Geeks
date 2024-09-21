@@ -1,0 +1,35 @@
+						##Linked Lists##
+
+A]Basic
+
+A.1	Linked List Insertion At End
+A.2	Count Linked List Nodes
+A.3	Identical Linked Lists
+A.4	Print Linked List elements
+A.5	Insert in Middle of Linked Lis...
+A.6	Is Linked List Length Even?
+A.7	Modular Node
+
+B]Easy
+
+B.1	Kth from End of Linked List
+B.2	Middle of a Linked List
+B.3	Reverse a linked list
+B.4	Remove Duplicates from a Sorted Linked List
+B.5	Remove duplicates from an unsorted Linked List
+B.6	Delete a Node in Single Linked List
+B.7	Intersection Sorted Linked List
+B.8	Insert in a Sorted List
+B.9	Delete Middle of Linked List
+B.10	Count Pairs whose sum is equal to X
+B.11	Node at a given index in linked list
+
+
+C]Medium
+
+C.1	Detect Loop in linked list
+C.2	Intersection Point in Y Shaped Linked Lists
+C.3	Merge two sorted linked lists
+
+D]Hard
+
