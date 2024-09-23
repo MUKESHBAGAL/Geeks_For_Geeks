@@ -1,0 +1,26 @@
+IN c++
+
+
+class Solution {
+public:
+    Node* sortedInsert(struct Node* head, int x) {
+        Node* newNode = new Node(x);
+        if (head == NULL) {
+            return newNode;
+        }
+        if (x < head->data) {
+            newNode->next = head;
+            return newNode;
+        }
+        Node* current = head;
+        while (current->next != NULL && current->next->data < x) {
+            current = current->next;
+        }
+        newNode->next = current->next;
+        current->next = newNode;
+
+        return head;
+    }
+};
+
+
