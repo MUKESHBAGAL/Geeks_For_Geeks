@@ -1,0 +1,24 @@
+IN c++
+
+class Solution {
+public:
+    Node* removeDuplicates(Node* head) {
+        if (!head || !head->next) {
+            return head;
+        }
+
+        Node* current = head;
+
+        while (current->next != nullptr) {
+            if (current->data == current->next->data) {
+                Node* temp = current->next;
+                current->next = temp->next;
+                delete temp;
+            } else {
+                current = current->next;
+            }
+        }
+
+        return head;
+    }
+};
