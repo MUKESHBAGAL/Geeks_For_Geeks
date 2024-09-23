@@ -1,0 +1,45 @@
+###C++
+class Solution {
+  public:
+    /*Function to count even and odd elements in the array
+     * arr : Array with its elements
+     */
+    vector<int> countOddEven(vector<int> &arr) {
+        int countOdd = 0, countEven = 0;
+        vector<int> result(2); // Initialize vector with size 2
+
+        for (int i = 0; i < arr.size(); i++) {
+            if (arr[i] % 2 != 0)
+                countOdd++;
+            else
+                countEven++;
+        }
+
+        result[0] = countOdd;
+        result[1] = countEven;
+
+        return result;
+    }
+};
+
+###JAVA
+
+class Solution {
+    public int[] countOddEven(int[] inputArray) {
+        int countOdd = 0, countEven = 0;
+        int[] result = new int[2]; // Array to store the result
+
+        for (int i = 0; i < inputArray.length; i++) {
+            if (inputArray[i] % 2 != 0) {
+                countOdd++;
+            } else {
+                countEven++;
+            }
+        }
+
+        result[0] = countOdd;
+        result[1] = countEven;
+
+        return result;
+    }
+}
