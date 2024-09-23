@@ -1,12 +1,41 @@
-IN C 
-
 
 IN C++
-
+class Solution {
+public:
+    string toLower(string s) {
+        for (char &c : s) {
+            c = tolower(c);
+        }
+        return s;
+    }
+};
 
 IN JAVA
-
+class Solution {
+    static String toLower(String s) {
+        StringBuilder l2 = new StringBuilder();
+        
+        for (char i : s.toCharArray()) {
+            if ('A' <= i && i <= 'Z') {
+                l2.append((char) (i + 32));
+            } else {
+                l2.append(i);
+            }
+        }
+        
+        return l2.toString();
+    }
+}
 
 
 IN PYTHON
 
+class Solution:
+    def toLower(self, s: str) -> str:
+        l2 = []
+        for i in s:
+            if 'A' <= i <= 'Z': 
+                l2.append(chr(ord(i) + 32))
+            else:
+                l2.append(i)
+        return ''.join(l2)
