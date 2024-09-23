@@ -1,0 +1,27 @@
+IN c++
+
+class Solution {
+public:
+    int countPairs(struct Node* head1, struct Node* head2, int x) {
+        unordered_set<int> values;
+        struct Node* temp = head1;
+
+        while (temp != nullptr) {
+            values.insert(temp->data);
+            temp = temp->next;
+        }
+
+        int count = 0;
+        temp = head2;
+
+        while (temp != nullptr) {
+            if (values.find(x - temp->data) != values.end()) {
+                count++;
+            }
+            temp = temp->next;
+        }
+
+        return count;
+    }
+};
+
