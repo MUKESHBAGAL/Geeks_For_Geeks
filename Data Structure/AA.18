@@ -1,0 +1,43 @@
+###C++
+class Solution {
+public:
+    int convertFive(int n) {
+        int sign = (n < 0) ? -1 : 1;
+        string s = to_string(abs(n));
+        
+        string result;
+        
+        for (char c : s) {
+            if (c == '0') {
+                result += '5';
+            } else {
+                result += c;
+            }
+        }
+        
+        return stoi(result) * sign;
+    }
+};
+
+###JAVA
+
+class Solution {
+    int convertfive(int num) {
+        int sign = (num < 0) ? -1 : 1; // Use 'num' instead of 'n'
+        String s = Integer.toString(Math.abs(num));
+        
+        StringBuilder sb = new StringBuilder();
+        
+        for (char c : s.toCharArray()) {
+            if (c == '0') {
+                sb.append('5');
+            } else {
+                sb.append(c);
+            }
+        }
+        
+        int result = Integer.parseInt(sb.toString());
+        return result * sign;
+    }
+}
+
