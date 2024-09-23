@@ -1,0 +1,20 @@
+###C++
+class Solution {
+  public:
+    // Just print the space seperated array elements
+    void printArray(vector<int> &arr) {
+        for(int num:arr)
+            cout<<num<<" ";
+    }
+};
+
+###JAVA
+
+class Solution {
+    // Just print the space seperated array elements
+    void printArray(int arr[]) {
+       for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
