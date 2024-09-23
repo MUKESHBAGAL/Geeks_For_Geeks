@@ -1,0 +1,18 @@
+###IN C++
+
+class Solution {
+public:
+    bool isLengthEven(Node **head) {
+        if (!head || !*head) return false;
+        
+        Node* current = *head;
+        int count = 0;
+
+        while (current) {
+            count++;
+            current = current->next;
+        }
+        
+        return count % 2 == 0;
+    }
+};
