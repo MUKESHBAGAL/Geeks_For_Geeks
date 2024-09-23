@@ -1,0 +1,49 @@
+###IN C++
+
+class Solution {
+public:
+    int intersectPoint(Node* head1, Node* head2) {
+        if (!head1 || !head2) return -1;  // If either list is empty, no intersection
+
+        Node *temp1 = head1;
+        Node *temp2 = head2;
+        int length1 = 0, length2 = 0;
+
+        // Get the length of the first linked list
+        while (temp1) {
+            length1++;
+            temp1 = temp1->next;
+        }
+
+        // Get the length of the second linked list
+        while (temp2) {
+            length2++;
+            temp2 = temp2->next;
+        }
+
+        // Align the starting point of the longer list
+        temp1 = head1;
+        temp2 = head2;
+
+        if (length1 > length2) {
+            for (int i = 0; i < (length1 - length2); i++) {
+                temp1 = temp1->next;
+            }
+        } else {
+            for (int i = 0; i < (length2 - length1); i++) {
+                temp2 = temp2->next;
+            }
+        }
+
+        // Traverse both lists and find the intersection
+        while (temp1 && temp2) {
+            if (temp1 == temp2) {
+                return temp1->data;
+            }
+            temp1 = temp1->next;
+            temp2 = temp2->next;
+        }
+
+        return -1;  // If no intersection
+    }
+};
