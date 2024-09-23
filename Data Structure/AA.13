@@ -1,0 +1,25 @@
+###C++
+class Solution {
+  public:
+    // Function to return sum of elements
+     int sum(const vector<int>& arr) { // Use const reference to avoid copying
+        int sum = 0;
+        for (int i = 0; i < arr.size(); ++i) {
+            sum += arr[i];
+        }
+        return sum;
+    }
+};
+
+###JAVA
+
+class Solution {
+    int sum(int arr[]) {
+        int sum=0;
+        for(int i=0;i<arr.length;i++){
+            sum+=arr[i];
+        }
+        return sum;
+    }
+}
+
