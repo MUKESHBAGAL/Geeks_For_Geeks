@@ -1,0 +1,45 @@
+IN C 
+
+int isBinary(char *str)
+{
+    while (*str) {
+        if (*str != '0' && *str != '1') {
+            return 0;
+        }
+        str++;
+    }
+    return 1;
+}
+
+IN C++
+
+bool isBinary(string str)
+{
+   for (char c : str) {
+            if (c != '0' && c != '1') {
+                return false;
+            }
+        }
+        return true;
+}
+
+IN JAVA
+
+class GfG {
+    boolean isBinary(String str) {
+        for (char c : str.toCharArray()) {
+            if (c != '0' && c != '1') {
+                return false; 
+            }
+        }
+        return true; 
+    }
+}
+
+IN PYTHON
+
+def isBinary(str):
+    for c in str:
+        if c != '0' and c != '1':
+            return False
+    return True
