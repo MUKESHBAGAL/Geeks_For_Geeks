@@ -1,0 +1,28 @@
+IN c++ 
+
+
+class Solution {
+public:
+    Node *removeDuplicates(Node *head) {
+        if (head == nullptr) return nullptr;
+
+        std::unordered_set<int> seen; // To store values we've encountered
+        Node *current = head;
+        Node *prev = nullptr;
+
+        while (current != nullptr) {
+            if (seen.find(current->data) != seen.end()) {
+                // Duplicate found; remove the node
+                prev->next = current->next;
+                delete current; // Free the memory
+            } else {
+                // Add value to the set and update previous pointer
+                seen.insert(current->data);
+                prev = current;
+            }
+            current = prev->next; // Move to the next node
+        }
+        return head;
+    }
+};
+
