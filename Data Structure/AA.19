@@ -1,0 +1,35 @@
+###C++
+class Solution {
+public:
+    string longest(vector<string> &names) {
+        string longestName;
+        
+        for (const auto& name : names) {
+            if (name.length() > longestName.length()) {
+                longestName = name;
+            }
+        }
+        
+        return longestName;
+    }
+};
+
+
+###JAVA
+class Solution {
+    public String longest(List<String> names) {
+        if (names == null || names.isEmpty()) {
+            return "";
+        }
+        
+        String longestName = "";
+        for (String name : names) {
+            if (name.length() > longestName.length()) {
+                longestName = name;
+            }
+        }
+        return longestName;
+    }
+}
+
+
