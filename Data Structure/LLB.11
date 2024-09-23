@@ -1,0 +1,19 @@
+IN c++
+
+class Solution {
+public:
+    int GetNth(Node *head, int index) {
+        Node* current = head;
+        int count = 1;
+
+        while (current != nullptr) {
+            if (count == index) {
+                return current->data;
+            }
+            count++;
+            current = current->next;
+        }
+
+        return -1;
+    }
+};
