@@ -1,0 +1,23 @@
+###IN C++
+
+class Solution {
+public:
+    int modularNode(Node *head, int k) {
+        if (!head || k <= 0) return -1; 
+        
+        Node* current = head;
+        int count = 0;
+        int result = -1; 
+        while (current) {
+            count++;
+           
+            if (count % k == 0) {
+                result = current->data; 
+            }
+            current = current->next; 
+        }
+        
+        return result; 
+    }
+};
+
