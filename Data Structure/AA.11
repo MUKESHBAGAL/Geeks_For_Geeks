@@ -1,6 +1,43 @@
 ###C++
+class Solution {
+public:
+    static void binSort(int A[], int N) {
+        int left = 0;
+        int right = N - 1;
 
+        while (left < right) {
+            if (A[left] == 0) {
+                left++;
+            } else if (A[right] == 1) {
+                right--;
+            } else {
+                swap(A[left], A[right]);
+                left++;
+                right--;
+            }
+        }
+    }
+};
 
 ###JAVA
 
-###PYTHON
+class Solution {
+    static void binSort(int A[], int N) {
+        int left = 0;
+        int right = N - 1;
+        
+        while (left < right) {
+            if (A[left] == 0) {
+                left++;
+            } else if (A[right] == 1) {
+                right--;
+            } else {
+                int temp = A[left];
+                A[left] = A[right];
+                A[right] = temp;
+                left++;
+                right--;
+            }
+        }
+    }
+}
