@@ -74,6 +74,8 @@ LLC.1	Detect Loop in linked list
 LLC.2	Intersection Point in Y Shaped Linked Lists
 LLC.3	Merge two sorted linked lists
 LLC.4	Segregate even and odd nodes in a Linked List
+LLC.5	Palindrome Linked List
+
 
 D]Hard
 
