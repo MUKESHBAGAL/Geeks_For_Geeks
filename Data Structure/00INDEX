@@ -66,6 +66,7 @@ LLB.8	Insert in a Sorted List
 LLB.9	Delete Middle of Linked List
 LLB.10	Count Pairs whose sum is equal to X
 LLB.11	Node at a given index in linked list
+LLB.12	Find the Sum of Last N nodes of the Linked List
 
 
 C]Medium
