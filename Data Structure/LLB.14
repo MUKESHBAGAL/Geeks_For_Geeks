@@ -1,0 +1,19 @@
+###C++
+
+class Solution {
+public:
+    bool isCircular(Node *head) {
+            
+        if (!head)
+            return true;
+            
+        Node *curr = head;
+        while (curr && curr->next != head)
+            curr = curr->next;
+    
+        if (!curr)
+            return false;
+    
+        return true;
+    }
+};
