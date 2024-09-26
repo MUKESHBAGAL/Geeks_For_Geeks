@@ -1,0 +1,23 @@
+###C++
+class Solution {
+public:
+    Node* segregate(Node* head) {
+        vector<int> values;
+        Node* temp = head;
+
+        while (temp != NULL) {
+            values.push_back(temp->data);
+            temp = temp->next;
+        }
+
+        sort(values.begin(), values.end());
+
+        temp = head;
+        for (int value : values) {
+            temp->data = value;
+            temp = temp->next;
+        }
+
+        return head;
+    }
+};
