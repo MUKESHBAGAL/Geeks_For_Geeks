@@ -1,0 +1,30 @@
+###C++
+
+//Move Last Element to Front of a Linked List
+
+class Solution {
+public:
+    Node* moveToFront(Node* head) {
+        if (!head || !head->next) return head;
+
+        Node* current = head;
+        Node* last = nullptr;
+
+        while (current->next) {
+            last = current;
+            current = current->next;
+        }
+
+        if (last) {
+            last->next = nullptr;
+            current->next = head;
+            head = current;
+        }
+
+        return head;
+    }
+};
+
+
+
+
