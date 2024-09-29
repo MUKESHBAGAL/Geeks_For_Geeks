@@ -1,0 +1,20 @@
+###JAVA
+
+class GFG 
+{ 
+    static double medianOfArrays(int n1, int n2, int a[], int b[]) {
+        int n = n1 + n2;
+        int[] merged = new int[n];
+
+        System.arraycopy(a, 0, merged, 0, n1);
+        System.arraycopy(b, 0, merged, n1, n2);
+        
+        Arrays.sort(merged);
+        
+        if (n % 2 == 1) {
+            return merged[n / 2];
+        } else {
+            return (merged[n / 2 - 1] + merged[n / 2]) / 2.0;
+        }
+    }
+}
