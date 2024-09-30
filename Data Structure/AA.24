@@ -1,0 +1,42 @@
+###C++
+
+class Solution {
+public:
+    vector<int> valueEqualToIndex(vector<int>& arr) {
+        vector<int> value;
+        for (int i = 0; i < arr.size(); i++) {
+            if (arr[i] == i + 1) {
+                value.push_back(i + 1);
+            }
+        }
+        return value;
+    }
+};
+
+
+###JAVA
+
+class Solution {
+    public List<Integer> valueEqualToIndex(List<Integer> arr) {
+        List<Integer> value = new ArrayList<>();
+        for (int i = 0; i < arr.size(); i++) {
+            if (arr.get(i) == i + 1) {
+                value.add(i + 1);
+            }
+        }
+        return value;
+    }
+}
+
+###PYTHON
+
+#User function Template for python3
+class Solution:
+    # Function to find values in array equal to their indices
+    def valueEqualToIndex(self, arr):
+        value = []
+        for i in range(len(arr)):
+            if arr[i] == i + 1:
+                value.append(i + 1)
+        return value
+
