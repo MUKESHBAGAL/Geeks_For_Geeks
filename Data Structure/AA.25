@@ -1,0 +1,58 @@
+###C++
+
+class Solution {
+public:
+    void swapKth(int k, vector<int>& arr) {
+        int n = arr.size();
+        
+        if (k <= 0 || k > n) {
+            return;
+        }
+
+        int firstIndex = k - 1;
+        int lastIndex = n - k;
+
+        if (firstIndex != lastIndex) {
+            swap(arr[firstIndex], arr[lastIndex]);
+        }
+    }
+};
+
+
+###JAVA
+
+class Solution {
+    public void swapKth(int k, List<Integer> arr) {
+        int n = arr.size();
+        
+        if (k <= 0 || k > n) {
+            return;
+        }
+
+        int firstIndex = k - 1;
+        int lastIndex = n - k;
+
+        if (firstIndex != lastIndex) {
+            int temp = arr.get(firstIndex);
+            arr.set(firstIndex, arr.get(lastIndex));
+            arr.set(lastIndex, temp);
+        }
+    }
+}
+
+
+###PYTHON
+
+class Solution:
+    def swapKth(self, k, arr):
+        n = len(arr)
+        
+        if k <= 0 or k > n:
+            return
+        
+        first_index = k - 1
+        last_index = n - k
+        
+        if first_index != last_index:
+            arr[first_index], arr[last_index] = arr[last_index], arr[first_index]
+
