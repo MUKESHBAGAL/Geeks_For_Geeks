@@ -1,0 +1,53 @@
+###C++
+
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+string isSubset(int a1[], int a2[], int n, int m) {
+    sort(a1, a1 + n);
+    sort(a2, a2 + m);
+    
+    int index = 0;
+    for (int i = 0; i < n; i++) {
+        if (index < m && a2[index] == a1[i]) {
+            index++;
+        }
+    }
+    
+    return (index == m) ? "Yes" : "No";
+}
+
+
+###JAVA
+
+class Compute {
+    public String isSubset(long a1[], long a2[], long n, long m) {
+        Arrays.sort(a1);
+        Arrays.sort(a2);
+        
+        int index = 0;
+        for (int i = 0; i < a1.length; i++) {
+            if (index < a2.length && a2[index] == a1[i]) {
+                index++;
+            }
+        }
+        
+        return (index == a2.length) ? "Yes" : "No";
+    }
+}
+
+
+###PYTHON
+
+def isSubset( a1, a2, n, m):
+        a1.sort()
+        a2.sort()
+        
+        index = 0
+        for i in range(n):
+            if index < m and a2[index] == a1[i]:
+                index += 1
+        
+        return "Yes" if index == m else "No"
