@@ -1,0 +1,17 @@
+###IN C++
+
+class Solution {
+public:
+    void deleteAlt(Node* head) {
+        if (!head) return;
+
+        Node* current = head;
+
+        while (current && current->next) {
+            Node* temp = current->next;
+            current->next = temp->next;
+            delete temp;
+            current = current->next;
+        }
+    }
+};
