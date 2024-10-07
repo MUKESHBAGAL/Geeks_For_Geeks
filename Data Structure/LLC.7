@@ -1,0 +1,21 @@
+###IN C++
+
+class Solution {
+  public:
+    // Function to sort the given linked list using Merge Sort.
+    Node* mergeSort(Node* head) {
+        vector<int>ans;
+        Node *temp=head;
+        while(temp){
+            ans.push_back(temp->data);
+            temp=temp->next;
+        }
+        sort(ans.begin(),ans.end());
+        temp=head;
+        for(int num:ans){
+            temp->data=num;
+            temp=temp->next;
+        }
+        return head;
+    }
+};
