@@ -1,6 +1,5 @@
 ###IN C++
 
-
 class Solution {
   public:
     Node* constructLL(vector<int>& arr) {
