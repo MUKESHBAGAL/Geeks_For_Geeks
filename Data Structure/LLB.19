@@ -1,0 +1,22 @@
+###IN C++
+
+
+class Solution {
+  public:
+    Node* constructLL(vector<int>& arr) {
+        Node *head=nullptr;
+        Node *tail=nullptr;
+        for(int num: arr){
+            Node *NewNode= new Node(num);
+            if(!head){
+                head=NewNode;
+                tail=NewNode;;
+            }
+            else{
+                tail->next=NewNode;;
+                tail=NewNode;
+            }
+        }
+        return head;
+    }
+};
