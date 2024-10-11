@@ -1,0 +1,41 @@
+###IN C++
+
+
+class Solution {
+public:
+    vector<Node*> alternatingSplitList(struct Node* head) {
+        Node* head1 = nullptr;
+        Node* head2 = nullptr;
+        Node* current1 = nullptr;
+        Node* current2 = nullptr;
+
+        int count = 0;
+        
+        while (head) {
+            if (count % 2 == 0) {
+                Node* newNode = new Node(head->data);
+                if (!head1) {
+                    head1 = newNode;
+                    current1 = head1;
+                } else {
+                    current1->next = newNode;
+                    current1 = current1->next;
+                }
+            } else {
+                Node* newNode = new Node(head->data);
+                if (!head2) {
+                    head2 = newNode;
+                    current2 = head2;
+                } else {
+                    current2->next = newNode;
+                    current2 = current2->next;
+                }
+            }
+            head = head->next;
+            count++;
+        }
+
+        return {head1, head2};
+    }
+};
+
