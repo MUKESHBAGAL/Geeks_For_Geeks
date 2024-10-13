@@ -1,0 +1,26 @@
+###IN C++
+
+class Solution {
+  public:
+    // Function to delete a node without any reference to the head pointer.
+    void deleteNode(Node* del_node) {
+       Node* temp=del_node;
+       if(!temp && !temp->next){
+           return ;
+       }
+       temp->data=temp->next->data;
+       temp->next=temp->next->next;
+    }
+};
+
+###IN JAVA
+
+class Solution {
+    void deleteNode(Node node) {
+        if (node == null || node.next == null) {
+            return;
+        }
+        node.data = node.next.data;
+        node.next = node.next.next;
+    }
+}
