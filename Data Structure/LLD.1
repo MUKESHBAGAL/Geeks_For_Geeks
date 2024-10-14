@@ -1,0 +1,33 @@
+###IN C++
+
+class Solution {
+  public:
+    DLLNode *sortDoubly(DLLNode *head) {
+        if (!head) return nullptr;
+
+        vector<int> ans;
+        DLLNode* temp = head;
+
+        // Collect values from the linked list
+        while (temp) {
+            ans.push_back(temp->data);
+            temp = temp->next;
+        }
+
+        // Sort the values
+        sort(ans.begin(), ans.end());
+
+        // Create a new sorted doubly linked list
+        DLLNode* sortedHead = new DLLNode(ans[0]);
+        DLLNode* current = sortedHead;
+
+        for (int i = 1; i < ans.size(); ++i) {
+            DLLNode* newNode = new DLLNode(ans[i]);
+            current->next = newNode;
+            newNode->prev = current;
+            current = newNode;
+        }
+
+        return sortedHead;
+    }
+};
