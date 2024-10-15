@@ -1,0 +1,45 @@
+### IN C++
+
+
+class Solution {
+public:
+    Node* compute(Node* head) {
+        if (!head) return nullptr;
+
+        vector<int> ans;
+        Node* temp = head;
+
+        while (temp) {
+            ans.push_back(temp->data);
+            temp = temp->next;
+        }
+
+        vector<int> result;
+        int max_from_right = ans.back();
+        result.push_back(max_from_right);
+
+        for (int i = ans.size() - 2; i >= 0; --i) {
+            if (ans[i] >= max_from_right) {
+                result.push_back(ans[i]);
+                max_from_right = ans[i];
+            }
+        }
+
+        Node* newHead = nullptr;
+        Node* newTail = nullptr;
+
+        for (int i = result.size() - 1; i >= 0; --i) {
+            Node* newNode = new Node(result[i]);
+            if (!newHead) {
+                newHead = newNode;
+                newTail = newNode;
+            } else {
+                newTail->next = newNode;
+                newTail = newNode;
+            }
+        }
+
+        return newHead;
+    }
+};
+
