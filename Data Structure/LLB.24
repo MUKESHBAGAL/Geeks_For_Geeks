@@ -1,0 +1,23 @@
+### IN C++ 
+
+
+
+class Solution {
+  public:
+    // function to sort a k sorted doubly linked list
+    DLLNode *sortAKSortedDLL(DLLNode *head, int k) {
+       vector<int>ans;
+       DLLNode *temp=head;
+       while(temp){
+           ans.push_back(temp->data);
+           temp = temp->next;
+       }
+       sort(ans.begin(),ans.end());
+       temp=head;
+       for(int i=0;i<ans.size();i++){
+           temp->data=ans[i];
+           temp=temp->next;
+       }
+       return head;
+    }
+};
