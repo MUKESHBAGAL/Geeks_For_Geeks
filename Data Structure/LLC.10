@@ -1,0 +1,40 @@
+### IN C++
+
+class Solution {
+public:
+    Node* makeUnion(Node* head1, Node* head2) {
+        unordered_set<int> dataSet;
+        Node* temp1 = head1;
+        Node* temp2 = head2;
+
+        while (temp1) {
+            dataSet.insert(temp1->data);
+            temp1 = temp1->next;
+        }
+
+        while (temp2) {
+            dataSet.insert(temp2->data);
+            temp2 = temp2->next;
+        }
+
+        vector<int> sortedValues(dataSet.begin(), dataSet.end());
+        sort(sortedValues.begin(), sortedValues.end());
+
+        Node* unionHead = nullptr;
+        Node* unionTail = nullptr;
+        
+        for (int value : sortedValues) {
+            Node* newNode = new Node(value);
+            if (!unionHead) {
+                unionHead = newNode;
+                unionTail = newNode;
+            } else {
+                unionTail->next = newNode;
+                unionTail = newNode;
+            }
+        }
+
+        return unionHead;
+    }
+};
+
