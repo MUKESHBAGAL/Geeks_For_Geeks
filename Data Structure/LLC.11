@@ -1,0 +1,42 @@
+### IN C++
+
+class Solution {
+public:
+    Node* inPlace(Node* head) {
+        if (!head || !head->next || !head->next->next) {
+            return head;
+        }
+
+        vector<int> ans;
+        Node* ptr = head;
+
+        while (ptr) {
+            ans.push_back(ptr->data);
+            ptr = ptr->next;
+        }
+
+        int n = ans.size();
+        vector<int> reordered;
+
+        int left = 0, right = n - 1;
+        while (left <= right) {
+            if (left == right) {
+                reordered.push_back(ans[left]);
+            } else {
+                reordered.push_back(ans[left]);
+                reordered.push_back(ans[right]);
+            }
+            left++;
+            right--;
+        }
+
+        ptr = head;
+        for (int value : reordered) {
+            ptr->data = value;
+            ptr = ptr->next;
+        }
+
+        return head;
+    }
+};
+
