@@ -94,6 +94,8 @@ LLB.22	Delete without head pointer
 LLB.23	Delete nodes having greater value on right
 LLB.24	Sort a k sorted doubly linked list
 LLB.25  Find length of Loop
+LLB.26  Reverse both parts
+
 
 
 
