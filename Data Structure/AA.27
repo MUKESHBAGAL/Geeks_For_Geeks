@@ -1,0 +1,45 @@
+###C++
+
+class Solution {
+public:
+    vector<int> mergeNsort(vector<int>& a, vector<int>& b) {
+        set<int> uniqueElements;
+        uniqueElements.insert(a.begin(), a.end());
+        uniqueElements.insert(b.begin(), b.end());
+        
+        vector<int> merged(uniqueElements.begin(), uniqueElements.end());
+        return merged;
+    }
+};
+
+###JAVA
+
+class Solution {
+    public int[] mergeNsort(int[] arr, int[] brr) {
+        LinkedHashSet<Integer> set = new LinkedHashSet<>();
+
+        for (int num : arr) {
+            set.add(num);
+        }
+        for (int num : brr) {
+            set.add(num);
+        }
+
+        int[] merged = new int[set.size()];
+        int index = 0;
+        for (int num : set) {
+            merged[index++] = num;
+        }
+
+        Arrays.sort(merged);
+
+        return merged;
+    }
+}
+###PYTHON
+
+
+class Solution:
+    def mergeNsort(self, arr, brr):
+       return sorted(list(set(arr+brr)))
+
