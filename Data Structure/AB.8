@@ -1,0 +1,51 @@
+
+###C++
+class Solution {
+public:
+    int numberofElementsInIntersection(vector<int> &a, vector<int> &b) {
+        unordered_set<int> setA(a.begin(), a.end());
+        unordered_set<int> intersection;
+
+        for (int num : b) {
+            if (setA.count(num)) {
+                intersection.insert(num);
+            }
+        }
+
+        return intersection.size();
+    }
+};
+
+
+###JAVA
+class Solution {
+    public static int numberofElementsInIntersection(int a[], int b[]) {
+        Set<Integer> setA = new HashSet<>();
+        Set<Integer> intersection = new HashSet<>();
+
+        for (int num : a) {
+            setA.add(num);
+        }
+
+        for (int num : b) {
+            if (setA.contains(num)) {
+                intersection.add(num);
+            }
+        }
+
+        return intersection.size();
+    }
+}
+
+
+###Python
+class Solution:
+    def numberofElementsInIntersection(self,a, b):
+        set_a = set(a)
+        intersection = set()
+
+        for num in b:
+            if num in set_a:
+                intersection.add(num)
+
+        return len(intersection)
