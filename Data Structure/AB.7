@@ -47,13 +47,8 @@ class Solution {
 }
 
 ###Python
-class Solution {
-    int missingNumber(int n, int arr[]) {
-        int total_sum = n * (n + 1) / 2;
-        int actual_sum = 0;
-        for (int num : arr) {
-            actual_sum += num;
-        }
-        return total_sum - actual_sum;
-    }
-}
+class Solution:
+    def missingNumber(self, n, arr):
+        total_sum = n * (n + 1) // 2
+        actual_sum = sum(arr)
+        return total_sum - actual_sum
