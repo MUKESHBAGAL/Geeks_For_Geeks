@@ -1,0 +1,32 @@
+###C++
+
+class Solution {
+public:    
+    vector<int> kLargest(int a[], int n, int k) {
+        vector<int> arr(a, a + n);
+        sort(arr.begin(), arr.end(), greater<int>());
+        return vector<int>(arr.begin(), arr.begin() + k);
+    }
+};
+
+
+###JAVA
+
+class Solution {
+    int[] kLargest(int[] a, int n, int k) {
+        Arrays.sort(a);
+        int[] result = new int[k];
+        for (int i = 0; i < k; i++) {
+            result[i] = a[n - 1 - i];
+        }
+        return result;
+    }
+}
+
+
+###PYTHON
+class Solution:
+
+	def kLargest(self,arr, n, k):
+		arr = sorted(arr, reverse=True)
+        return arr[:k]
