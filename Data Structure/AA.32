@@ -1,0 +1,51 @@
+###C++
+
+class Solution {
+public:
+    int minValueToBalance(vector<int> &arr) {
+        int stsum = 0, edsum = 0, n = arr.size();
+        
+        for (int i = 0; i < n / 2; i++) {
+            stsum += arr[i];
+        }
+        
+        for (int i = n / 2; i < n; i++) {
+            edsum += arr[i];
+        }
+        
+        return abs(stsum - edsum);
+    }
+};
+
+
+###JAVA
+
+class Solution {
+    // Function to find the minimum value required to balance the array.
+    public int minValueToBalance(List<Integer> arr) {
+        int stsum = 0, edsum = 0;
+        int n = arr.size();
+        
+        for (int i = 0; i < n / 2; i++) {
+            stsum += arr.get(i);
+        }
+        
+        for (int i = n / 2; i < n; i++) {
+            edsum += arr.get(i);
+        }
+        
+        return Math.abs(stsum - edsum);
+    }
+}
+
+
+###PYTHON
+
+class Solution:
+    # Function to find the minimum value required to balance the array.
+    def min_value_to_balance(self, arr):
+        stsum = sum(arr[:len(arr) // 2])
+        edsum = sum(arr[len(arr) // 2:])
+        
+        return abs(stsum - edsum)
+
