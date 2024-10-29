@@ -1,0 +1,57 @@
+###C++
+
+class Solution {
+public:
+    int altProduct(vector<int>& arr) {
+        sort(arr.begin(), arr.end());
+        int left = 0, right = arr.size() - 1;
+        int sum = 0;
+        while (left < right) {
+            sum += arr[left] * arr[right];
+            left++;
+            right--;
+        }
+        if (left == right) {
+            sum += arr[left];
+        }
+        return sum;
+    }
+};
+
+
+
+###JAVA
+
+class Solution {
+    public int altProduct(int[] arr) {
+        Arrays.sort(arr);
+        int left = 0, right = arr.length - 1;
+        int sum = 0;
+        while (left < right) {
+            sum += arr[left] * arr[right];
+            left++;
+            right--;
+        }
+        if (left == right) {
+            sum += arr[left];
+        }
+        return sum;
+    }
+}
+
+
+###PYTHON
+
+class Solution:
+    def altProduct(self, arr):
+        arr.sort()
+        left, right = 0, len(arr) - 1
+        total_sum = 0
+        while left < right:
+            total_sum += arr[left] * arr[right]
+            left += 1
+            right -= 1
+        if left == right:
+            total_sum += arr[left]
+        return total_sum
+
