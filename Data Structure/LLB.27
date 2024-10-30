@@ -1,0 +1,33 @@
+							### IN C++
+							
+class Solution {
+  public:
+    // Function to reverse a doubly linked list
+    DLLNode* reverseDLL(DLLNode* head) {
+       vector<int> values;
+
+        for (DLLNode* current = head; current != nullptr; current = current->next) {
+            values.push_back(current->data);
+        }
+
+        reverse(values.begin(), values.end());
+
+        DLLNode* newHead = nullptr;
+        DLLNode* newTail = nullptr;
+
+        for (int value : values) {
+            DLLNode* newNode = new DLLNode(value);
+            if (newHead == nullptr) {
+                newHead = newNode;
+                newTail = newNode;
+            } else {
+                newTail->next = newNode;
+                newNode->prev = newTail;
+                newTail = newNode;
+            }
+        }
+
+        return newHead;
+    }
+};
+
