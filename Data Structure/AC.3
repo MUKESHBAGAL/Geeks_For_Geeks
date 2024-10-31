@@ -1,0 +1,55 @@
+###C++
+
+class Solution {
+public:
+    vector<int> find(vector<int> arr, int x) {
+        vector<int> ans(2, -1);
+        for (int i = 0; i < arr.size(); i++) {
+            if (arr[i] == x) {
+                if (ans[0] == -1) {
+                    ans[0] = i;
+                }
+                ans[1] = i;
+            }
+        }
+        return ans;
+    }
+};
+
+
+###JAVA
+
+class GFG {
+    ArrayList<Integer> find(int arr[], int x) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        ans.add(-1);
+        ans.add(-1);
+        
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == x) {
+                if (ans.get(0) == -1) {
+                    ans.set(0, i);
+                }
+                ans.set(1, i);
+            }
+        }
+        return ans;
+    }
+}
+
+
+
+###PYTHON
+
+class Solution:
+    def find(self, arr, x):
+        ans = [-1, -1]
+        
+        for i in range(len(arr)):
+            if arr[i] == x:
+                if ans[0] == -1:
+                    ans[0] = i
+                ans[1] = i
+                
+        return ans
+
