@@ -1,0 +1,51 @@
+###C++
+
+public:
+    vector<int> findUnion(vector<int> &a, vector<int> &b) {
+        set<int> unionSet;
+        for (int num : a) {
+            unionSet.insert(num);
+        }
+        for (int num : b) {
+            unionSet.insert(num);
+        }
+        vector<int> result(unionSet.begin(), unionSet.end());
+        return result;
+    }
+};
+
+
+###JAVA
+
+class Solution {
+    public static ArrayList<Integer> findUnion(int a[], int b[]) {
+        Set<Integer> unionSet = new HashSet<>();
+        
+        for (int num : a) {
+            unionSet.add(num);
+        }
+        
+        for (int num : b) {
+            unionSet.add(num);
+        }
+        
+        ArrayList<Integer> result = new ArrayList<>(unionSet);
+        Collections.sort(result);
+        return result;
+    }
+}
+
+
+
+###PYTHON
+
+class Solution:
+    
+    #Function to return a list containing the union of the two arrays.
+    def findUnion(self,a,b):
+        union_set = set(a)
+        union_set.update(b)
+        result = sorted(union_set)
+        return result
+
+
