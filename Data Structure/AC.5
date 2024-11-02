@@ -1,0 +1,36 @@
+###C++
+
+class Solution {
+  public:
+    int count(vector<int>& arr, int target) {
+        int count=0;
+        for(int i:arr){
+            if(i==target)
+            count++;
+        }
+        return count;
+    }
+};
+
+
+###JAVA
+
+class Solution {
+    int count(int[] arr, int target) {
+        int count=0;
+        for(int i:arr){
+            if(i==target)
+            count++;
+        }
+        return count;
+    }
+}
+
+
+
+###PYTHON
+
+class Solution:
+    def count(self, arr, target):
+        return arr.count(target)
+
