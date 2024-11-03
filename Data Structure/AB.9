@@ -1,0 +1,39 @@
+###C++
+
+class Solution {
+  public:
+    // Function to return the count of number of elements in union of two arrays.
+    int findUnion(vector<int>& a, vector<int>& b) {
+        set<int>ans;
+        ans.insert(a.begin(), a.end());
+        ans.insert(b.begin(), b.end());
+        return ans.size();
+    }
+};
+
+
+
+###JAVA
+
+class Solution {
+    public static int findUnion(int a[], int b[]) {
+        HashSet<Integer> ans = new HashSet<>();
+        for (int num : a) {
+            ans.add(num);
+        }
+        for (int num : b) {
+            ans.add(num);
+        }
+        return ans.size();
+        
+    }
+}
+
+
+###Python
+
+class Solution:    
+    #Function to return the count of number of elements in union of two arrays.
+    def findUnion(self, a, b):
+        ans = set(a) | set(b)
+        return len(ans)
