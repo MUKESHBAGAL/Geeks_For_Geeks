@@ -1,0 +1,40 @@
+###C++
+
+class Solution {
+public:
+    int kthElement(int k, vector<int>& arr1, vector<int>& arr2) {
+        vector<int> ans;
+        ans.insert(ans.end(), arr1.begin(), arr1.end()); 
+        ans.insert(ans.end(), arr2.begin(), arr2.end());
+        sort(ans.begin(), ans.end());
+        return ans[k - 1];  
+    }
+};
+
+
+
+###JAVA
+
+class Solution {
+    public long kthElement(int k, int arr1[], int arr2[]) {
+        List<Integer> ans = new ArrayList<>();
+        for (int num : arr1) {
+            ans.add(num);
+        }
+        for (int num : arr2) {
+            ans.add(num);
+        }
+        Collections.sort(ans);
+        return ans.get(k - 1);
+    }
+}
+
+
+
+###PYTHON
+
+class Solution:
+    def kthElement(self, k, arr1, arr2):
+        ans = arr1 + arr2
+        ans.sort()
+        return ans[k - 1]  
