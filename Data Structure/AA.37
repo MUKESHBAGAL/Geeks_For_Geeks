@@ -1,0 +1,77 @@
+###C++
+
+class Solution {
+  public:
+    vector<int> getFloorAndCeil(int x, vector<int> &arr) {
+        sort(arr.begin(), arr.end());  
+        int floor = -1, ceil = -1;
+        int left = 0, right = arr.size() - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (arr[mid] == x) {
+                return {x, x};
+            } else if (arr[mid] < x) {
+                floor = arr[mid];
+                left = mid + 1;
+            } else {
+                ceil = arr[mid];
+                right = mid - 1;
+            }
+        }
+
+        return {floor, ceil};
+    }
+};
+
+
+
+###JAVA
+
+class Solution {
+    public int[] getFloorAndCeil(int x, int[] arr) {
+        Arrays.sort(arr);
+        int floor = -1, ceil = -1;
+        int left = 0, right = arr.length - 1;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            
+            if (arr[mid] == x) {
+                return new int[]{x, x};
+            } else if (arr[mid] < x) {
+                floor = arr[mid];
+                left = mid + 1;
+            } else {
+                ceil = arr[mid];
+                right = mid - 1;
+            }
+        }
+        
+        return new int[]{floor, ceil};
+    }
+}
+
+
+###PYTHON
+
+class Solution:
+    def getFloorAndCeil(self, x: int, arr: list) -> list:
+        arr.sort() 
+        floor, ceil = -1, -1
+        left, right = 0, len(arr) - 1
+
+        while left <= right:
+            mid = left + (right - left) // 2
+
+            if arr[mid] == x:
+                return [x, x]
+            elif arr[mid] < x:
+                floor = arr[mid]
+                left = mid + 1
+            else:
+                ceil = arr[mid]
+                right = mid - 1
+
+        return [floor, ceil]
