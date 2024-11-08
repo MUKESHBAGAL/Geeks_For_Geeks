@@ -1,0 +1,67 @@
+###C++
+
+class Solution {
+  public:
+    void segregate0and1(vector<int> &arr) {
+        int left = 0, right = arr.size() - 1;
+
+        while (left < right) {
+            if (arr[left] == 1 && arr[right] == 0) {
+                swap(arr[left], arr[right]);
+                left++;
+                right--;
+            }
+            if (arr[left] == 0) {
+                left++;
+            }
+            if (arr[right] == 1) {
+                right--;
+            }
+        }
+    }
+};
+
+
+
+
+###JAVA
+
+class Solution {
+    void segregate0and1(int[] arr) {
+        int left = 0, right = arr.length - 1;
+
+        while (left < right) {
+            if (arr[left] == 1 && arr[right] == 0) {
+                int temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+                left++;
+                right--;
+            }
+            if (arr[left] == 0) {
+                left++;
+            }
+            if (arr[right] == 1) {
+                right--;
+            }
+        }
+    }
+}
+
+
+###PYTHON
+
+class Solution:
+    def segregate0and1(self, arr):
+        left, right = 0, len(arr) - 1
+
+        while left < right:
+            if arr[left] == 1 and arr[right] == 0:
+                arr[left], arr[right] = arr[right], arr[left]
+                left += 1
+                right -= 1
+            if arr[left] == 0:
+                left += 1
+            if arr[right] == 1:
+                right -= 1
+
