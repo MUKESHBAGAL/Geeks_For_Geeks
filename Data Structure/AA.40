@@ -1,0 +1,62 @@
+###C++
+
+class Solution {
+public:
+    vector<int> findDuplicates(vector<int>& arr) {
+        unordered_set<int> seen;
+        unordered_set<int> duplicates;
+
+        for (int num : arr) {
+            if (seen.find(num) != seen.end()) {
+                duplicates.insert(num);
+            } else {
+                seen.insert(num);
+            }
+        }
+        vector<int>ans(duplicates.begin(), duplicates.end());
+        sort(ans.begin(),ans.end());
+        return ans;
+    }
+};
+
+
+
+
+
+###JAVA
+
+class Solution {
+    public List<Integer> findDuplicates(int[] arr) {
+        Set<Integer> seen = new HashSet<>();
+        Set<Integer> duplicates = new HashSet<>();
+        
+        for (int num : arr) {
+            if (seen.contains(num)) {
+                duplicates.add(num);
+            } else {
+                seen.add(num);
+            }
+        }
+        
+        List<Integer> ans = new ArrayList<>(duplicates);
+        Collections.sort(ans);
+        
+        return ans;
+    }
+}
+
+
+###PYTHON
+
+class Solution:
+    def findDuplicates(self, arr):
+        seen = set()
+        duplicates = set()
+        
+        for num in arr:
+            if num in seen:
+                duplicates.add(num)
+            else:
+                seen.add(num)
+        
+        return sorted(list(duplicates))
