@@ -1,0 +1,62 @@
+### IN C++
+
+class Solution {
+  public:
+    // Function to reverse a circular linked list
+    Node* reverse(Node* head) {
+       if (head == nullptr || head->next == head) return head;
+    
+    Node* prev = nullptr;
+    Node* curr = head;
+    Node* nextNode = nullptr;
+    
+    do {
+        nextNode = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = nextNode;
+    } while (curr != head);
+    
+    head->next = prev;
+    head = prev;
+    
+    return head;
+    }
+
+    // Function to delete a node from the circular linked list
+   Node* deleteNode(Node* head, int key) {
+    if (head == nullptr) return nullptr;
+
+    vector<int> ans;
+    Node *temp = head;
+    Node *ptr = head;
+    
+    do {
+        ans.push_back(ptr->data);
+        ptr = ptr->next;
+    } while (ptr != head);
+    
+    for (int i = 0; i < ans.size(); i++) {
+        if (ans[i] == key) {
+            ans.erase(ans.begin() + i);
+            break;
+        }
+    }
+    
+    if (ans.empty()) return nullptr;
+    
+    Node* newHead = new Node(ans[0]);
+    Node* current = newHead;
+
+    for (int i = 1; i < ans.size(); i++) {
+        Node* newNode = new Node(ans[i]);
+        current->next = newNode;
+        current = current->next;
+    }
+
+    current->next = newHead;
+    
+    return newHead;
+}
+
+};
