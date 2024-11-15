@@ -1,0 +1,75 @@
+### IN C++
+
+class Solution {
+  public:
+    Node* flatten(Node *root) {
+        vector<int> ans;
+        Node* temp = root;
+        Node* ptr = NULL;
+
+        while (temp) {
+            ptr = temp;
+            while (ptr) {
+                ans.push_back(ptr->data);
+                ptr = ptr->bottom;
+            }
+            temp = temp->next;
+        }
+        sort(ans.begin(),ans.end());
+        Node* newRoot = NULL;
+        Node* last = NULL;
+        
+        for (int i = 0; i < ans.size(); i++) {
+            Node* newNode = new Node(ans[i]);
+            
+            if (!newRoot) {
+                newRoot = newNode;
+                last = newRoot;
+            } else {
+                last->bottom = newNode;
+                last = last->bottom;
+            }
+        }
+        
+        return newRoot;
+    }
+};
+
+
+
+### JAVA
+
+class Solution {
+    public Node flatten(Node root) {
+        List<Integer> ans = new ArrayList<>();
+        Node temp = root;
+        Node ptr = null;
+
+        while (temp != null) {
+            ptr = temp;
+            while (ptr != null) {
+                ans.add(ptr.data);
+                ptr = ptr.bottom;
+            }
+            temp = temp.next;
+        }
+        
+        Collections.sort(ans);
+        Node newRoot = null;
+        Node last = null;
+        
+        for (int i = 0; i < ans.size(); i++) {
+            Node newNode = new Node(ans.get(i));
+            
+            if (newRoot == null) {
+                newRoot = newNode;
+                last = newRoot;
+            } else {
+                last.bottom = newNode;
+                last = last.bottom;
+            }
+        }
+        
+        return newRoot;
+    }
+}
