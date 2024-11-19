@@ -1,0 +1,63 @@
+							### IN C++
+class Solution {
+  public:
+    void moveZeroes(Node*& head) {
+        if (!head) return;
+
+        vector<int> Zero;
+        vector<int> INT;
+
+        Node* temp = head;
+        while (temp) {
+            if (temp->data == 0) {
+                Zero.push_back(0);
+            } else {
+                INT.push_back(temp->data);
+            }
+            temp = temp->next;
+        }
+
+        temp = head;
+        for (int z : Zero) {
+            temp->data = z;
+            temp = temp->next;
+        }
+        for (int i : INT) {
+            temp->data = i;
+            temp = temp->next;
+        }
+    }
+};
+
+
+							### IN JAVA
+							
+class Solution {
+    public Node moveZeroes(Node head) {
+        if (head == null) return null;
+
+        ArrayList<Integer> zeros = new ArrayList<>();
+        ArrayList<Integer> integers = new ArrayList<>();
+
+        Node temp = head;
+        while (temp != null) {
+            if (temp.data == 0) {
+                zeros.add(0);
+            } else {
+                integers.add(temp.data);
+            }
+            temp = temp.next;
+        }
+
+        temp = head;
+        for (int z : zeros) {
+            temp.data = z;
+            temp = temp.next;
+        }
+        for (int i : integers) {
+            temp.data = i;
+            temp = temp.next;
+        }
+        return head;
+    }
+}
