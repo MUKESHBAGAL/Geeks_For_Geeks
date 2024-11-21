@@ -1,0 +1,75 @@
+### IN C++
+
+class Solution {
+  public:
+    struct Node* partition(struct Node* head, int x) {
+        vector<int>large;
+        vector<int>small;
+        vector<int>equal;
+        Node* temp=head;
+        while(temp){
+            if(temp->data<x)
+                small.push_back(temp->data);
+            else if(temp->data==x)
+                equal.push_back(temp->data);
+            else
+                large.push_back(temp->data);
+            temp=temp->next;
+        }
+        temp=head;
+        for(int num:small){
+            temp->data=num;
+            temp=temp->next;
+        }
+        for(int num:equal){
+            temp->data=num;
+            temp=temp->next;
+        }
+        for(int num:large){
+            temp->data=num;
+            temp=temp->next;
+        }
+        return head;
+    }
+};
+
+
+
+### IN JAVA 
+
+class Solution {
+    public static Node partition(Node head, int x) {
+        if (head == null) return null;
+
+        Node smallHead = new Node(0);
+        Node equalHead = new Node(0);
+        Node largeHead = new Node(0);
+
+        Node small = smallHead;
+        Node equal = equalHead;
+        Node large = largeHead;
+        
+        Node temp = head;
+        
+        while (temp != null) {
+            if (temp.data < x) {
+                small.next = temp;
+                small = small.next;
+            } else if (temp.data == x) {
+                equal.next = temp;
+                equal = equal.next;
+            } else {
+                large.next = temp;
+                large = large.next;
+            }
+            temp = temp.next;
+        }
+
+        small.next = equalHead.next;
+        equal.next = largeHead.next;
+        large.next = null;
+
+        return smallHead.next;
+    }
+}
+
