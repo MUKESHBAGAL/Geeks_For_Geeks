@@ -1,0 +1,43 @@
+### IN C++
+
+class Solution {
+
+  public:
+    Node* sortList(Node* head) {
+        Node* temp=head;
+        vector<int>ans;
+        while(temp){
+            ans.push_back(temp->data);
+            temp=temp->next;
+        }
+        sort(ans.begin(),ans.end());
+        temp=head;
+        for(int num:ans){
+            temp->data=num;
+            temp=temp->next;
+        }
+        return head;
+    }
+};
+
+
+
+### IN JAVA 
+
+class Solution {
+    Node sortList(Node head) {
+        List<Integer> values = new ArrayList<>();
+        Node temp = head;
+        while (temp != null) {
+            values.add(temp.data);
+            temp = temp.next;
+        }
+        Collections.sort(values);
+        temp = head;
+        for (int data : values) {
+            temp.data = data;
+            temp = temp.next;
+        }
+        return head;
+    }
+}
