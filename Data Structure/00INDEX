@@ -149,6 +149,9 @@ LLC.16  Insert in Sorted way in a Sorted DLL
 LLC.17  Arrange Consonants and Vowels
 LLC.18  Partition a Linked List around a given value
 LLC.19  Absolute List Sorting
+LLC.20  Rotate a Linked List
+
+
 
 D]Hard
 LLD.1	Merge Sort on Doubly Linked List
