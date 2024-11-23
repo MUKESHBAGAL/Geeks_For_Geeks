@@ -1,0 +1,68 @@
+### IN C++
+
+class Solution {
+public:
+    Node* rotate(Node* head, int k) {
+        if (!head || k == 0) return head;
+
+        Node* temp = head;
+        int length = 1;
+        while (temp->next) {
+            temp = temp->next;
+            length++;
+        }
+
+        temp->next = head;
+
+        k = k % length;
+        if (k == 0) {
+            temp->next = NULL;  
+            return head;
+        }
+
+        temp = head;
+        for (int i = 1; i < k; i++) {
+            temp = temp->next;
+        }
+
+        Node* newHead = temp->next;
+        temp->next = NULL;
+
+        return newHead;
+    }
+};
+
+
+
+### IN JAVA 
+
+class Solution {
+    public Node rotate(Node head, int k) {
+        if (head == null || k == 0) return head;
+
+        Node temp = head;
+        int length = 1;
+        while (temp.next != null) {
+            temp = temp.next;
+            length++;
+        }
+
+        temp.next = head;
+
+        k = k % length;
+        if (k == 0) {
+            temp.next = null;
+            return head;
+        }
+
+        temp = head;
+        for (int i = 1; i < k; i++) {
+            temp = temp.next;
+        }
+
+        Node newHead = temp.next;
+        temp.next = null;
+
+        return newHead;
+    }
+}
