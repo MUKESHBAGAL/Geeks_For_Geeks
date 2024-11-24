@@ -1,0 +1,91 @@
+### IN C++
+
+class Solution {
+public:
+    Node* addOne(Node* head) {
+        head = reverseList(head);
+
+        Node* temp = head;
+        int carry = 1;
+
+        while (temp) {
+            int sum = temp->data + carry;
+            temp->data = sum % 10;
+            carry = sum / 10;
+
+            if (carry == 0) {
+                break;
+            }
+
+            if (!temp->next && carry) {
+                temp->next = new Node(carry);
+                carry = 0;
+            }
+            temp = temp->next;
+        }
+
+        return reverseList(head);
+    }
+
+private:
+    Node* reverseList(Node* head) {
+        Node* prev = nullptr;
+        Node* curr = head;
+
+        while (curr) {
+            Node* nextNode = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+
+        return prev;
+    }
+};
+
+
+
+### IN JAVA 
+
+class Solution {
+    public Node addOne(Node head) {
+        head = reverseList(head);
+
+        Node temp = head;
+        int carry = 1;
+
+        while (temp != null) {
+            int sum = temp.data + carry;
+            temp.data = sum % 10;
+            carry = sum / 10;
+
+            if (carry == 0) {
+                break;
+            }
+
+            if (temp.next == null && carry > 0) {
+                temp.next = new Node(carry);
+                carry = 0;
+            }
+            temp = temp.next;
+        }
+
+        return reverseList(head);
+    }
+
+    private Node reverseList(Node head) {
+        Node prev = null;
+        Node curr = head;
+
+        while (curr != null) {
+            Node nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+
+        return prev;
+    }
+}
+
+}
