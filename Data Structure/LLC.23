@@ -1,0 +1,57 @@
+### IN C++
+
+
+class Solution {
+public:
+    Node* sort(Node* head) {
+        if (!head || !head->next) return head;
+
+        vector<int> values;
+        Node* temp = head;
+
+        while (temp) {
+            values.push_back(temp->data);
+            temp = temp->next;
+        }
+
+        std::sort(values.begin(), values.end());
+
+        temp = head;
+        for (int val : values) {
+            temp->data = val;
+            temp = temp->next;
+        }
+
+        return head;
+    }
+};
+
+
+
+### IN JAVA 
+
+class Solution {
+    public Node sort(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        List<Integer> values = new ArrayList<>();
+        Node temp = head;
+
+        while (temp != null) {
+            values.add(temp.data);
+            temp = temp.next;
+        }
+
+        Collections.sort(values);
+
+        temp = head;
+        for (int val : values) {
+            temp.data = val;
+            temp = temp.next;
+        }
+
+        return head;
+    }
+}
