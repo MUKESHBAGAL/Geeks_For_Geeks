@@ -1,0 +1,66 @@
+###C++
+
+lass Solution {
+  public:
+    vector<int> increment(vector<int> arr, int N) {
+        int carry = 1;
+        for (int i = N - 1; i >= 0; --i) {
+            arr[i] += carry;
+            if (arr[i] == 10) {
+                arr[i] = 0;
+                carry = 1;
+            } else {
+                carry = 0;
+                break;
+            }
+        }
+        if (carry == 1) {
+            arr.insert(arr.begin(), 1);
+        }
+        return arr;
+    }
+};
+
+
+
+
+###JAVA
+
+class Solution {
+    static ArrayList<Integer> increment(ArrayList<Integer> arr , int N) {
+        int carry = 1;
+        for (int i = arr.size() - 1; i >= 0; --i) {
+            int sum = arr.get(i) + carry;
+            if (sum == 10) {
+                arr.set(i, 0);
+                carry = 1;
+            } else {
+                arr.set(i, sum);
+                carry = 0;
+                break;
+            }
+        }
+        if (carry == 1) {
+            arr.add(0, 1);
+        }
+        return arr;
+    }
+};
+
+
+###Python
+
+class Solution:
+    def increment(self, arr, N):
+        carry = 1
+        for i in range(len(arr) - 1, -1, -1):
+            arr[i] += carry
+            if arr[i] == 10:
+                arr[i] = 0
+                carry = 1
+            else:
+                carry = 0
+                break
+        if carry == 1:
+            arr.insert(0, 1)
+        return arr
