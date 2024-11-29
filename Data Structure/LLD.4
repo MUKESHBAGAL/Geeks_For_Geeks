@@ -1,0 +1,160 @@
+### IN C++
+
+class Solution {
+public:
+    Node* subLinkedList(Node* head1, Node* head2) {
+        // Convert linked lists to vectors
+        vector<int> num1, num2;
+
+        // Populate num1 from head1
+        while (head1) {
+            num1.push_back(head1->data);
+            head1 = head1->next;
+        }
+
+        // Populate num2 from head2
+        while (head2) {
+            num2.push_back(head2->data);
+            head2 = head2->next;
+        }
+
+        // Remove leading zeros from both vectors
+        while (!num1.empty() && num1[0] == 0) num1.erase(num1.begin());
+        while (!num2.empty() && num2[0] == 0) num2.erase(num2.begin());
+
+        // Ensure num1 >= num2 by swapping if needed
+        bool isNegative = false;
+        if (num1.size() < num2.size() || (num1.size() == num2.size() && num1 < num2)) {
+            swap(num1, num2);
+            isNegative = true; // Handle if subtraction result is negative
+        }
+
+        // Perform subtraction
+        vector<int> result;
+        int borrow = 0, diff = 0;
+        int i = num1.size() - 1, j = num2.size() - 1;
+
+        while (i >= 0 || j >= 0) {
+            int digit1 = (i >= 0) ? num1[i] : 0;
+            int digit2 = (j >= 0) ? num2[j] : 0;
+
+            diff = digit1 - digit2 - borrow;
+
+            if (diff < 0) {
+                diff += 10;
+                borrow = 1;
+            } else {
+                borrow = 0;
+            }
+
+            result.push_back(diff);
+            i--; j--;
+        }
+
+        // Remove leading zeros from the result
+        while (result.size() > 1 && result.back() == 0) {
+            result.pop_back();
+        }
+
+        // Construct the resulting linked list
+        Node* resHead = nullptr;
+        Node* tail = nullptr;
+
+        for (int k = result.size() - 1; k >= 0; --k) {
+            Node* newNode = new Node(result[k]);
+            if (!resHead) {
+                resHead = newNode;
+                tail = newNode;
+            } else {
+                tail->next = newNode;
+                tail = newNode;
+            }
+        }
+
+        return resHead ? resHead : new Node(0); // Handle edge case of empty result
+    }
+};
+
+
+
+
+### IN JAVA 
+
+
+class Solution {
+    public Node subLinkedList(Node head1, Node head2) {
+        List<Integer> num1 = new ArrayList<>();
+        List<Integer> num2 = new ArrayList<>();
+
+        while (head1 != null) {
+            num1.add(head1.data);
+            head1 = head1.next;
+        }
+
+        while (head2 != null) {
+            num2.add(head2.data);
+            head2 = head2.next;
+        }
+
+        while (!num1.isEmpty() && num1.get(0) == 0) num1.remove(0);
+        while (!num2.isEmpty() && num2.get(0) == 0) num2.remove(0);
+
+        boolean isNegative = false;
+        if (num1.size() < num2.size() || (num1.size() == num2.size() && compareLists(num1, num2) < 0)) {
+            List<Integer> temp = num1;
+            num1 = num2;
+            num2 = temp;
+            isNegative = true;
+        }
+
+        List<Integer> result = new ArrayList<>();
+        int borrow = 0, diff = 0;
+        int i = num1.size() - 1, j = num2.size() - 1;
+
+        while (i >= 0 || j >= 0) {
+            int digit1 = (i >= 0) ? num1.get(i) : 0;
+            int digit2 = (j >= 0) ? num2.get(j) : 0;
+
+            diff = digit1 - digit2 - borrow;
+
+            if (diff < 0) {
+                diff += 10;
+                borrow = 1;
+            } else {
+                borrow = 0;
+            }
+
+            result.add(diff);
+            i--;
+            j--;
+        }
+
+        while (result.size() > 1 && result.get(result.size() - 1) == 0) {
+            result.remove(result.size() - 1);
+        }
+
+        Node resHead = null;
+        Node tail = null;
+
+        for (int k = result.size() - 1; k >= 0; --k) {
+            Node newNode = new Node(result.get(k));
+            if (resHead == null) {
+                resHead = newNode;
+                tail = newNode;
+            } else {
+                tail.next = newNode;
+                tail = newNode;
+            }
+        }
+
+        return resHead != null ? resHead : new Node(0);
+    }
+
+    private int compareLists(List<Integer> num1, List<Integer> num2) {
+        for (int i = 0; i < num1.size(); i++) {
+            if (num1.get(i) < num2.get(i)) return -1;
+            if (num1.get(i) > num2.get(i)) return 1;
+        }
+        return 0;
+    }
+}
