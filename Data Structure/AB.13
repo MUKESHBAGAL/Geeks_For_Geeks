@@ -1,0 +1,39 @@
+###C++
+
+class Solution {
+  public:
+
+    void countOddEven(vector<int>& arr) {
+        int oddCount = 0, evenCount = 0;
+
+        for (int num : arr) {
+            if (num % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+        }
+
+        cout << oddCount << " " <<evenCount<< endl;
+    }
+};
+
+
+
+###JAVA
+
+class Solution {
+    public static void countOddEven(Integer arr[]) {
+        int oddCount = 0, evenCount = 0;
+
+        for (int num : arr) {
+            if (num % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+        }
+        System.out.println( oddCount+ " " + evenCount);
+    }
+}
+
