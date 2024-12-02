@@ -1,0 +1,56 @@
+###C++
+
+class Solution {
+public:
+    vector<int> removeDuplicate(vector<int>& arr) {
+        unordered_set<int> seen;
+        vector<int> ans;
+
+        for (int num : arr) {
+            if (seen.find(num) == seen.end()) {
+                ans.push_back(num);
+                seen.insert(num);
+            }
+        }
+
+        return ans;
+    }
+};
+
+
+
+
+###JAVA
+
+class Solution {
+
+    static ArrayList<Integer> removeDuplicate(int arr[]) {
+        Set<Integer> seen = new HashSet<>();
+        ArrayList<Integer> ans = new ArrayList<>();
+
+        for (int num : arr) {
+            if (!seen.contains(num)) {
+                ans.add(num);
+                seen.add(num);
+            }
+        }
+
+        return ans;
+    }
+}
+
+
+###Python
+
+
+class Solution:
+    def removeDuplicate(self, arr):
+        seen = set()
+        ans = []
+
+        for num in arr:
+            if num not in seen:
+                ans.append(num)
+                seen.add(num)
+
+        return ans
