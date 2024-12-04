@@ -1,0 +1,44 @@
+							### IN C++
+class Solution {
+public:
+    bool compute(Node* head) {
+        if (!head) return true;
+
+        string result;
+        Node* temp = head;
+        while (temp) {
+            result += temp->data;
+            temp = temp->next;
+        }
+
+        string reversed = result;
+        reverse(reversed.begin(), reversed.end());
+        
+        return result == reversed;
+    }
+};
+
+
+
+							### IN JAVA
+							
+class Solution {
+    public boolean compute(Node head) {
+        if (head == null) return true;
+
+        StringBuilder result = new StringBuilder();
+        Node temp = head;
+
+        // Traverse the linked list and build the string
+        while (temp != null) {
+            result.append(temp.data);
+            temp = temp.next;
+        }
+
+        // Check if the string is a palindrome
+        String original = result.toString();
+        String reversed = result.reverse().toString();
+
+        return original.equals(reversed);
+    }
+}
