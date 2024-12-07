@@ -1,0 +1,70 @@
+###C++
+
+class Solution {
+  public:
+    void segregateElements(vector<int>& arr) {
+        vector<int> temp;
+
+        // Add positive elements to temp
+        for (int num : arr) {
+            if (num >= 0) {
+                temp.push_back(num);
+            }
+        }
+
+        // Add negative elements to temp
+        for (int num : arr) {
+            if (num < 0) {
+                temp.push_back(num);
+            }
+        }
+
+        // Copy temp back to arr
+        for (int i = 0; i < arr.size(); i++) {
+            arr[i] = temp[i];
+        }
+    }
+};
+
+
+
+
+###JAVA
+
+class Solution {
+    public void segregateElements(int[] arr) {
+       int[] temp = new int[arr.length];
+        int index = 0;
+
+        // Add positive elements to temp
+        for (int num : arr) {
+            if (num >= 0) {
+                temp[index++] = num;
+            }
+        }
+
+        // Add negative elements to temp
+        for (int num : arr) {
+            if (num < 0) {
+                temp[index++] = num;
+            }
+        }
+
+        // Copy temp back to arr
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = temp[i];
+        }
+    }
+}
+
+
+###Python
+
+
+class Solution:
+    def segregateElements(self, arr):
+        temp = []
+        temp.extend([num for num in arr if num >= 0])
+        temp.extend([num for num in arr if num < 0])
+        for i in range(len(arr)):
+            arr[i] = temp[i]
