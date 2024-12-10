@@ -1,0 +1,89 @@
+### IN C++
+
+class Solution {
+public:
+    Node* swapKthNode(Node* head, int k) {
+         if (!head) return head;
+        
+        int len = 0;
+        Node* temp = head;
+        while (temp) {
+            len++;
+            temp = temp->next;
+        }
+        
+        if (k > len) return head;
+        
+        Node* node1 = head;
+        for (int i = 1; i < k; i++) {
+            node1 = node1->next;
+        }
+        
+        Node* node2 = head;
+        for (int i = 1; i < len - k + 1; i++) {
+            node2 = node2->next;
+        }
+        
+        if (node1 != node2) {
+            int tempData = node1->data;
+            node1->data = node2->data;
+            node2->data = tempData;
+        }
+        
+        return 1;
+    }
+};
+
+
+
+### IN JAVA 
+
+
+class Solution {
+    public Node swapKthNode(Node head, int k) {
+        if (head == null) return null;
+
+        Node temp = head;
+        int count = 0;
+        while (temp != null) {
+            count++;
+            temp = temp.next;
+        }
+
+        if (k > count) return head;
+        if (2 * k - 1 == count) return head;
+
+        Node first = head;
+        Node firstPrev = null;
+        for (int i = 1; i < k; i++) {
+            firstPrev = first;
+            first = first.next;
+        }
+
+        Node second = head;
+        Node secondPrev = null;
+        for (int i = 1; i < count - k + 1; i++) {
+            secondPrev = second;
+            second = second.next;
+        }
+
+        if (firstPrev != null) {
+            firstPrev.next = second;
+        } else {
+            head = second;
+        }
+
+        if (secondPrev != null) {
+            secondPrev.next = first;
+        } else {
+            head = first;
+        }
+
+        Node tempNext = first.next;
+        first.next = second.next;
+        second.next = tempNext;
+
+        return head;
+    }
+}
+
