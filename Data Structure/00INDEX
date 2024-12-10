@@ -163,6 +163,11 @@ LLC.22  Rotate doubly Linked List
 LLC.23  Linked List that is Sorted Alternatingly
 LLC.24  Triplets in Sorted Linked List
 LLC.25  Remove loop in Linked List
+LLC.26  Swap Kth nodes from ends
+
+
+
+
 
 D]Hard
 LLD.1	Merge Sort on Doubly Linked List
