@@ -1,0 +1,55 @@
+							### IN C++
+
+class Solution {
+public:
+    int fractional_node(struct Node *head, int k) {
+        if (!head || k <= 0) return -1;
+
+        struct Node *temp = head;
+        int count = 0;
+        while (temp) {
+            count++;
+            temp = temp->next;
+        }
+
+        int fractionalIndex = (int)ceil((double)count / (double)k);
+
+        // Traverse to the fractional node
+        temp = head;
+        for (int i = 1; i < fractionalIndex; i++) {
+            temp = temp->next;
+        }
+
+        return temp->data;
+    }
+};
+
+
+
+							### IN JAVA
+							
+
+
+
+class Solution {
+    public static int fractional_node(Node head, int k) {
+        if (head == null || k <= 0) return -1;
+
+        Node temp = head;
+        int count = 0;
+
+        while (temp != null) {
+            count++;
+            temp = temp.next;
+        }
+
+        int fractionalIndex = (int) Math.ceil((double) count / (double) k);
+
+        temp = head;
+        for (int i = 1; i < fractionalIndex; i++) {
+            temp = temp.next;
+        }
+
+        return temp.data;
+    }
+}
