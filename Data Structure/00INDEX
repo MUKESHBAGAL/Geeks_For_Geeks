@@ -131,6 +131,7 @@ LLB.28  Move all zeros to the front of the linked list
 LLB.29  Linked list of strings forms a palindrome
 LLB.30  Find the first node of loop in linked list
 LLB.31  Intersection of Two Linked Lists
+LLB.32  Find n/k th node in Linked list
 
 
 
