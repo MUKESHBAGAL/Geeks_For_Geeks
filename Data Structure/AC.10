@@ -1,0 +1,68 @@
+###C++
+
+class Solution {
+  public:
+    int SumofMiddleElements(vector<int> &arr1, vector<int> &arr2) {
+        vector<int> ans;
+        for (int num : arr1) {
+            ans.push_back(num);
+        }
+        for (int num : arr2) {
+            ans.push_back(num);
+        }
+        sort(ans.begin(), ans.end());
+        int mid = ans.size() / 2;
+        if (ans.size() % 2 != 0) {
+            return ans[mid];
+        } else {
+            return ans[mid - 1] + ans[mid];
+        }
+    }
+};
+
+
+
+
+
+###JAVA
+
+class Solution {
+    public int SumofMiddleElements(int[] arr1, int[] arr2) {
+       int[] ans = new int[arr1.length + arr2.length];
+        int index = 0;
+        
+        for (int num : arr1) {
+            ans[index++] = num;
+        }
+        
+        for (int num : arr2) {
+            ans[index++] = num;
+        }
+        
+        Arrays.sort(ans);
+        
+        int mid = ans.length / 2;
+        
+        if (ans.length % 2 != 0) {
+            return ans[mid];
+        } else {
+            return ans[mid - 1] + ans[mid];
+        }
+    }
+}
+
+
+
+###PYTHON
+
+class Solution:
+    def sum_of_middle_elements(self, arr1, arr2):
+        ans = arr1 + arr2
+        ans.sort()
+        
+        mid = len(ans) // 2
+        
+        if len(ans) % 2 != 0:
+            return ans[mid]
+        else:
+            return ans[mid - 1] + ans[mid]
