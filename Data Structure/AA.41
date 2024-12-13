@@ -1,0 +1,17 @@
+###C++
+
+vector<vector<int>> transpose(int matrix[][M], int n)
+{
+    vector<vector<int>>result;
+ 
+    for(int i=0;i<n;i++){
+        vector<int>temp;
+        for(int j=0;j<n;j++)
+            temp.push_back(matrix[j][i]);
+        result.push_back(temp);
+        
+    }
+    return result;
+}
+
+
