@@ -1,0 +1,64 @@
+###C++
+
+class Solution {
+public:
+    vector<int> customSort(vector<int>& arr) {
+        int n = arr.size();
+        if (n <= 1) return arr;
+
+        vector<int> asc(arr.begin(), arr.begin() + n / 2);
+        vector<int> desc(arr.begin() + n / 2, arr.end());
+
+        sort(asc.begin(), asc.end());
+        sort(desc.begin(), desc.end(), greater<int>());
+
+        asc.insert(asc.end(), desc.begin(), desc.end());
+        return asc;
+    }
+};
+
+
+###JAVA
+
+class Solution {
+    public ArrayList<Integer> customSort(int[] arr) {
+        int n = arr.length;
+        if (n <= 1) {
+            ArrayList<Integer> result = new ArrayList<>();
+            for (int num : arr) {
+                result.add(num);
+            }
+            return result;
+        }
+
+        List<Integer> arrList = new ArrayList<>();
+        for (int num : arr) {
+            arrList.add(num);
+        }
+
+        List<Integer> asc = new ArrayList<>(arrList.subList(0, n / 2));
+        List<Integer> desc = new ArrayList<>(arrList.subList(n / 2, n));
+
+        Collections.sort(asc);
+        desc.sort(Collections.reverseOrder());
+
+        asc.addAll(desc);
+        return new ArrayList<>(asc);
+    }
+}
+
+
+
+###PYTHON
+
+class Solution:
+    def customSort(self, arr):
+        n = len(arr)
+        if n <= 1:
+            return arr
+        
+        asc = sorted(arr[:n // 2])
+        desc = sorted(arr[n // 2:], reverse=True)
+        
+        return asc + desc
+
