@@ -1,0 +1,52 @@
+###C++
+
+class Solution {
+  public:
+    int median(vector<vector<int>> &mat) {
+        vector<int> ans;
+        for (int i = 0; i < mat.size(); i++) {
+            for (int j = 0; j < mat[i].size(); j++) {
+                ans.push_back(mat[i][j]);
+            }
+        }
+        sort(ans.begin(), ans.end());
+        int n = ans.size();
+        return (n % 2 == 0) ? ans[n / 2 - 1] : ans[n / 2];
+    }
+};
+
+
+###JAVA
+
+class Solution {
+    int median(int mat[][]) {
+        int rows = mat.length;
+        int cols = mat[0].length;
+        int[] arr = new int[rows * cols];
+        int index = 0;
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                arr[index++] = mat[i][j];
+            }
+        }
+
+        Arrays.sort(arr);
+        int n = arr.length;
+        return (n % 2 == 0) ? arr[n / 2 - 1] : arr[n / 2];
+    }
+}
+
+
+
+###PYTHON
+
+class Solution:
+    def median(self, mat):
+    	ans = []
+        for row in mat:
+            ans.extend(row)
+        ans.sort()
+        n = len(ans)
+        return ans[n // 2] if n % 2 != 0 else ans[n // 2 - 1]
+
