@@ -89,6 +89,8 @@ AC.10	Sum of Middle elements of two sorted arrays
 
 D]Hard
 AD.1	Median of 2 Sorted Arrays of Different Sizes
+AD.2	Median in a row-wise sorted Matrix
+
 
 ##########################################################Linked Lists[LL]###########################################################
 
