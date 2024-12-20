@@ -1,0 +1,56 @@
+###C++
+
+class Solution {
+public:
+    void reverseInGroups(vector<long long int> &arr, int k) {
+        int n = arr.size();
+        for (int start = 0; start < n; start += k) {
+            int end = min(start + k - 1, n - 1);
+            int i = start, j = end;
+            while (i < j) {
+                swap(arr[i], arr[j]);
+                i++;
+                j--;
+            }
+        }
+    }
+};
+
+
+###JAVA
+
+class Solution {
+
+    // Function to reverse every sub-array group of size k.
+    void reverseInGroups(ArrayList<Long> arr, int k) {
+        int n = arr.size();
+        for (int start = 0; start < n; start += k) {
+            int end = Math.min(start + k - 1, n - 1);
+            int i = start, j = end;
+            while (i < j) {
+                long temp = arr.get(i);
+                arr.set(i, arr.get(j));
+                arr.set(j, temp);
+                i++;
+                j--;
+            }
+        }
+    }
+    
+}
+
+
+
+###PYTHON
+
+class Solution:
+    # Function to reverse every sub-array group of size k.
+    def reverseInGroups(self, arr, k):
+        n = len(arr)
+        for start in range(0, n, k):
+            end = min(start + k - 1, n - 1)
+            i, j = start, end
+            while i < j:
+                arr[i], arr[j] = arr[j], arr[i]
+                i += 1
+                j -= 1
