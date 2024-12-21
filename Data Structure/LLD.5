@@ -1,0 +1,78 @@
+### IN C++
+
+
+class Solution {
+public:
+    struct node* reverseIt(struct node* head, int k) {
+        if (!head || k <= 1) return head;
+
+        struct node* temp = head;
+        vector<int> arr;
+
+        while (temp) {
+            arr.push_back(temp->data);
+            temp = temp->next;
+        }
+
+        int n = arr.size();
+        for (int start = 0; start < n; start += k) {
+            int end = min(start + k - 1, n - 1);
+            int i = start, j = end;
+            while (i < j) {
+                swap(arr[i], arr[j]);
+                i++;
+                j--;
+            }
+        }
+
+        temp = head;
+        for (int num : arr) {
+            temp->data = num;
+            temp = temp->next;
+        }
+
+        return head;
+    }
+};
+
+
+
+
+
+### IN JAVA 
+
+
+class Solution {
+    public static Node reverse(Node node, int k) {
+        if (node == null || k <= 1) return node;
+
+        Node temp = node;
+        ArrayList<Integer> arr = new ArrayList<>();
+
+        while (temp != null) {
+            arr.add(temp.data);
+            temp = temp.next;
+        }
+
+        int n = arr.size();
+        for (int start = 0; start < n; start += k) {
+            int end = Math.min(start + k - 1, n - 1);
+            int i = start, j = end;
+            while (i < j) {
+                int tempVal = arr.get(i);
+                arr.set(i, arr.get(j));
+                arr.set(j, tempVal);
+                i++;
+                j--;
+            }
+        }
+
+        temp = node;
+        for (int num : arr) {
+            temp.data = num;
+            temp = temp.next;
+        }
+
+        return node;
+    }
+}
