@@ -1,0 +1,89 @@
+###C++
+
+class Solution {
+  public:
+    vector<int> findIndex(vector<int>& arr, int key) {
+        int startIndex = -1;
+        int endIndex = -1;
+    
+        // Find the start index (first occurrence from left)
+        for (int i = 0; i < arr.size(); i++) {
+            if (arr[i] == key) {
+                startIndex = i;
+                break;
+            }
+        }
+    
+        // Find the end index (first occurrence from right)
+        for (int i = arr.size() - 1; i >= 0; i--) {
+            if (arr[i] == key) {
+                endIndex = i;
+                break;
+            }
+        }
+    
+        return {startIndex, endIndex};
+    }
+};
+
+
+
+
+
+###JAVA
+
+class Solution {
+    // Function to find starting and end index
+    static int[] findIndex(int arr[], int key) {
+         int startIndex = -1;
+        int endIndex = -1;
+
+        // Find the start index (first occurrence from left)
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == key) {
+                startIndex = i;
+                break;
+            }
+        }
+
+        // Find the end index (first occurrence from right)
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] == key) {
+                endIndex = i;
+                break;
+            }
+        }
+
+        // If the key was not found, return [-1, -1]
+        if (startIndex == -1 || endIndex == -1) {
+            return new int[]{-1, -1};
+        }
+
+        return new int[]{startIndex, endIndex};
+    }
+}
+
+
+###Python
+
+class Solution:
+    def findIndex (self,arr, key ):
+        start_index = -1
+        end_index = -1
+    
+        # Find the start index (first occurrence from left)
+        for i in range(len(arr)):
+            if arr[i] == key:
+                start_index = i
+                break
+    
+        # Find the end index (first occurrence from right)
+        for i in range(len(arr) - 1, -1, -1):
+            if arr[i] == key:
+                end_index = i
+                break
+    
+        return [start_index, end_index]
+
+
+
