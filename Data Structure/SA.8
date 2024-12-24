@@ -1,0 +1,44 @@
+### IN C++
+
+class Solution
+{
+  public:
+    char firstRep (string s)
+    {
+       for(int i=0;i<s.size();i++){
+           for(int j=i+1;j<s.size();j++){
+               if(s[i]==s[j])
+               return s[i];
+           }
+       }
+       return "";
+    }
+};
+
+
+
+### IN JAVA
+
+class Solution {
+    public char firstRep(String S) {
+        for (int i = 0; i < S.length(); i++) {
+            for (int j = i + 1; j < S.length(); j++) {
+                if (S.charAt(i) == S.charAt(j)) {
+                    return S.charAt(i); // Return the first repeating character
+                }
+            }
+        }
+        return '#'; // Return '#' if no repeating character is found
+    }
+}
+
+
+### IN PYTHON
+
+class Solution:
+    def firstRep(self, s):
+        for i in range(len(s)):
+            for j in range(i + 1, len(s)):
+                if s[i] == s[j]:
+                    return s[i]
+        return '#'
