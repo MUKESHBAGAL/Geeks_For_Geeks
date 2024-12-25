@@ -201,6 +201,7 @@ SA.5	Display longest name.
 SA.6	Remove Spaces.
 SA.7	Merge two strings
 SA.8	Repeated Character
+SA.9	Remove vowels from string
 
 
 
