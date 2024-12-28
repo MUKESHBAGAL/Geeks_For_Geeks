@@ -1,0 +1,35 @@
+### IN C++
+
+class Solution
+{
+    public:
+        bool check (string s)
+        {
+        	unordered_set<char> unique_chars(s.begin(), s.end());
+            return unique_chars.size() == 1;
+        }
+};
+
+
+### IN JAVA
+
+class Sol
+{
+    Boolean check (String s)
+    {
+        HashSet<Character> uniqueChars = new HashSet<>();
+        for (char c : s.toCharArray()) {
+            uniqueChars.add(c);
+        }
+        return uniqueChars.size() == 1;     
+    }
+}
+
+
+### IN PYTHON
+
+class Solution:
+    def check (self,s):
+        s=set(s)
+        return len(s)==1
+
