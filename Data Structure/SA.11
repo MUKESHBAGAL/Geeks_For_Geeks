@@ -1,0 +1,31 @@
+### IN C++
+
+class Solution {
+  public:
+    int firstOccurence(string &txt, string &pat) {
+        size_t pos = txt.find(pat);
+        return (pos != string::npos) ? pos : -1;
+    }
+};
+
+
+### IN JAVA
+
+
+
+class GfG {
+    int strstr(String s, String x) {
+        return s.indexOf(x);
+    }
+}
+
+
+
+### IN PYTHON
+
+
+def strstr(s,x):
+    return s.find(x)
+
+
+
