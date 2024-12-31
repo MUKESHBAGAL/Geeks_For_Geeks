@@ -34,8 +34,8 @@ class Solution {
 ### IN PYTHON
 
 class Solution:
-    def transform(self, s):
-       return s.title()
+    def convert(self, s):
+        return s.title()
 
 
 
