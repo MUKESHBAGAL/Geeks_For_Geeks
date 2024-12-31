@@ -1,0 +1,44 @@
+### IN C++
+
+class Solution {
+public:
+    string convert(string& s) {
+        for (int i = 0; i < s.size(); i++) {
+            if ((i == 0 || s[i - 1] == ' ') && s[i] >= 'a' && s[i] <= 'z') {
+                s[i] = s[i] - 32;
+            }
+        }
+        return s;
+    }
+};
+
+
+### IN JAVA
+
+
+
+class Solution {
+    public String convert(String s) {
+        StringBuilder result = new StringBuilder(s);
+        for (int i = 0; i < result.length(); i++) {
+            if ((i == 0 || result.charAt(i - 1) == ' ') && result.charAt(i) >= 'a' && result.charAt(i) <= 'z') {
+                result.setCharAt(i, (char) (result.charAt(i) - 32));
+            }
+        }
+        return result.toString();
+    }
+}
+
+
+
+### IN PYTHON
+
+class Solution:
+    def transform(self, s):
+       return s.title()
+
+
+
+
+
+
