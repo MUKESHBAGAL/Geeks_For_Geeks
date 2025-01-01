@@ -1,0 +1,57 @@
+### IN C++
+
+class Solution{
+public:	
+	
+	string firstAlphabet(string S)
+	{
+	    
+        string result = "";
+        bool isWordStart = true;
+        for (char ch : S) {
+            if (isWordStart && ch != ' ') {
+                result += ch;
+                isWordStart = false;
+            } 
+            if (ch == ' ') {
+                isWordStart = true;
+            }
+        }
+        
+        return result;
+	}
+};
+
+
+### IN JAVA
+
+class Solution {
+    String firstAlphabet(String S) {
+        String[] words = S.split(" ");
+        StringBuilder result = new StringBuilder();
+        
+        for (String word : words) {
+            result.append(word.charAt(0));
+        }
+        
+        return result.toString();
+    }
+};
+
+
+
+### IN PYTHON
+
+class Solution:
+	def firstAlphabet(self, S):
+		words = S.split()
+        result = ""
+        for word in words:
+            result += word[0]
+        return result
+
+
+
+
+
+
