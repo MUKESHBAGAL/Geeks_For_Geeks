@@ -209,7 +209,7 @@ SA.11	First Occurence
 SA.12	Reversing the vowels
 SA.13	Upper Case Conversion
 SA.14	Print first letter of every word in the string
-
+SA.15	Delete alternate characters
 
 Delete alternate characters
 Java Strings | Set 1
