@@ -1,0 +1,76 @@
+### IN C++
+
+class Solution
+{
+    public:
+    //Function to calculate sum of all numbers present in a string.
+    int findSum(string str)
+    {
+        int num = 0,sum = 0;
+    
+        for (char ch : str) {
+            if (isdigit(ch)) {
+                num = num * 10 + (ch - '0');
+            } else {
+                sum += num;
+                num = 0;
+            }
+        }
+    
+        sum += num;
+        return sum;
+    	
+    }
+};
+
+
+### IN JAVA
+
+class Solution
+{
+    //Function to calculate sum of all numbers present in a string.
+    public static long findSum(String str)
+    {
+        int num = 0, sum = 0;
+        
+        for (char ch : str.toCharArray()) {
+            if (Character.isDigit(ch)) {
+                num = num * 10 + (ch - '0');
+            } else {
+                sum += num;
+                num = 0;
+            }
+        }
+        
+        sum += num;
+        return sum;
+    }
+    
+}
+
+
+
+### IN PYTHON
+
+class Solution:
+    
+    #Function to calculate sum of all numbers present in a string.
+    def findSum(self,s):
+        num = 0
+        total_sum = 0
+        
+        for ch in s:
+            if ch.isdigit():
+                num = num * 10 + int(ch)
+            else:
+                total_sum += num
+                num = 0
+        
+        total_sum += num
+        return total_sum
+
+
+
+
+
+
