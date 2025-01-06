@@ -1,0 +1,95 @@
+### IN C++
+
+class Solution
+{
+    public:
+    //Function to remove common characters and concatenate two strings.
+    string concatenatedString(string s1, string s2) 
+    { 
+        unordered_set<char> set1(s1.begin(), s1.end());
+        unordered_set<char> set2(s2.begin(), s2.end());
+        string result;
+
+        for (char ch : s1) {
+            if (set2.find(ch) == set2.end()) {
+                result += ch;
+            }
+        }
+
+        for (char ch : s2) {
+            if (set1.find(ch) == set1.end()) {
+                result += ch;
+            }
+        }
+
+        if (result.empty()) {
+            return "-1";
+        }
+        return result;
+    }
+
+};
+
+
+### IN JAVA
+
+class Solution
+{
+    //Function to remove common characters and concatenate two strings.
+    public static String concatenatedString(String s1,String s2)
+    {
+        HashSet<Character> set1 = new HashSet<>();
+        HashSet<Character> set2 = new HashSet<>();
+        StringBuilder result = new StringBuilder();
+
+        for (char ch : s1.toCharArray()) {
+            set1.add(ch);
+        }
+
+        for (char ch : s2.toCharArray()) {
+            set2.add(ch);
+        }
+
+        for (char ch : s1.toCharArray()) {
+            if (!set2.contains(ch)) {
+                result.append(ch);
+            }
+        }
+
+        for (char ch : s2.toCharArray()) {
+            if (!set1.contains(ch)) {
+                result.append(ch);
+            }
+        }
+
+        if (result.length() == 0) {
+            return "-1";
+        }
+        return result.toString();
+    }
+}
+
+
+
+### IN PYTHON
+
+class Solution:
+    
+    #Function to remove common characters and concatenate two strings.
+    def concatenatedString(self,s1,s2):
+        s=""
+        for ch in s1:
+            if ch not in s2:
+                s+=ch
+        for ch in s2:
+            if ch not in s1:
+                s+=ch
+                
+        if(len(s)==0):
+            return -1
+        return s
+
+
+
+
+
