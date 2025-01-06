@@ -213,7 +213,7 @@ SA.15	Delete alternate characters
 SA.16  	Sort a String
 SA.17  	Sum of numbers in string
 SA.18	Remove character
-SA.19 
+SA.19	Remove common characters and concatenate
 SA.20 
 SA.21 
 SA.22 
