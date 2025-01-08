@@ -1,0 +1,85 @@
+### IN C++
+
+class Solution {
+  public:
+    string uncommonChars(string& s1, string& s2) {
+        set<char> set1(s1.begin(), s1.end());
+        set<char> set2(s2.begin(), s2.end());
+        set<char> uncommon;
+
+        for (char ch : set1) {
+            if (set2.find(ch) == set2.end()) {
+                uncommon.insert(ch);
+            }
+        }
+
+        for (char ch : set2) {
+            if (set1.find(ch) == set1.end()) {
+                uncommon.insert(ch);
+            }
+        }
+
+        string result;
+        for (char ch : uncommon) {
+            result += ch;
+        }
+
+        return result;
+    }
+};
+
+
+
+### IN JAVA
+
+class Solution {
+    String uncommonChars(String s1, String s2) {
+        Set<Character> set1 = new HashSet<>();
+        Set<Character> set2 = new HashSet<>();
+        Set<Character> uncommon = new TreeSet<>();
+
+        for (char ch : s1.toCharArray()) {
+            set1.add(ch);
+        }
+        for (char ch : s2.toCharArray()) {
+            set2.add(ch);
+        }
+
+        for (char ch : set1) {
+            if (!set2.contains(ch)) {
+                uncommon.add(ch);
+            }
+        }
+
+        for (char ch : set2) {
+            if (!set1.contains(ch)) {
+                uncommon.add(ch);
+            }
+        }
+
+        StringBuilder result = new StringBuilder();
+        for (char ch : uncommon) {
+            result.append(ch);
+        }
+
+        return result.toString();
+    }
+}
+
+
+
+### IN PYTHON
+
+class Solution:
+    # Function to find uncommon characters between two strings.
+    def uncommonChars(self, s1, s2):
+       
+        set1 = set(s1)
+        set2 = set(s2)
+        uncommon = (set1 - set2) | (set2 - set1)
+        return ''.join(sorted(uncommon))
+
+
+
+
+
