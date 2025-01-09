@@ -1,0 +1,53 @@
+### IN C++
+
+class Solution{
+    public:
+    string removeConsonants(string s){
+        string ans = "";
+        for (char ch : s) {
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+                ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+                ans += ch;
+            }
+        }
+        return ans.empty() ? "No Vowel" : ans;
+    }
+};
+
+
+
+### IN JAVA
+
+class Solution
+{
+    public String removeConsonants(String s)
+    {
+        StringBuilder ans = new StringBuilder();
+        for (char ch : s.toCharArray()) {
+            if ("aeiouAEIOU".indexOf(ch) != -1) {
+                ans.append(ch);
+            }
+        }
+        return ans.length() == 0 ? "No Vowel" : ans.toString();
+    }
+    
+}
+
+
+
+### IN PYTHON
+
+class Solution:
+    def removeConsonants(self, s):
+        ans = ""
+        for ch in s:
+            if ch in "aeiouAEIOU":
+                ans += ch
+        if len(ans)==0:
+            return "No Vowel"
+        return ans
+
+
+
+
+
