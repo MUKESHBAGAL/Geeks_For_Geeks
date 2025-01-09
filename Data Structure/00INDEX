@@ -216,7 +216,7 @@ SA.18	Remove character
 SA.19	Remove common characters and concatenate
 SA.20	Lower case to upper case 
 SA.21	Uncommon characters
-SA.22 
+SA.22	Remove consonants from a string
 SA.23 
 SA.24 
 SA.25 
