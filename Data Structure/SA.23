@@ -1,0 +1,51 @@
+### IN C++
+
+class Solution
+{
+  public:   
+    int countCamelCase (string s)
+    {
+        int count = 0;
+        for (char ch : s)
+        {
+            if (ch >= 'A' && ch <= 'Z')
+                count++;
+        }
+        return count;
+    }
+};
+
+
+
+### IN JAVA
+
+class Sol
+{
+    int countCamelCase (String s)
+    {
+       int count = 0;
+        for (char ch : s.toCharArray()) {
+            if (ch >= 'A' && ch <= 'Z') {
+                count++;
+            }
+        }
+        return count;      
+    }
+}
+
+
+
+### IN PYTHON
+
+class Solution:
+    def countCamelCase (self,s):
+        count = 0
+        for ch in s:
+            if 'A' <= ch <= 'Z':
+                count += 1
+        return count
+
+
+
+
+
