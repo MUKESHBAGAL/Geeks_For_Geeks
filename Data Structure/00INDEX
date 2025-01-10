@@ -217,9 +217,24 @@ SA.19	Remove common characters and concatenate
 SA.20	Lower case to upper case 
 SA.21	Uncommon characters
 SA.22	Remove consonants from a string
-SA.23 
+SA.23	Count of camel case characters
 SA.24 
 SA.25 
+SA.24 
+SA.27 
+SA.28 
+SA.29 
+SA.30 
+SA.31 
+SA.32	
+SA.33	
+SA.34 
+SA.55 
+SA.36 
+SA.37 
+SA.38 
+SA.39 
+SA.40 
 
 
 
