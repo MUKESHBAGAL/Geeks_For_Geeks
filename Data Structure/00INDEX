@@ -218,7 +218,7 @@ SA.20	Lower case to upper case
 SA.21	Uncommon characters
 SA.22	Remove consonants from a string
 SA.23	Count of camel case characters
-SA.24 
+SA.24	Check if a string is Isogram or not
 SA.25 
 SA.24 
 SA.27 
