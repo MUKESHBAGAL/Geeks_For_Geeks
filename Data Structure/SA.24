@@ -1,0 +1,42 @@
+### IN C++
+
+
+class Solution
+{
+    public:
+    //Function to check if a string is Isogram or not.
+    bool isIsogram(string s)
+    {
+        set<char> s1;
+        for (char ch : s)
+            s1.insert(ch);
+        return s.size() == s1.size();
+    }
+};
+
+
+### IN JAVA
+
+class Solution
+{
+    //Function to check if a string is Isogram or not.
+    static boolean isIsogram(String data){
+        HashSet<Character> set = new HashSet<>();
+        for (char ch : data.toCharArray()) {
+            set.add(ch);
+        }
+        return set.size() == data.length();
+    }
+}
+
+
+
+### IN PYTHON
+
+def isIsogram(self,s):
+        return len(set(s))==len(s)
+
+
+
+
+
