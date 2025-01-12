@@ -1,0 +1,39 @@
+### IN C++
+
+class Solution{
+public:
+    string chartostr(char arr[], int n)
+    {   
+        string str = "";
+        for (int i = 0; i < n; i++) {
+            str += arr[i];
+        }
+        return str;
+    }
+};
+
+
+### IN JAVA
+
+class Solution {
+    public String chartostr(char[] arr, int n) {
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            str.append(arr[i]);
+        }
+        return str.toString();
+    }
+}
+
+
+
+### IN PYTHON
+
+class Solution:
+    def chartostr(self, arr,N):
+        return "".join(arr)
+
+
+
+
+
