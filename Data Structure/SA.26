@@ -1,0 +1,48 @@
+### IN C++
+
+class Solution {
+  public:
+    int RedOrGreen(int N, string S) {
+        int redcount = 0, greencount = 0;
+        for (int i = 0; i < S.size(); i++) {
+            if (S[i] == 'R') {
+                redcount++;
+            } else if (S[i] == 'G') {
+                greencount++;
+            }
+        }
+        return min(redcount, greencount);
+    }
+};
+
+
+### IN JAVA
+
+class Solution {
+    static int RedOrGreen(int N, String S) {
+       int redCount = 0, greenCount = 0;
+        for (int i = 0; i < S.length(); i++) {
+            if (S.charAt(i) == 'R') {
+                redCount++;
+            } else if (S.charAt(i) == 'G') {
+                greenCount++;
+            }
+        }
+        return Math.min(redCount, greenCount);
+    }
+}
+
+
+
+### IN PYTHON
+
+class Solution:
+    def RedOrGreen(self,N,S):
+        red_count = S.count('R')
+        green_count = S.count('G')
+        return min(red_count, green_count)
+
+
+
+
+
