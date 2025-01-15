@@ -1,0 +1,66 @@
+###C++
+
+class Solution {
+  public:
+    // Function to return a list containing the intersection of two arrays.
+    vector<int> intersection(vector<int> &arr1, vector<int> &arr2) {
+        unordered_set<int> set1(arr1.begin(), arr1.end());
+        vector<int> result;
+
+        for (int num : arr2) {
+            if (set1.count(num)) {
+                result.push_back(num);
+                set1.erase(num);
+            }
+        }
+
+        sort(result.begin(), result.end());
+        return result;
+    }
+};
+
+
+
+
+
+###JAVA
+
+class Solution {
+    // Function to return a list containing the intersection of two arrays.
+    static ArrayList<Integer> intersection(int arr1[], int arr2[]) {
+        Set<Integer> set1 = new HashSet<>();
+        for (int num : arr1) {
+            set1.add(num);
+        }
+
+        ArrayList<Integer> result = new ArrayList<>();
+        for (int num : arr2) {
+            if (set1.contains(num)) {
+                result.add(num);
+                set1.remove(num);
+            }
+        }
+
+        Collections.sort(result);
+        return result;
+    }
+}
+
+
+###Python
+
+class Solution:
+    #Function to return a list containing the intersection of two arrays.
+    def intersection(self, arr1, arr2):
+        set1 = set(arr1)
+        result = []
+
+        for num in arr2:
+            if num in set1:
+                result.append(num)
+                set1.remove(num)
+
+        return sorted(result)
+
+
+
