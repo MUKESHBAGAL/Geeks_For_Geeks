@@ -1,0 +1,43 @@
+### IN C++
+
+
+class Solution {
+  public:
+
+    string removeCharacters(string& s) {
+        string result = "";
+        for (char ch : s) {
+            if (isdigit(ch)) {
+                result += ch;
+            }
+        }
+        return result;
+    }
+};
+
+
+### IN JAVA
+
+class Solution {
+    String removeCharacters(String s) {
+        StringBuilder result = new StringBuilder();
+        for (char ch : s.toCharArray()) {
+            if (Character.isDigit(ch)) {
+                result.append(ch);
+            }
+        }
+        return result.toString();
+    }
+}
+
+
+### IN PYTHON
+
+class Solution:
+	def removeCharacters(self, s):
+		result = ''.join([ch for ch in s if ch.isdigit()])
+        return result
+
+
+
+
