@@ -1,0 +1,40 @@
+### IN C++
+
+
+class Solution {
+public:
+    int LastIndex(string s, char p) {
+        for (int i = s.size() - 1; i >= 0; i--) {
+            if (s[i] == p)
+                return i ;
+        }
+        return -1;
+    }
+};
+
+### IN JAVA
+
+class Solution{
+    int LastIndex(String s, char p){
+       for (int i = s.length() - 1; i >= 0; i--) {
+            if (s.charAt(i) == p)
+                return i;
+        }
+        return -1;
+
+    }
+}
+
+
+### IN PYTHON
+
+class Solution:
+    def LastIndex(self, s, p):
+        for i in range(len(s) - 1, -1, -1):
+            if s[i] == p:
+                return i
+        return -1
+
+
+
+
