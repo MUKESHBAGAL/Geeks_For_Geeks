@@ -225,7 +225,7 @@ SA.26	Red OR Green
 SA.27	Sort the string in descending order
 SA.28 	Remove characters from alphanumeric string
 SA.29 	Last index of a character in the string
-SA.30 
+SA.30 	Remove all characters other than alphabets
 SA.31 
 SA.32	
 SA.33	
