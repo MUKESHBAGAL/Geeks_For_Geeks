@@ -1,0 +1,67 @@
+### IN C++
+
+
+class Solution {
+public:
+    string javaSub(string S, int L, int R) {
+        if (L < 0 || R < 0 || L >= S.size() || L > R) {
+            return "";
+        }
+
+        int left = L;
+        int right = min(R, static_cast<int>(S.size()));
+        string str = "";
+
+        while (left <=right) {
+            str += S[left];
+            left++;
+        }
+
+        return str;
+    }
+};
+
+
+
+### IN JAVA
+
+class Solution {
+    static String javaSub(String S, int L, int R) {
+       if (L < 0 || R < 0 || L >= S.length() || L > R) {
+            return "";
+        }
+
+        int left = L;
+        int right = Math.min(R, S.length() - 1); 
+        StringBuilder str = new StringBuilder();
+
+        while (left <= right) {
+            str.append(S.charAt(left));
+            left++;
+        }
+
+        return str.toString();
+    }
+}
+
+
+### IN PYTHON
+
+class Solution:
+    def javaSub (ob, S, L, R):
+        if L < 0 or R < 0 or L >= len(S) or L > R:
+            return ""
+
+        left = L
+        right = min(R, len(S) - 1)  
+        s=""
+
+        while left <= right:
+            s+=S[left]
+            left += 1
+
+        return s
+
+
+
+
