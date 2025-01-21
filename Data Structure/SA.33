@@ -1,0 +1,64 @@
+### IN C++
+
+
+class Solution
+{   
+public:
+    vector<int> countChars (string s)
+    {
+        vector<int> ans;
+        stringstream ss(s); // Create a stringstream object
+        string word;
+        while (ss >> word) // Extract words from the string
+        {
+            ans.push_back(word.size());
+        }
+        return ans;
+        
+    }
+};
+
+
+
+### IN JAVA
+
+class Solution{
+    ArrayList<Integer> countChars (String s)
+    {
+        ArrayList<Integer> ans = new ArrayList<>();
+        int wordLength = 0;
+
+        for (char c : s.toCharArray()) {
+            if (c == ' ') { // End of a word
+                if (wordLength > 0) { // Add the length of the word
+                    ans.add(wordLength);
+                    wordLength = 0; // Reset for the next word
+                }
+            } else {
+                wordLength++; // Increment the length of the current word
+            }
+        }
+
+        // Add the last word if it exists
+        if (wordLength > 0) {
+            ans.add(wordLength);
+        }
+
+        return ans;
+    }
+}
+
+
+### IN PYTHON
+
+class Solution:
+    def countChars(self,s):
+        s=s.split()
+        ans=[]
+        for word in s:
+            ans.append(len(word))
+        return ans
+
+
+
+
