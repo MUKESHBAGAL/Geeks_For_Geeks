@@ -1,0 +1,71 @@
+### IN C++
+
+
+int findLength(string s) {
+    int n = s.size() - 1;
+    int count = 0;
+
+    // Skip trailing spaces
+    while (n >= 0 && s[n] == ' ') {
+        n--;
+    }
+
+    // Count the characters of the last word
+    while (n >= 0 && s[n] != ' ') {
+        count++;
+        n--;
+    }
+
+    return count;
+}
+
+
+
+### IN JAVA
+
+class Solution 
+{ 
+    int findLength(String s) 
+    { 
+        int n = s.length() - 1;
+        int count = 0;
+
+        // Skip trailing spaces
+        while (n >= 0 && s.charAt(n) == ' ') {
+            n--;
+        }
+
+        // Count the characters of the last word
+        while (n >= 0 && s.charAt(n) != ' ') {
+            count++;
+            n--;
+        }
+
+        return count;
+    }
+}
+
+
+### IN PYTHON
+
+class Solution:
+
+    def findLength(self, s):
+        n = len(s) - 1
+        count = 0
+    
+        # Skip trailing spaces
+        while n >= 0 and s[n] == ' ':
+            n -= 1
+    
+        # Count the characters of the last word
+        while n >= 0 and s[n] != ' ':
+            count += 1
+            n -= 1
+    
+        return count
+
+
+
+
+
