@@ -1,0 +1,75 @@
+### IN C++
+
+
+vector<string> extractIntegerWords(string s)
+{
+    vector<string> result;
+    string temp = "";
+
+    for (char ch : s) {
+        if (isdigit(ch)) {
+            temp += ch;
+        } else if (!temp.empty()) {
+            result.push_back(temp);
+            temp = "";
+        }
+    }
+
+    if (!temp.empty()) {
+        result.push_back(temp);
+    }
+
+    return result;
+}
+
+
+
+### IN JAVA
+
+class Solution { 
+    ArrayList<String> extractIntegerWords(String s) { 
+        ArrayList<String> result = new ArrayList<>();
+        StringBuilder temp = new StringBuilder();
+
+        for (char ch : s.toCharArray()) {
+            if (Character.isDigit(ch)) {
+                temp.append(ch);
+            } else if (temp.length() > 0) {
+                result.add(temp.toString());
+                temp.setLength(0);  // Reset StringBuilder
+            }
+        }
+
+        // Add the last number if there is one
+        if (temp.length() > 0) {
+            result.add(temp.toString());
+        }
+
+        return result;
+    }
+} 
+
+
+### IN PYTHON
+
+class Solution:
+
+    def extractIntegerWords(self, s):
+        result = []
+        temp = ""
+
+        for ch in s:
+            if ch.isdigit():
+                temp += ch
+            elif temp:
+                result.append(temp)
+                temp = ""
+
+        if temp:
+            result.append(temp)
+
+        return result
+
+
+
+
