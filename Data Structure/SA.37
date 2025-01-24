@@ -1,0 +1,45 @@
+### IN C++
+
+
+string isGoodString(string s)
+{
+    for (int i = 0; i < s.size() - 1; i++) {
+            int diff = abs(s[i] - s[i + 1]);
+            if (diff != 1 && diff != 25) {
+                return "NO";
+            }
+        }
+        return "YES";
+}
+
+
+
+### IN JAVA
+
+class Solution 
+{ 
+    String isGoodString(String s) 
+    { 
+        for (int i = 0; i < s.length() - 1; i++) {
+            if (Math.abs(s.charAt(i) - s.charAt(i + 1)) != 1 && Math.abs(s.charAt(i) - s.charAt(i + 1)) != 25 ) {
+                return "NO";
+            }
+        }
+        return "YES";
+    }
+}
+
+
+### IN PYTHON
+
+class Solution:
+
+    def isGoodString(self, s):
+        for i in range(len(s) - 1):
+            diff = abs(ord(s[i]) - ord(s[i + 1]))
+            if diff != 1 and diff != 25:
+                return "NO"
+        return "YES"
+
+
+
