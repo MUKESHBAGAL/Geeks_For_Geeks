@@ -1,0 +1,78 @@
+### IN C++
+
+
+class Solution
+{
+  public:
+        string reverseWithSpacesIntact (string s)
+        {
+            int left = 0;
+            int right = s.size() - 1;
+            
+            while (left < right) {
+                if (s[left] == ' ') {
+                    left++;
+                } else if (s[right] == ' ') {
+                    right--;
+                } else {
+                    swap(s[left], s[right]);
+                    left++;
+                    right--;
+                }
+            }
+            return s;
+        }
+};
+
+
+
+
+### IN JAVA
+
+class Solution
+{
+    String reverseWithSpacesIntact(String s)
+    {
+        char[] chars = s.toCharArray();
+        int left = 0, right = chars.length - 1;
+
+        while (left < right) {
+            if (chars[left] == ' ') {
+                left++;
+            } else if (chars[right] == ' ') {
+                right--;
+            } else {
+                char temp = chars[left];
+                chars[left] = chars[right];
+                chars[right] = temp;
+                left++;
+                right--;
+            }
+        }
+        return new String(chars);
+    }
+}
+
+
+### IN PYTHON
+
+class Solution:
+    def reverseWithSpacesIntact(self, s):
+        s = list(s)  # Convert string to list for mutability
+        left, right = 0, len(s) - 1
+
+        while left < right:
+            if s[left] == ' ':
+                left += 1
+            elif s[right] == ' ':
+                right -= 1
+            else:
+                s[left], s[right] = s[right], s[left]
+                left += 1
+                right -= 1
+
+        return ''.join(s)  
+
+
+
+
