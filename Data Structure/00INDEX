@@ -232,10 +232,10 @@ SA.33	Count the characters in each word in a given sentence
 SA.34	Length of Last word 
 SA.35	Extract the integers
 SA.36	Pattern of Strings
-SA.37 
-SA.38 
-SA.39 
-SA.40 
+SA.37	Good String 
+SA.38	Fake Profile
+SA.39	Reverse a string with spaces intact
+SA.40	Compare two Large Numbers
 SA.41
 SA.42
 SA.43
