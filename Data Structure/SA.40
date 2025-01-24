@@ -1,0 +1,69 @@
+### IN C++
+
+int check(string a, string b) {
+    a.erase(0, a.find_first_not_of('0'));
+    b.erase(0, b.find_first_not_of('0'));
+
+    // Compare lengths first (numerical comparison)
+    if (a.size() < b.size())
+        return 1; // a is numerically smaller
+    else if (a.size() > b.size())
+        return 2; // a is numerically greater
+    else {
+        // If lengths are equal, compare lexicographically
+        if (a < b)
+            return 1; // a is numerically smaller
+        else if (a > b)
+            return 2; // a is numerically greater
+        else
+            return 3; // a is numerically equal
+    }
+}
+
+
+
+### IN JAVA
+
+class Solution
+{
+    int check (String a, String b)
+    {
+        a = a.replaceFirst("^0+", "");
+        b = b.replaceFirst("^0+", "");
+
+        // Compare lengths first (numerical comparison)
+        if (a.length() < b.length()) {
+            return 1; // a is numerically smaller
+        } else if (a.length() > b.length()) {
+            return 2; // a is numerically greater
+        } else {
+            // If lengths are equal, compare lexicographically
+            int comparison = a.compareTo(b);
+            if (comparison < 0) {
+                return 1; // a is numerically smaller
+            } else if (comparison > 0) {
+                return 2; // a is numerically greater
+            } else {
+                return 3; // a is numerically equal
+            }
+        } 
+    }
+}
+
+
+### IN PYTHON
+
+
+class Solution:
+
+    def check(self, a,b):
+        if(a<b):
+            return 1
+        elif(a>b):
+            return 2
+        else:
+            return 3
+
+
+
+
