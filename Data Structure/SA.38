@@ -1,0 +1,66 @@
+### IN C++
+
+
+string solve(string a) {
+    set<char> uniqueChars(a.begin(), a.end());
+    int count = 0;
+    for (char ch : uniqueChars) {
+        if (string("aeiouAEIOU").find(ch) == string::npos) {
+            count++;
+        }
+    }
+    
+    if (count % 2 == 0) {
+        return "SHE!";
+    } else {
+        return "HE!";
+    }
+}
+
+
+
+### IN JAVA
+
+class Solution
+{
+    public String solve(String a)
+    {
+       HashSet<Character> uniqueChars = new HashSet<>();
+        for (char ch : a.toCharArray()) {
+            uniqueChars.add(ch);
+        }
+        
+        int count = 0;
+        for (char ch : uniqueChars) {
+            if ("aeiouAEIOU".indexOf(ch) == -1) {
+                count++;
+            }
+        }
+        
+        if (count % 2 == 0) {
+            return "SHE!";
+        } else {
+            return "HE!";
+        }
+    }
+}
+
+
+### IN PYTHON
+
+class Solution:
+
+    def solve(self, a):
+        s=set(a)
+        count=0
+        for ch in s:
+            if ch not in "aeiouAEIOU":
+                count+=1
+        if count%2 == 0:
+            return "SHE!"
+        else:
+            return "HE!"
+
+
+
+
