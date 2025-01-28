@@ -1,0 +1,73 @@
+### IN C++
+
+class Solution {
+
+  public:
+
+    string Sandwiched_Vowel(string &s) {
+        string ans = "";
+        int n = s.length();
+    
+        for (int i = 0; i < n; i++) {
+            if (string("aeiouAEIOU").find(s[i]) != string::npos) {
+                if (i > 0 && i < n - 1 && 
+                    string("aeiouAEIOU").find(s[i - 1]) == string::npos && 
+                    string("aeiouAEIOU").find(s[i + 1]) == string::npos) {
+                    continue; // Skip this vowel
+                }
+            }
+            ans += s[i];
+        }
+    
+        return ans;
+    }
+};
+
+
+
+### IN JAVA
+
+class Complete{
+    
+   
+    public static String Sandwiched_Vowel(String str) 
+    { 
+       StringBuilder ans = new StringBuilder();
+        int n = str.length();
+
+        for (int i = 0; i < n; i++) {
+            if ("aeiouAEIOU".indexOf(str.charAt(i)) != -1) {
+                if (i > 0 && i < n - 1 && 
+                    "aeiouAEIOU".indexOf(str.charAt(i - 1)) == -1 && 
+                    "aeiouAEIOU".indexOf(str.charAt(i + 1)) == -1) {
+                    continue; // Skip this vowel
+                }
+            }
+            ans.append(str.charAt(i));
+        }
+
+        return ans.toString();
+    } 
+}
+
+
+### IN PYTHON
+
+
+def Sandwiched_Vowel(s):
+    ans = ""
+    n = len(s)
+    
+    for i in range(n):
+        # Check if the current character is a vowel
+        if s[i] in "aeiouAEIOU":
+            # Ensure it is sandwiched between two consonants
+            if i > 0 and i < n - 1 and s[i - 1] not in "aeiouAEIOU" and s[i + 1] not in "aeiouAEIOU":
+                continue  # Skip this vowel
+        ans += s[i]
+    
+    return ans
+
+
+
+
