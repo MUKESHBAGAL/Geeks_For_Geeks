@@ -1,0 +1,54 @@
+### IN C++
+
+long long int modify(long long int N) {
+    string num = to_string(N);
+    string result = "";
+
+    result += num[0]; // Add the first digit to the result
+    for (int i = 1; i < num.size(); i++) {
+        if (num[i] != num[i - 1]) {
+            result += num[i]; // Add only if it's not a duplicate of the previous digit
+        }
+    }
+
+    return stoll(result); // Convert the result string back to a long long int
+}
+
+
+
+### IN JAVA
+
+class Solution
+{
+    public long modify(long N)
+    {
+        String num = Long.toString(N);
+        StringBuilder result = new StringBuilder();
+
+        result.append(num.charAt(0)); // Add the first digit to the result
+        for (int i = 1; i < num.length(); i++) {
+            if (num.charAt(i) != num.charAt(i - 1)) {
+                result.append(num.charAt(i)); // Add only if it's not a duplicate of the previous digit
+            }
+        }
+
+        return Long.parseLong(result.toString()); // Convert the result string back to a long 
+    }
+}
+
+
+### IN PYTHON
+
+class Solution:
+    def modify(self, N):
+        num = str(N)
+        result = num[0]  # Add the first digit to the result
+
+        for i in range(1, len(num)):
+            if num[i] != num[i - 1]:
+                result += num[i]  # Add only if it's not a duplicate of the previous digit
+
+        return int(result)
+
+
+
