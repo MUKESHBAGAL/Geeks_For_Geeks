@@ -1,0 +1,52 @@
+### IN C++
+
+class Solution{
+  public:
+    int isReversible(string str, int n) { 
+        int left =0,right=n-1;
+        while(left<right){
+            if(str[left]!=str[right])
+                return 0;
+            left++;
+            right--;
+        }
+        return 1; 
+    } 
+};
+
+
+
+### IN JAVA
+
+class Solution
+{
+    public int isReversible(String str, int n) 
+    { 
+         int left = 0, right = n - 1;
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return 0; 
+            }
+            left++;
+            right--;
+        }
+        return 1;
+    } 
+}
+
+
+
+### IN PYTHON
+
+class Solution:
+    def isReversible(self, str, n):
+        left, right = 0, n - 1
+        while left < right:
+            if str[left] != str[right]:
+                return 0  # Not reversible
+            left += 1
+            right -= 1
+        return 1
+
+
+
