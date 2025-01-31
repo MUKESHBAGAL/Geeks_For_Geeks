@@ -1,0 +1,43 @@
+### IN C
+
+int lengthString(char str[]) {
+    int length = 0;
+    while (str[length] != '\0') {
+        length++;
+    }
+    return length;
+}
+
+
+### IN C++
+
+
+class Solution {
+  public:
+    int lengthString(string &s) {
+        return s.size();
+    }
+};
+
+
+
+### IN JAVA
+
+class Solution
+{
+    // Complete the function
+    // str: input string
+    public static int lengthString(String str) {
+        return str.length();
+    }
+
+}
+
+### IN PYTHON
+
+class Solution:
+    def lengthString(self, str):
+        return len(str)
+
+
+
