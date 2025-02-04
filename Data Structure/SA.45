@@ -1,0 +1,97 @@
+### IN C++
+
+class Solution {
+public:
+    string modify(string& s) {
+        int len = s.size();
+        if (len == 0) return s;
+
+        bool cap_flag = false;
+
+        if (s[0] >= 'A' && s[0] <= 'Z')
+            cap_flag = true;
+
+        for (int i = 0; i < len; i++) {
+            if (cap_flag) {
+                if (s[i] >= 'a' && s[i] <= 'z') {
+                    s[i] -= 32;
+                }
+            } else {
+                if (s[i] >= 'A' && s[i] <= 'Z') {
+                    s[i] += 32;
+                }
+            }
+        }
+
+        return s;
+    }
+};
+
+
+
+### IN JAVA
+
+class Solution{
+    String modify(String s){
+        int len = s.length();
+        if (len == 0) return s;
+
+        boolean capFlag = false;
+
+        if (s.charAt(0) >= 'A' && s.charAt(0) <= 'Z') {
+            capFlag = true;
+        }
+
+        StringBuilder modified = new StringBuilder();
+        for (int i = 0; i < len; i++) {
+            char c = s.charAt(i);
+            if (capFlag) {
+                if (c >= 'a' && c <= 'z') {
+                    modified.append((char) (c - 32));
+                } else {
+                    modified.append(c);
+                }
+            } else {
+                if (c >= 'A' && c <= 'Z') {
+                    modified.append((char) (c + 32));
+                } else {
+                    modified.append(c);
+                }
+            }
+        }
+
+        return modified.toString();
+    }
+}
+
+
+
+### IN PYTHON
+
+class Solution:
+    def modify(self, s):
+        if not s:
+            return s
+
+        cap_flag = False
+
+        if 'A' <= s[0] <= 'Z':
+            cap_flag = True
+
+        modified = []
+        for c in s:
+            if cap_flag:
+                if 'a' <= c <= 'z':
+                    modified.append(chr(ord(c) - 32))
+                else:
+                    modified.append(c)
+            else:
+                if 'A' <= c <= 'Z':
+                    modified.append(chr(ord(c) + 32))
+                else:
+                    modified.append(c)
+
+        return ''.join(modified)  
+
+
+
