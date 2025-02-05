@@ -1,0 +1,43 @@
+### IN C++
+
+bool check_duck(string N) {
+    bool flag = false;
+    for (char digit : N) {
+        if (digit == '0') {
+            flag = true;
+        }
+    }
+    return flag && N[0] != '0';
+}
+
+
+### IN JAVA
+
+class Solution{
+    static boolean check_duck(String N){
+        boolean flag = false;
+        for (char digit : N.toCharArray()) {
+            if (digit == '0') {
+                flag = true;
+            }
+        }
+        return flag && N.charAt(0) != '0';
+        
+    }
+}
+
+
+### IN PYTHON
+
+class Solution:
+
+    def check_duck(self, N):
+        flag = False
+        for digit in N:
+            if digit == '0':
+                flag = True
+        return flag and N[0] != '0'
+
+
+
+
