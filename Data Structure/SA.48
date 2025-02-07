@@ -1,0 +1,50 @@
+### IN C++
+
+class Solution {
+  public:
+    int countWords(string &s) {
+        if (s.empty()) {
+            return 0; // Handle empty string
+        }
+        stringstream ss(s);
+        string word;
+        int count = 0;
+        while (ss >> word) {
+            count++;
+        }
+        return count;
+
+    }
+};
+
+
+
+### IN JAVA
+
+class Solution
+{
+    // Complete the function
+    // str: input string
+    public static int countWords(String str)
+    {
+        if (str == null || str.trim().isEmpty()) {
+            return 0; // Handle null or empty input
+        }
+        String[] words = str.trim().split("\\s+"); // Split by whitespace
+        return words.length;
+    }
+}
+
+
+
+### IN PYTHON
+
+class Solution:
+    def countWords(self,s):
+        s=s.split()
+        return len(s);
+
+
+
+
+
