@@ -1,0 +1,67 @@
+### IN C++
+
+class Solution
+{
+	public:
+		string is_common(vector<string>&s, vector<string>&t)
+		{
+		    set<string> menu;
+        
+            // Insert all elements of 's' into the set
+            for (const string& item : s) {
+                menu.insert(item);
+            }
+            
+            // Check if any element of 't' is in the set
+            for (const string& item : t) {
+                if (menu.find(item) != menu.end()) {
+                    return "CHANGE";
+                }
+            }
+            
+            return "BEHAPPY";
+		}
+};
+
+
+
+### IN JAVA
+
+class Solution
+{
+    public String  is_common(String [] s, String [] t)
+    {
+        Set<String> menu = new HashSet<>();
+        
+        // Insert all elements of 's' into the set
+        for (String item : s) {
+            menu.add(item);
+        }
+        
+        // Check if any element of 't' is in the set
+        for (String item : t) {
+            if (menu.contains(item)) {
+                return "CHANGE";
+            }
+        }
+        
+        return "BEHAPPY";
+    }
+}
+
+
+
+### IN PYTHON
+
+class Solution:
+    def is_common(self, s, t):
+        for item in s:
+            if item in t:
+                return "CHANGE"
+                
+        return "BEHAPPY"
+
+
+
+
+
