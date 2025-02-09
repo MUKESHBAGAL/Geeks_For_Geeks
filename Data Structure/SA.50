@@ -1,0 +1,58 @@
+### IN C++
+
+class Solution {
+  public:
+    string snakeCase(string S , int n) {
+        for (char &c : S) {
+            if (c >= 'A' && c <= 'Z') {
+                c += 32;
+            } else if (c == ' ') {
+                c = '_';
+            }
+        }
+        return S;
+    }
+};
+
+
+
+### IN JAVA
+
+
+class Solution {
+    static String snakeCase(String S , int n) {
+        StringBuilder result = new StringBuilder(); // Add semicolon here
+        for (int i = 0; i < S.length(); i++) {
+            char c = S.charAt(i);
+            if (Character.isUpperCase(c)) {
+                result.append(Character.toLowerCase(c)); // Convert uppercase to lowercase
+            } else if (c == ' ') {
+                result.append('_'); // Replace space with underscore
+            } else {
+                result.append(c); // Append other characters as-is
+            }
+        }
+        return result.toString();
+    }
+};
+
+
+
+### IN PYTHON
+
+class Solution:
+    def snakeCase(self, S , n):
+        result = []
+        for char in S:
+            if 'A' <= char <= 'Z':  # Convert uppercase to lowercase
+                result.append(chr(ord(char) + 32))
+            elif char == ' ':  # Replace space with underscore
+                result.append('_')
+            else:
+                result.append(char)  # Append other characters as-is
+        return ''.join(result) 
+
+
+
+
+
