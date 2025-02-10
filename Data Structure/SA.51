@@ -1,0 +1,57 @@
+### IN C++
+
+string reverseString(string S) {
+    unordered_set<char> seen;
+    string result = "";
+
+    for (int i = S.size() - 1; i >= 0; i--) {
+        char ch = S[i];
+        if (ch != ' ' && seen.find(ch) == seen.end()) {
+            result += ch;
+            seen.insert(ch);
+        }
+    }
+
+    return result;
+}
+
+
+
+### IN JAVA
+
+class Solution
+{
+    public String reverseString(String S)
+    {
+        HashSet<Character> seen = new HashSet<>();
+        StringBuilder result = new StringBuilder();
+
+        for (int i = S.length() - 1; i >= 0; i--) {
+            char ch = S.charAt(i);
+            if (ch != ' ' && !seen.contains(ch)) {
+                result.append(ch);
+                seen.add(ch);
+            }
+        }
+
+        return result.toString();
+        
+    }
+}
+
+
+### IN PYTHON
+
+class Solution:
+    def reverseString(self, s):
+        s=s[::-1]
+        result=" "
+        for ch in s:
+            if ch not in result:
+                result+=ch
+        return result
+
+
+
+
+
