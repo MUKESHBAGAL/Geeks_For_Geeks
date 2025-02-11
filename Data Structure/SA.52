@@ -1,0 +1,70 @@
+### IN C++
+
+class Solution {
+  public:
+    vector<int> factorial(int n) {
+        vector<int> result;
+        result.push_back(1); // Initialize with 1 as 0! = 1 and 1! = 1
+        
+        for (int i = 2; i <= n; i++) {
+            int carry = 0;
+            for (int j = 0; j < result.size(); j++) {
+                int prod = result[j] * i + carry;
+                result[j] = prod % 10; // Store last digit
+                carry = prod / 10;    // Keep the carry
+            }
+            // Add carry digits
+            while (carry > 0) {
+                result.push_back(carry % 10);
+                carry /= 10;
+            }
+        }
+        reverse(result.begin(), result.end());
+        return result;
+    }
+};
+
+
+
+### IN JAVA
+
+class Solution {
+    public static ArrayList<Integer> factorial(int n) {
+        ArrayList<Integer> result = new ArrayList<>();
+        result.add(1); // Initialize with 1 as 0! = 1 and 1! = 1
+
+        for (int i = 2; i <= n; i++) {
+            int carry = 0;
+            for (int j = 0; j < result.size(); j++) {
+                int prod = result.get(j) * i + carry;
+                result.set(j, prod % 10); // Store the last digit
+                carry = prod / 10;       // Keep the carry
+            }
+            // Add carry digits
+            while (carry > 0) {
+                result.add(carry % 10);
+                carry /= 10;
+            }
+        }
+
+        // Reverse the result to get the number in the correct order
+        Collections.reverse(result);
+        return result;
+    }
+}
+
+### IN PYTHON
+
+class Solution:
+    def factorial(self, n):
+        fact=1
+        for num in range(1,n+1):
+            fact*=num
+        result=list(str(fact))
+        return result
+
+
+
+
+
+
