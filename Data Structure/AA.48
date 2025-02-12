@@ -1,0 +1,36 @@
+###C
+
+void insertAtEnd(int arr[],int sizeOfArray,int element)
+{
+    arr[sizeOfArray - 1] = element;
+}
+
+
+
+###C++
+
+void insertAtEnd(int arr[],int sizeOfArray,int element)
+{
+    arr[sizeOfArray - 1] = element;
+}
+
+
+
+###JAVA
+
+class Insert
+{
+     
+    public void insertAtEnd(int arr[],int sizeOfArray,int element)
+    {
+        arr[sizeOfArray - 1] = element;
+    }
+}
+
+
+
+###PYTHON
+
+def insertAtEnd(arr,sizeOfArray,element):
+    arr.append(element)
+
