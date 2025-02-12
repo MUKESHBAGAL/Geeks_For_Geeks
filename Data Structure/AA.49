@@ -1,0 +1,47 @@
+###C++
+
+//User function Template for C++
+
+class Solution{
+    public:
+    int product(int arr[], int n)
+    {
+        long long mul=1;
+        for (int i = 0; i < n; i++) {
+            mul *= arr[i];
+        }
+        return mul;
+    }
+};
+
+###JAVA
+
+
+class Solution {
+
+    public static int product(int arr[],int n)
+    {
+        long mul = 1;
+        for (int num : arr) {
+            mul *= num;
+            if (mul > Integer.MAX_VALUE || mul < Integer.MIN_VALUE) {
+                return -1; 
+            }
+        }
+        return (int) mul;
+    }
+}
+
+
+
+###PYTHON
+
+#User function Template for python3
+
+class Solution:
+    def longest(self, arr, n):
+        mul = 1
+        for num in arr:
+            mul *= num
+        return mul
+
