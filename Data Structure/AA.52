@@ -1,0 +1,44 @@
+###C++
+
+class Solution {
+  public:
+
+    void sumArray(vector<int> &arr) {
+        int totalSum = 0;
+        for (int i = 0; i < arr.size(); i++) {
+            totalSum += arr[i];
+        }
+        for (int i = 0; i < arr.size(); i++) {
+             arr[i] = totalSum - arr[i];
+        }
+        
+    }
+};
+
+
+
+###JAVA
+
+
+class Solution {
+    public void sumArray(List<Integer> arr) {
+        int totalSum = 0;
+        for (int num : arr) {
+            totalSum += num;
+        }
+        for (int i = 0; i < arr.size(); i++) {
+            arr.set(i, totalSum - arr.get(i));
+        }
+    }
+}
+
+
+
+###PYTHON
+
+class Solution:
+    def sumArray(self, arr):
+        total_sum = sum(arr)
+        for i in range(len(arr)):
+            arr[i] = total_sum - arr[i]
+
