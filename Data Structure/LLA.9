@@ -1,0 +1,40 @@
+###IN C
+
+int searchLinkedList(struct Node *head, int x) {
+    struct Node *temp=head;
+    while (temp) {
+        if (temp->data == x)
+            return 1;
+        temp = temp->next; 
+    }
+    return 0;
+}
+
+
+###IN C++
+
+bool searchLinkedList(Node *head, int x) {
+    Node *temp = head;
+    while (temp) {
+        if (temp->data == x)
+            return true;
+        temp = temp->next; 
+    }
+    return false; 
+}
+
+
+###IN JAVA
+
+class Get {
+    public static boolean searchLinkedList(Node head, int x) {
+        Node temp = head;
+        while (temp != null) {
+            if (temp.data == x)
+                return true;
+            temp = temp.next;
+        }
+        return false;
+    }
+}
+
