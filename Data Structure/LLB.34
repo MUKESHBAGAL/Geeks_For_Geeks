@@ -1,0 +1,82 @@
+							### IN C
+struct Node *deleteAtPosition(struct Node *head, int pos) {
+    if (head == NULL) return NULL;
+
+    if (pos == 1) {
+        struct Node* temp = head;
+        head = head->next;
+        free(temp);
+        return head;
+    }
+
+    struct Node* temp = head;
+    for (int i = 1; i < pos - 1 && temp != NULL; i++) {
+        temp = temp->next;
+    }
+
+    if (temp == NULL || temp->next == NULL) return head;
+
+    struct Node* nodeToDelete = temp->next;
+    temp->next = nodeToDelete->next;
+    free(nodeToDelete);
+
+    return head;
+}
+
+
+							### IN C++
+
+Node* deleteAtPosition(Node* head, int pos) {
+    if (head == NULL) return NULL;
+
+    if (pos == 1) {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+        return head;
+    }
+
+    Node* temp = head;
+    for (int i = 1; i < pos - 1 && temp != NULL; i++) {
+        temp = temp->next;
+    }
+
+    if (temp == NULL || temp->next == NULL) return head;
+
+    Node* nodeToDelete = temp->next;
+    temp->next = nodeToDelete->next;
+    delete nodeToDelete;
+
+    return head;
+}
+
+
+
+							### IN JAVA
+							
+class Delete {
+    Node deleteAtPosition(Node head, int pos) {
+        if (head == null) return null;
+
+        if (pos == 1) {
+            Node temp = head;
+            head = head.next;
+            temp.next = null;
+            return head;
+        }
+
+        Node temp = head;
+        for (int i = 1; i < pos - 1 && temp != null; i++) {
+            temp = temp.next;
+        }
+
+        if (temp == null || temp.next == null) return head;
+
+        Node nodeToDelete = temp.next;
+        temp.next = nodeToDelete.next;
+        nodeToDelete.next = null;
+
+        return head;
+        
+    }
+}
