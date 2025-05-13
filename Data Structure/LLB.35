@@ -1,0 +1,98 @@
+							### IN C
+							
+void push(struct StackNode** top, int x) {
+    struct StackNode* newNode = (struct StackNode*)malloc(sizeof(struct StackNode));
+    newNode->data = x;
+    newNode->next = *top;
+    *top = newNode;
+}
+
+int pop(struct StackNode** top) {
+    if (*top == NULL) {
+        return -1;
+    }
+    int poppedValue = (*top)->data;
+    struct StackNode* temp = *top;
+    *top = (*top)->next;
+    free(temp);
+    return poppedValue;
+}
+
+
+							### IN C++
+
+class MyStack {
+  private:
+    struct StackNode {
+        int data;
+        StackNode* next;
+    };
+    StackNode* top;
+
+  public:
+    MyStack() { top = NULL; }
+
+    void push(int x) {
+        StackNode* newNode = new StackNode();
+        newNode->data = x;
+        newNode->next = top;
+        top = newNode;
+    }
+
+    int pop() {
+        if (top == NULL) {
+            return -1;
+        }
+        int poppedValue = top->data;
+        StackNode* temp = top;
+        top = top->next;
+        delete temp;
+        return poppedValue;
+    }
+};
+
+
+							### IN JAVA
+							
+
+class MyStack {
+    class StackNode {
+        int data;
+        StackNode next;
+
+        StackNode(int a) {
+            data = a;
+            next = null;
+        }
+    }
+
+    StackNode top;
+
+    void push(int a) {
+        StackNode newNode = new StackNode(a);
+        newNode.next = top;
+        top = newNode;
+    }
+
+    int pop() {
+        if (top == null) {
+            return -1;
+        }
+        int poppedValue = top.data;
+        top = top.next;
+        return poppedValue;
+    }
+
+    public static void main(String[] args) {
+        MyStack stack = new MyStack();
+
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+    }
+}
