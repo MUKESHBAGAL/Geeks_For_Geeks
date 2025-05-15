@@ -1,0 +1,51 @@
+							### IN C++
+							
+class solution {
+  public:
+    long long multiplyTwoLists(Node *first, Node *second) {
+        long long a = 0, b = 0;
+        const long long MOD = 1000000007;
+
+        Node *temp = first;
+        while (temp) {
+            a = (a * 10 + temp->data) % MOD;
+            temp = temp->next;
+        }
+
+        Node *ptr = second;
+        while (ptr) {
+            b = (b * 10 + ptr->data) % MOD;
+            ptr = ptr->next;
+        }
+
+        return (a * b) % MOD;
+        
+    }
+};
+
+
+							### IN JAVA
+							
+
+class Solution {
+    public long multiplyTwoLists(Node first, Node second) {
+        long a = 0, b = 0;
+        final long MOD = 1000000007;
+
+        Node temp = first;
+        while (temp != null) {
+            a = (a * 10 + temp.data) % MOD;
+            temp = temp.next;
+        }
+
+        Node ptr = second;
+        while (ptr != null) {
+            b = (b * 10 + ptr.data) % MOD;
+            ptr = ptr.next;
+        }
+
+        return (a * b) % MOD;
+        
+    }
+}
+
