@@ -1,0 +1,66 @@
+### IN C++
+
+
+class Solution {
+  public:
+    struct Node* quickSort(struct Node* head) {
+        if (!head || !head->next) {
+            return head;
+        }
+
+        // Step 1: Convert linked list to a vector
+        vector<int> values = linkedListToVector(head);
+
+        // Step 2: Sort the vector using quicksort
+        quickSort(values, 0, values.size() - 1);
+
+        // Step 3: Convert the sorted vector back to a linked list
+        return vectorToLinkedList(values);
+    }
+
+private:
+    vector<int> linkedListToVector(Node* head) {
+        vector<int> values;
+        while (head) {
+            values.push_back(head->data);
+            head = head->next;
+        }
+        return values;
+    }
+
+    Node* vectorToLinkedList(const vector<int>& values) {
+        Node* sortedList = new Node(values[0]);
+        Node* temp = sortedList;
+        for (size_t i = 1; i < values.size(); i++) {
+            temp->next = new Node(values[i]);
+            temp = temp->next;
+        }
+        return sortedList;
+    }
+
+    void quickSort(vector<int>& arr, int low, int high) {
+        if (low < high) {
+            int pivotIndex = partition(arr, low, high);
+            quickSort(arr, low, pivotIndex - 1);
+            quickSort(arr, pivotIndex + 1, high);
+        }
+    }
+
+    int partition(vector<int>& arr, int low, int high) {
+        int pivot = arr[high];
+        int i = low - 1;
+
+        for (int j = low; j < high; j++) {
+            if (arr[j] < pivot) {
+                i++;
+                swap(arr[i], arr[j]);
+            }
+        }
+
+        swap(arr[i + 1], arr[high]);
+        return i + 1;
+    }
+};
+
+
+
