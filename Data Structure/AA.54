@@ -1,0 +1,65 @@
+###C++
+
+class Solution {
+  public:
+    vector<int> alternateSort(vector<int>& arr) {
+        vector<int> dummy;
+        sort(arr.begin(), arr.end());
+        int left = arr.size() - 1, right = 0;
+
+        while (left >= right) {
+            if (left >= right) {
+                dummy.push_back(arr[left--]);
+            }
+            if (right <= left) {
+                dummy.push_back(arr[right++]);
+            }
+        }
+        return dummy;
+    }
+};
+
+
+
+###JAVA
+
+
+class Solution {
+    public static ArrayList<Integer> alternateSort(int[] arr) {
+        
+        ArrayList<Integer> dummy = new ArrayList<>();
+        Arrays.sort(arr);
+        int left = arr.length - 1, right = 0;
+
+        while (left >= right) {
+            if (left >= right) {
+                dummy.add(arr[left--]);
+            }
+            if (right <= left) {
+                dummy.add(arr[right++]);
+            }
+        }
+        return dummy;
+    }
+}
+
+
+
+###PYTHON
+
+class Solution:
+    def alternateSort(self,arr):
+        dummy = []
+        arr.sort()
+        left, right = len(arr) - 1, 0
+
+        while left >= right:
+            if left >= right:
+                dummy.append(arr[left])
+                left -= 1
+            if right <= left:
+                dummy.append(arr[right])
+                right += 1
+
+        return dummy
+
