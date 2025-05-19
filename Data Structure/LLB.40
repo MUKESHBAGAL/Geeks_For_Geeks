@@ -9,8 +9,7 @@ struct Node *deleteHead(struct Node *head) {
     free(head); // Free memory of the old head.
     return newHead;
 }
-														
-							
+																
 							
 							### IN C++
 							
