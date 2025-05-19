@@ -1,0 +1,42 @@
+							### IN C
+
+
+struct Node *deleteHead(struct Node *head) {
+    if (head == NULL) {
+            return NULL; // No nodes to delete.
+    }
+    struct Node* newHead = head->next; // Move to the next node.
+    free(head); // Free memory of the old head.
+    return newHead;
+}
+														
+							
+							
+							### IN C++
+							
+
+Node *deleteHead(Node *head) {
+    if (head == nullptr) {
+            return nullptr; // No nodes to delete.
+    }
+    Node* newHead = head->next; // Move to the next node.
+    delete head; // Free memory of the old head.
+    return newHead;
+    
+}
+
+
+
+							### IN JAVA
+							
+class Delete {
+    Node deleteHead(Node head) {
+       if (head == null) {
+            return null;
+        }
+        Node newHead = head.next;
+        head.next = null;
+        return newHead; 
+        
+    }
+}
