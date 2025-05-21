@@ -1,0 +1,68 @@
+							 
+							 ### IN C++							
+
+class Solution {
+  public:
+    // Function to delete a node at given position.
+    Node* deleteNode(Node* head, int x) {
+       
+        if (!head) return NULL;
+
+        if (x == 1) {
+            Node* temp = head;
+            head = head->next;
+            if (head) head->prev = NULL;
+            delete temp;
+            return head;
+        }
+
+        Node* curr = head;
+        for (int i = 1; i < x && curr != NULL; ++i) {
+            curr = curr->next;
+        }
+
+        if (!curr) return head;
+
+        if (curr->prev) curr->prev->next = curr->next;
+
+        if (curr->next) curr->next->prev = curr->prev;
+
+        delete curr;
+
+        return head;
+    }
+};
+
+
+
+							### IN JAVA
+							
+class Solution {
+    public Node deleteNode(Node head, int x) {
+        if (head == null) return null;
+
+        // If the node to delete is the head
+        if (x == 1) {
+            Node temp = head;
+            head = head.next;
+            if (head != null) head.prev = null;
+            return head;
+        }
+
+        // Traverse to the node at position x
+        Node curr = head;
+        for (int i = 1; i < x && curr != null; i++) {
+            curr = curr.next;
+        }
+
+        // If position x is out of bounds
+        if (curr == null) return head;
+
+        // Adjust pointers to skip the current node
+        if (curr.prev != null) curr.prev.next = curr.next;
+        if (curr.next != null) curr.next.prev = curr.prev;
+
+        return head;
+        
+    }
+}
