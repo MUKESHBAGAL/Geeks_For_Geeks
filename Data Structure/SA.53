@@ -1,0 +1,79 @@
+### IN C++
+
+class Solution {
+public:
+    // Function to find the maximum occurring character in a string.
+    char getMaxOccuringChar(string& s) {
+        // Create a map to store frequency of each character.
+        map<char, int> freq;
+
+        // Count the frequency of each character.
+        for (char ch : s) {
+            freq[ch]++;
+        }
+
+        // Find the character with the maximum frequency.
+        char maxChar = '\0';
+        int maxFreq = 0;
+
+        for (const auto& entry : freq) {
+            if (entry.second > maxFreq) {
+                maxFreq = entry.second;
+                maxChar = entry.first;
+            }
+        }
+
+        return maxChar;
+    }
+};
+
+
+### IN JAVA
+
+class Solution {
+    // Function to find the maximum occurring character in a string.
+    public static char getMaxOccuringChar(String s) {
+        Map<Character, Integer> freq = new HashMap<>();
+        int maxFreq = 0;
+        char maxChar = '\0';
+
+        for (char ch : s.toCharArray()) {
+            freq.put(ch, freq.getOrDefault(ch, 0) + 1);
+
+            // Update maxChar when a new maximum is found or frequency ties but earlier order
+            if (freq.get(ch) > maxFreq || (freq.get(ch) == maxFreq && maxChar > ch)) {
+                maxFreq = freq.get(ch);
+                maxChar = ch;
+            }
+        }
+
+        return maxChar;
+        
+    }
+}
+
+
+### IN PYTHON
+
+class Solution:
+    
+    #Function to find the maximum occurring character in a string.
+    def getMaxOccurringChar(self, s):
+        freq = {}
+        maxChar = ''
+        maxFreq = 0
+
+        for ch in s:
+            freq[ch] = freq.get(ch, 0) + 1
+
+            # Update maxChar when a new maximum is found or frequency ties but earlier order
+            if freq[ch] > maxFreq or (freq[ch] == maxFreq and maxChar > ch):
+                maxFreq = freq[ch]
+                maxChar = ch
+
+        return maxChar
+
+
+
+
+
