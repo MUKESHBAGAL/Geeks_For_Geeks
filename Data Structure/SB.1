@@ -1,0 +1,53 @@
+IN C++
+
+class Solution {
+  public:
+    string reverse(const string& S) {
+        stack<char> st;
+        for (char c : S) {
+            st.push(c);
+        }
+        string reversed = "";
+        while (!st.empty()) {
+            reversed += st.top();
+            st.pop();
+        }
+        return reversed;
+
+        
+    }
+};
+
+
+IN JAVA
+
+
+class Solution {
+    public String reverse(String S) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : S.toCharArray()) {
+            stack.push(c);
+        }
+        StringBuilder reversed = new StringBuilder();
+        while (!stack.isEmpty()) {
+            reversed.append(stack.pop());
+        }
+        return reversed.toString();
+        
+    }
+}
+
+
+
+IN PYTHON
+
+class Solution:
+    def reverse(self, s: str) -> str:
+        stack = []
+        for c in s:
+            stack.append(c)
+        reversed_str = ""
+        while stack:
+            reversed_str += stack.pop()
+        return reversed_str
+
