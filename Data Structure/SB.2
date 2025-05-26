@@ -1,0 +1,89 @@
+IN C++
+
+
+class Solution {
+  public:
+    bool isMatchingPair(char open, char close) {
+    return (open == '(' && close == ')') || 
+           (open == '{' && close == '}') || 
+           (open == '[' && close == ']');
+    }
+    
+    bool isBalanced(string s) {
+        stack<char> myStack;
+        for (char ch : s) {
+            if (ch == '(' || ch == '{' || ch == '[') {
+                myStack.push(ch);
+            } else if (ch == ')' || ch == '}' || ch == ']') {
+                if (myStack.empty()) {
+                    return false;
+                }
+                char top = myStack.top();
+                myStack.pop();
+                if (!isMatchingPair(top, ch)) {
+                    return false;
+                }
+            }
+        }
+        return myStack.empty();
+    }
+};
+
+
+IN JAVA
+
+
+
+class Solution {
+    static boolean isBalanced(String s) {
+         Stack<Character> myStack = new Stack<>();
+        
+        for (char ch : s.toCharArray()) {
+            if (ch == '(' || ch == '{' || ch == '[') {
+                myStack.push(ch);
+            } else if (ch == ')' || ch == '}' || ch == ']') {
+                if (myStack.isEmpty()) {
+                    return false;
+                }
+                char top = myStack.pop();
+                if (!isMatchingPair(top, ch)) {
+                    return false;
+                }
+            }
+        }
+        
+        return myStack.isEmpty();
+    }
+
+    private static boolean isMatchingPair(char open, char close) {
+        return (open == '(' && close == ')') || 
+               (open == '{' && close == '}') || 
+               (open == '[' && close == ']');
+        
+    }
+}
+
+
+
+
+IN PYTHON
+
+class Solution:
+    def isBalanced(self, s):
+        stack = []
+        for ch in s:
+            if ch in "({[":
+                stack.append(ch)
+            elif ch in ")}]":
+                if not stack:
+                    return False
+                top = stack.pop()
+                if not self.is_matching_pair(top, ch):
+                    return False
+        return not stack
+
+    def is_matching_pair(self, open, close):
+        return (open == '(' and close == ')') or \
+               (open == '{' and close == '}') or \
+               (open == '[' and close == ']')
+
