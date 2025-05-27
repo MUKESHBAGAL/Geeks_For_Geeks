@@ -1,0 +1,66 @@
+###IN C
+
+int arr[100000];
+int idx;
+
+void postOrderTraversal(struct Node* node) {
+    if (node == NULL)
+        return;
+    postOrderTraversal(node->left);
+    postOrderTraversal(node->right);
+    arr[idx++] = node->data;
+}
+
+int* postOrder(struct Node* root) {
+    for (int i = 0; i < 100000; i++)
+        arr[i] = -1;
+
+    idx = 0;
+    postOrderTraversal(root);
+
+    return arr;
+}
+
+
+###IN C++
+
+class Solution {
+  public:
+    // Function to return a list containing the postorder traversal of the tree.
+    vector<int> postOrder(Node* root) {
+        vector<int>ans;
+        postOrderTraversal(root,ans);
+        
+        return ans;
+        
+    }
+    void postOrderTraversal(Node *node ,vector<int>&ans){
+        if(node==NULL)
+            return ;
+        postOrderTraversal(node->left,ans);
+        postOrderTraversal(node->right,ans);
+        ans.push_back(node->data);
+    }
+};
+
+
+
+###IN JAVA
+
+class Solution {
+    // Function to return a list containing the postorder traversal of the tree.
+    ArrayList<Integer> postOrder(Node root) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        postOrderTraversal(root, ans);
+        return ans;
+    }
+
+    private void postOrderTraversal(Node node, List<Integer> ans) {
+        if (node == null)
+            return;
+        postOrderTraversal(node.left, ans);
+        postOrderTraversal(node.right, ans);
+        ans.add(node.data);
+    }
+}
+
