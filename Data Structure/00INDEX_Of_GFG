@@ -1,4 +1,4 @@
-##########################################################ARRAY[A]#####################################################################
+###############################################################################################ARRAY[A]######################################################################################
 						
 A]Basic
 
@@ -103,7 +103,84 @@ AD.1	Median of 2 Sorted Arrays of Different Sizes
 AD.2	Median in a row-wise sorted Matrix
 
 
-##########################################################Linked Lists[LL]###########################################################
+################################################################################ String[S]  #################################################################################################
+						
+A]Basic
+
+SA.1	Reverse a String.
+SA.2	Implement strstr.
+SA.3	Check for Binary.
+SA.4	Convert String to LowerCase.
+SA.5	Display longest name.
+SA.6	Remove Spaces.
+SA.7	Merge two strings
+SA.8	Repeated Character
+SA.9	Remove vowels from string
+SA.10	Check String
+SA.11	First Occurence
+SA.12	Reversing the vowels
+SA.13	Upper Case Conversion
+SA.14	Print first letter of every word in the string
+SA.15	Delete alternate characters
+SA.16  	Sort a String
+SA.17  	Sum of numbers in string
+SA.18	Remove character
+SA.19	Remove common characters and concatenate
+SA.20	Lower case to upper case 
+SA.21	Uncommon characters
+SA.22	Remove consonants from a string
+SA.23	Count of camel case characters
+SA.24	Check if a string is Isogram or not
+SA.25	Convert a list of characters into a String
+SA.26	Red OR Green 
+SA.27	Sort the string in descending order
+SA.28 	Remove characters from alphanumeric string
+SA.29 	Last index of a character in the string
+SA.30 	Remove all characters other than alphabets
+SA.31	Remainder with 7
+SA.32	Java Substring
+SA.33	Count the characters in each word in a given sentence
+SA.34	Length of Last word 
+SA.35	Extract the integers
+SA.36	Pattern of Strings
+SA.37	Good String 
+SA.38	Fake Profile
+SA.39	Reverse a string with spaces intact
+SA.40	Compare two Large Numbers
+SA.41	Sandwiched_Vowels
+SA.42	Remove repeated digits in a given number
+SA.43	Perfect Reversible String
+SA.44	Length of String
+SA.45	Change the string
+SA.46	Duck Number
+SA.47	First Repeated Character
+SA.48	Count Words in String
+SA.49	Sort the fest
+SA.50	Snake Case
+SA.51	String Reversal
+SA.52	Factorials of large numbers
+SA.53	Most Frequent Character
+
+
+
+
+Java Strings | Set 1
+Sort a String
+C++ Strings
+Check if divisible by 4
+Split Strings
+
+B]Easy 
+SB.1    Reverse Using Stack
+SB.2    Parenthesis Checker
+
+C]Medium
+
+D]Hard
+
+
+
+###############################################################################Linked Lists[LL]##############################################################################################
 
 A]Basic
 
@@ -207,78 +284,16 @@ LLD.3	Reverse a sublist of a linked list
 LLD.4	Subtraction in Linked List
 LLD.5	Reverse a Linked List in Groups
 
-############################################################ String[S]  #############################################################
-						
+
+#########################################################################################  TREE   ###########################################################################################
 
 A]Basic
 
-SA.1	Reverse a String.
-SA.2	Implement strstr.
-SA.3	Check for Binary.
-SA.4	Convert String to LowerCase.
-SA.5	Display longest name.
-SA.6	Remove Spaces.
-SA.7	Merge two strings
-SA.8	Repeated Character
-SA.9	Remove vowels from string
-SA.10	Check String
-SA.11	First Occurence
-SA.12	Reversing the vowels
-SA.13	Upper Case Conversion
-SA.14	Print first letter of every word in the string
-SA.15	Delete alternate characters
-SA.16  	Sort a String
-SA.17  	Sum of numbers in string
-SA.18	Remove character
-SA.19	Remove common characters and concatenate
-SA.20	Lower case to upper case 
-SA.21	Uncommon characters
-SA.22	Remove consonants from a string
-SA.23	Count of camel case characters
-SA.24	Check if a string is Isogram or not
-SA.25	Convert a list of characters into a String
-SA.26	Red OR Green 
-SA.27	Sort the string in descending order
-SA.28 	Remove characters from alphanumeric string
-SA.29 	Last index of a character in the string
-SA.30 	Remove all characters other than alphabets
-SA.31	Remainder with 7
-SA.32	Java Substring
-SA.33	Count the characters in each word in a given sentence
-SA.34	Length of Last word 
-SA.35	Extract the integers
-SA.36	Pattern of Strings
-SA.37	Good String 
-SA.38	Fake Profile
-SA.39	Reverse a string with spaces intact
-SA.40	Compare two Large Numbers
-SA.41	Sandwiched_Vowels
-SA.42	Remove repeated digits in a given number
-SA.43	Perfect Reversible String
-SA.44	Length of String
-SA.45	Change the string
-SA.46	Duck Number
-SA.47	First Repeated Character
-SA.48	Count Words in String
-SA.49	Sort the fest
-SA.50	Snake Case
-SA.51	String Reversal
-SA.52	Factorials of large numbers
-SA.53	Most Frequent Character
+TA.1	Minimum element in BST
+TA.2	
+TA.3	
+TA.4	
+TA.5	
+TA.6	
+TA.7	
 
-
-
-
-Java Strings | Set 1
-Sort a String
-C++ Strings
-Check if divisible by 4
-Split Strings
-
-B]Easy 
-SB.1    Reverse Using Stack
-SB.2    Parenthesis Checker
-
-C]Medium
-
-D]Hard
