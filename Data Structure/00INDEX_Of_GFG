@@ -290,8 +290,8 @@ LLD.5	Reverse a Linked List in Groups
 A]Basic
 
 TA.1	Minimum element in BST
-TA.2	
-TA.3	
+TA.2	Preorder Traversal
+TA.3	Postorder Traversal
 TA.4	
 TA.5	
 TA.6	
