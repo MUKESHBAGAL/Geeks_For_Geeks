@@ -1,0 +1,27 @@
+###IN C++
+
+class Solution {
+  public:
+    // Function to count the number of leaf nodes in a binary tree.
+    int countLeaves(Node* root) {
+        if(root == NULL)
+        return 0;
+        if (root->left == NULL && root->right == NULL) {
+            return 1;
+        }
+        return 0+countLeaves(root->left) + countLeaves(root->right);
+        
+    }
+};
+
+###IN JAVA
+
+class Solution {
+    int countLeaves(Node node) {
+        if (node == null)
+            return 0;
+        if (node.left == null && node.right == null)
+            return 1;
+        return countLeaves(node.left) + countLeaves(node.right);
+    }
+}
