@@ -1,0 +1,26 @@
+###IN C++
+
+class Solution {
+  public:
+    int countNonLeafNodes(Node* root) {
+        if (root == NULL || (root->left == NULL && root->right == NULL)) {
+            return 0;
+        }
+        return 1 + countNonLeafNodes(root->left) + countNonLeafNodes(root->right);
+        
+        
+    }
+};
+
+
+###IN JAVA
+
+class Solution {
+    int countNonLeafNodes(Node root) {
+        if (root == null || (root.left == null && root.right == null)) {
+            return 0;
+        }
+        return 1 + countNonLeafNodes(root.left) + countNonLeafNodes(root.right);
+        
+    }
+}
