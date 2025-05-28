@@ -1,0 +1,42 @@
+###IN C++
+
+class Solution {
+  public:
+    int sumOfMatrix(int N, int M, vector<vector<int>> Grid) {
+        int totalSum = 0;
+        for (int i = 0; i < N; ++i) {
+            for (int j = 0; j < M; ++j) {
+                totalSum += Grid[i][j];
+            }
+        }
+        return totalSum;
+        
+    }
+};
+
+
+
+###IN JAVA
+
+
+class Solution {
+    int sumOfMatrix(int N, int M, int[][] Grid) {
+        int totalSum = 0;
+        for (int i = 0; i < N; ++i) {
+            for (int j = 0; j < M; ++j) {
+                totalSum += Grid[i][j];
+            }
+        }
+        return totalSum;
+        
+    }
+}
+
+
+
+### IN PYTHON 
+
+class Solution:
+    def sumOfMatrix(self,N,M,Grid):
+        return sum(sum(row) for row in Grid)
+
