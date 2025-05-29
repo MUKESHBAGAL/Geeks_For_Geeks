@@ -304,5 +304,6 @@ TA.7	Size of Binary Tree
 A]Basic
 
 MA.1	Sum of elements in a matrix
-MA.1	Sorted matrix
+MA.2	Sorted matrix
+MA.3	Diagonal sum
 
