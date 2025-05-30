@@ -1,0 +1,46 @@
+###IN C++
+
+class Solution {
+  public:
+    int diagonalSumDifference(int N, vector<vector<int>> Grid) {
+        int sum1=0; //Sum of primary diagonal
+        int sum2=0; //Sum of secondary diagonal
+        for(int i=0;i<N;i++){
+            sum1+=Grid[i][i];
+            sum2+=Grid[i][N-i-1];
+        }
+        return abs(sum1-sum2);
+    }
+};
+
+
+
+###IN JAVA
+
+class Solution {
+    int diagonalSumDifference(int N, int[][] Grid) {
+        int sum1=0; //Sum of primary diagonal
+        int sum2=0; //Sum of secondary diagonal
+        for(int i=0;i<N;i++){
+            sum1+=Grid[i][i];
+            sum2+=Grid[i][N-i-1];
+        }
+        return Math.abs(sum1-sum2);
+        
+    }
+}
+
+
+### IN PYTHON 
+
+class Solution:
+    def diagonalSumDifference(self,N,Grid):
+        sum1 = 0  # Sum of the primary diagonal
+        sum2 = 0  # Sum of the secondary diagonal
+    
+        for i in range(N):
+            sum1 += Grid[i][i]  
+            sum2 += Grid[i][N - i - 1] 
+    
+        return abs(sum1 - sum2)
+
