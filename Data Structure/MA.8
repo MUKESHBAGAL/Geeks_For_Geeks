@@ -1,0 +1,94 @@
+###IN C++
+
+class Solution {
+  public:
+    bool multiplyMatrix(int mat1[4][4], int mat2[4][4], int result[4][4]) {
+        int n = 4;
+        int m = 4;
+        int p = 4;
+
+        int product[4][4] = {0};
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < p; j++) {
+                product[i][j] = 0;
+                for (int k = 0; k < m; k++) {
+                    product[i][j] += mat1[i][k] * mat2[k][j];
+                }
+            }
+        }
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < p; j++) {
+                if (product[i][j] != result[i][j]) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+        
+    }
+};
+
+
+
+###IN JAVA
+
+
+class Solution {
+    static boolean multiplyMatrix(int mat1[][], int mat2[][], int result[][]) {
+        int n = mat1.length;
+        int m = mat1[0].length;
+        int p = mat2[0].length;
+
+        // Initialize the product matrix
+        int[][] product = new int[n][p];
+
+        // Perform matrix multiplication
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < p; j++) {
+                for (int k = 0; k < m; k++) {
+                    product[i][j] += mat1[i][k] * mat2[k][j];
+                }
+            }
+        }
+
+        // Compare the product matrix with res
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < p; j++) {
+                if (product[i][j] != result[i][j]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+        
+    }
+}
+
+
+
+### IN PYTHON 
+
+
+class Solution:
+    def multiplyMatrix(self, mat1, mat2, result):
+        n = len(mat1)
+        m = len(mat1[0])
+        p = len(mat2[0])
+
+        # Initialize the product matrix with zeros
+        product = [[0] * p for _ in range(n)]
+
+        # Perform matrix multiplication
+        for i in range(n):
+            for j in range(p):
+                for k in range(m):
+                    product[i][j] += mat1[i][k] * mat2[k][j]
+
+        # Compare the product matrix with result
+        return product == result
+
+    
+
