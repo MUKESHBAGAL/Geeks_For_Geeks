@@ -1,0 +1,61 @@
+###IN C++
+
+
+class Solution {
+  public:
+    int sumOfRowCol(int N, int M, vector<vector<int>> A) {
+        for (int i = 0; i < N; i++) {
+            int rowSum = 0, colSum = 0;
+            for (int j = 0; j < M; j++) {
+                rowSum += A[i][j];
+            }
+            for (int j = 0; j < N; j++) {
+                colSum += A[j][i];
+            }
+            if (rowSum != colSum) {
+                return 0;
+            }
+        }
+        return 1;
+        
+    }
+};
+
+
+###IN JAVA
+
+
+class Solution {
+    int sumOfRowCol(int N, int M, int A[][]) {
+        for (int i = 0; i < N; i++) {
+            int rowSum = 0, colSum = 0;
+            for (int j = 0; j < M; j++) {
+                rowSum += A[i][j];
+            }
+            for (int j = 0; j < N; j++) {
+                colSum += A[j][i];
+            }
+            if (rowSum != colSum) {
+                return 0;
+            }
+        }
+        return 1;
+        
+    }
+}
+
+
+### IN PYTHON 
+
+
+class Solution:
+    def sumOfRowCol(self,N,M,A):
+        for i in range(N):
+            rowSum = sum(A[i])
+            colSum = sum(A[j][i] for j in range(N))
+            if rowSum != colSum:
+                return 0
+        return 1
+
+    
+
