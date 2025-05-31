@@ -1,0 +1,44 @@
+###IN C++
+
+/*Complete the function below*/
+void multiply(int A[][100], int B[][100], int C[][100], int N) {
+    for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                C[i][j] = 0;
+                for (int k = 0; k < N; k++) {
+                    C[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
+}
+
+
+###IN JAVA
+
+class GfG {
+    public static void multiply(int A[][], int B[][], int C[][], int N) {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                C[i][j] = 0;
+                for (int k = 0; k < N; k++) {
+                    C[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
+    }
+}
+
+
+
+### IN PYTHON 
+
+# Your task is to complete this function
+# function should store the multiplication in C
+def multiply(A, B, C, N):
+    for i in range(N):
+        for j in range(N):
+            for k in range(N):
+                C[i][j] += A[i][k] * B[k][j]
+    
+    return C
+
