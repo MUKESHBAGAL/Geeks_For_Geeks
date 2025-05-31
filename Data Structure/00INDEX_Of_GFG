@@ -308,4 +308,5 @@ MA.2	Sorted matrix
 MA.3	Diagonal sum
 MA.4	Find difference between sum of diagonals
 MA.5	Multiply Matrices
+MA.6	Count zeros in a sorted matrix
 
