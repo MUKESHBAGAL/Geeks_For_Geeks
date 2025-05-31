@@ -1,0 +1,51 @@
+###IN C++
+
+//Back-end complete function Template for C++
+
+class Solution {
+  public:
+    int countZeros(vector<vector<int>> A) {
+        int count = 0;
+        for (int i = 0; i < A.size(); i++) {
+            for (int j = 0; j < A.size(); j++) {
+                if (A[i][j] == 0) {
+                    count++;
+                }
+            }
+        }
+        return count;
+        
+    }
+};
+
+###IN JAVA
+
+class GfG {
+    /*you are required to complete this method*/
+    int countZeros(int A[][], int N) {
+        int count = 0;
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (A[i][j] == 0) {
+                    count++;
+                }
+            }
+        }
+        return count;
+        
+    }
+}
+
+
+### IN PYTHON 
+
+class Solution:
+    def countZeroes(self, A, N):
+        count = 0
+        for i in range(N):
+            for j in range(N):
+                if A[i][j] == 0:
+                    count += 1
+        return count
+    
+
