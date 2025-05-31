@@ -1,0 +1,67 @@
+###IN C++
+
+
+class Solution {
+  public:
+    // Function to find two repeated elements.
+    vector<int> twoRepeated(int n, int arr[]) {
+        vector<int> freq(n + 1, 0);
+        vector<int> result;
+        
+        for (int i = 0; i < n + 2; i++) {
+            freq[arr[i]]++;
+            if (freq[arr[i]] == 2) {
+                result.push_back(arr[i]);
+                if (result.size() == 2) break; // found both
+            }
+        }
+        return result;
+        
+    }
+};
+
+
+
+###IN JAVA
+
+
+
+class Solution {
+    // Function to find two repeated elements.
+    public int[] twoRepeated(int n, int arr[]) {
+        int[] freq = new int[n + 1];
+        int[] result = new int[2];
+        int idx = 0;
+
+        for (int i = 0; i < n + 2; i++) {
+            freq[arr[i]]++;
+            if (freq[arr[i]] == 2) {
+                result[idx++] = arr[i];
+                if (idx == 2) break;
+            }
+        }
+        return result;
+        
+    }
+}
+
+
+
+### IN PYTHON 
+
+
+class Solution:
+    
+    #Function to find two repeated elements.
+    def twoRepeated(self, n, arr):
+        freq = [0] * (n + 1)
+        result = []
+
+        for num in arr:
+            freq[num] += 1
+            if freq[num] == 2:
+                result.append(num)
+                if len(result) == 2:
+                    break
+        return result
+
