@@ -1,0 +1,60 @@
+
+IN C++
+
+class Solution {
+  public:
+    vector<int> colSum(vector<vector<int>>& mat) {
+        if (mat.empty() || mat[0].empty()) 
+            return {};
+
+        int rows = mat.size();
+        int cols = mat[0].size();
+        vector<int> result(cols, 0);
+        for (int i = 0; i < rows; ++i) {
+            for (int j = 0; j < cols; ++j) {
+                result[j] += mat[i][j];
+            }
+        }
+        return result;
+    }
+};
+
+
+
+IN JAVA
+
+class Solution {
+    public static int[] colSum(int mat[][]) {
+        if (mat.length == 0 || mat[0].length == 0) 
+            return new int[0];
+
+        int rows = mat.length;
+        int cols = mat[0].length;
+        int[] result = new int[cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result[j] += mat[i][j];
+            }
+        }
+        return result;
+        
+    }
+}
+
+
+IN PYTHON
+
+class Solution:
+
+    def colSum(self, mat):
+        if not mat or not mat[0]:
+            return []
+        
+        rows = len(mat)
+        cols = len(mat[0])
+        result = [0] * cols
+        for i in range(rows):
+            for j in range(cols):
+                result[j] += mat[i][j]
+        return result
+
