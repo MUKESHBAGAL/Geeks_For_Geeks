@@ -1,0 +1,53 @@
+
+###IN C++
+
+class Solution {
+  public:
+    bool matSearch(vector<vector<int>> &mat, int x) {
+        for(int i=0;i<mat.size();i++){
+            for(int j=0;j<mat[i].size();j++){
+                if(mat[i][j]==x)
+                    return true;
+            }
+        }
+        return false;
+    }
+};
+
+
+
+###IN JAVA
+
+class Solution {
+    public static boolean matSearch(int mat[][], int x) {
+        int rows = mat.length;
+        int cols = mat[0].length;
+        int i = 0, j = cols - 1; // Start from the top-right corner
+
+        while (i < rows && j >= 0) {
+            if (mat[i][j] == x) {
+                return true;
+            } else if (mat[i][j] > x) {
+                j--; // Move left
+            } else {
+                i++; // Move down
+            }
+        }
+
+        return false;
+    }
+}
+
+
+
+###IN PYTHON
+
+
+class Solution:
+    def matSearch(self, mat, x):
+        for i in range(len(mat)):
+            if x in mat[i]:
+                return True
+        return False
+
+
