@@ -1,0 +1,62 @@
+###IN C++
+
+void MyStack ::push(int x) {
+     if (top == 999) {
+            cout << "Stack Overflow" << endl;
+            return;
+        }
+        arr[++top] = x;
+}
+
+// Function to remove an item from top of the stack.
+int MyStack ::pop() {
+    if (top == -1) {
+            return -1; 
+        }
+    return arr[top--];
+}
+
+
+###IN JAVA
+
+class MyStack {
+    private int[] arr;
+    private int top;
+
+    public MyStack() {
+        arr = new int[1000];
+        top = -1;
+    }
+
+    public void push(int x) {
+        if (top == arr.length - 1) {
+            System.out.println("Stack Overflow");
+            return;
+        }
+        arr[++top] = x;
+    }
+
+    public int pop() {
+        if (top == -1) {
+            return -1; 
+        }
+        return arr[top--];
+    }
+}
+
+
+###IN PYTHON3
+
+class MyStack:
+    
+    def __init__(self):
+        self.arr=[]
+    
+    def push(self, data):
+        self.arr.append(data)
+    
+    def pop(self):
+        if not self.arr:
+            return -1
+        return self.arr.pop()
+        
