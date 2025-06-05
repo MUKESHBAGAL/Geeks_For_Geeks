@@ -1,0 +1,44 @@
+###C++
+
+class Solution {
+    int findSum(int arr[]) {
+        Set<Integer> result = new TreeSet<>();
+        for (int num : arr) {
+            result.add(num);
+        }
+        int sum = 0;
+        for (int num : result) {
+            sum += num;
+        }
+        return sum;
+        
+    }
+}
+
+
+
+###JAVA
+
+class Solution {
+    int findSum(int arr[]) {
+        Set<Integer> result = new TreeSet<>();
+        for (int num : arr) {
+            result.add(num);
+        }
+        int sum = 0;
+        for (int num : result) {
+            sum += num;
+        }
+        return sum;
+        
+    }
+}
+
+
+
+###PYTHON
+
+class Solution:
+	def findSum(self,arr):
+		return sum(set(arr))
+
