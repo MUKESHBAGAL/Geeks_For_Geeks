@@ -1,0 +1,62 @@
+###IN C++
+
+class Solution {
+public:
+    vector<int> subarraySum(vector<int> &arr, int target) {
+        int n = arr.size();
+        for (int i = 0; i < n; i++) {
+            int sum = 0;
+            for (int j = i; j < n; j++) {
+                sum += arr[j];
+                if (sum == target) {
+                    return {i+1, j+1};
+                }
+            }
+        }
+        return {-1};
+    }
+};
+
+
+###IN JAVA
+
+
+class Solution {
+    static ArrayList<Integer> subarraySum(int[] arr, int target) {
+         int n = arr.length;
+        for (int i = 0; i < n; i++) {
+            int sum = 0;
+            for (int j = i; j < n; j++) {
+                sum += arr[j];
+                if (sum == target) {
+                    ArrayList<Integer> result = new ArrayList<>();
+                    result.add(i+1);
+                    result.add(j+1);
+                    return result;
+                }
+            }
+        }
+        ArrayList<Integer> noResult = new ArrayList<>();
+        noResult.add(-1);
+        return noResult;
+        
+    }
+}
+
+
+
+###IN PYTHON3
+
+
+class Solution:
+    def subarraySum(self, arr, target):
+        start = 0
+        current_sum = 0
+        for end in range(len(arr)):
+            current_sum += arr[end]
+            while current_sum > target and start <= end:
+                current_sum -= arr[start]
+                start += 1
+            if current_sum == target:
+                return [start+1, end+1]
+        return [-1]
