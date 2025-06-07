@@ -1,0 +1,60 @@
+
+###IN C++
+
+class Solution {
+  public:
+    // Function to search a given integer in a matrix.
+    bool searchMatrix(vector<vector<int>> &mat, int x) {
+        int rows = mat.size();
+        int cols = mat[0].size();
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (mat[i][j] == x)
+                    return true;
+            }
+        }
+        return false;
+        
+    }
+};
+
+
+###IN JAVA
+
+class Solution {
+    // Function to search a given integer in a matrix.
+    public boolean searchMatrix(int[][] mat, int x) {
+        int rows = mat.length;
+        int cols = mat[0].length;
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (mat[i][j] == x) {
+                    return true;
+                }
+            }
+        }
+        return false;
+        
+    }
+}
+
+
+
+
+###IN PYTHON
+
+class Solution:
+    
+    #Function to search a given integer in a matrix.
+    def searchMatrix(self,matrix, x): 
+    	rows = len(mat)
+        cols = len(mat[0])
+
+        for i in range(rows):
+            for j in range(cols):
+                if mat[i][j] == x:
+                    return True
+        return False
+
