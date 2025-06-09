@@ -1,0 +1,72 @@
+IN C++
+
+class Solution {
+  public:
+    string addBinary(string& s1, string& s2) {
+        string result = "";
+        int carry = 0, i = s1.length() - 1, j = s2.length() - 1;
+
+        while (i >= 0 || j >= 0 || carry > 0) {
+            int b1 = (i >= 0) ? s1[i--] - '0' : 0;
+            int b2 = (j >= 0) ? s2[j--] - '0' : 0;
+            int total = b1 + b2 + carry;
+            result += (total % 2) + '0';
+            carry = total / 2;
+        }
+
+        reverse(result.begin(), result.end());
+        
+        // Remove leading zeros
+        size_t pos = result.find_first_not_of('0');
+        return (pos == string::npos) ? "0" : result.substr(pos);
+    }
+};
+
+
+IN JAVA
+
+class Solution {
+    public String addBinary(String s1, String s2) {
+        StringBuilder result = new StringBuilder();
+        int carry = 0;
+        int i = s1.length() - 1, j = s2.length() - 1;
+
+        while (i >= 0 || j >= 0 || carry > 0) {
+            int b1 = (i >= 0) ? s1.charAt(i--) - '0' : 0;
+            int b2 = (j >= 0) ? s2.charAt(j--) - '0' : 0;
+            int total = b1 + b2 + carry;
+            result.append(total % 2);
+            carry = total / 2;
+        }
+
+        // Reverse the result and remove leading zeros
+        String finalResult = result.reverse().toString();
+        return finalResult.replaceFirst("^0+(?!$)", "");
+        
+    }
+}
+
+
+IN PYTHON
+
+class Solution:
+    def addBinary(self, s1, s2):
+        s1 = s1[::-1]
+        s2 = s2[::-1]
+        
+        max_len = max(len(s1), len(s2))
+        carry = 0
+        result = []
+        
+        for i in range(max_len):
+            b1 = int(s1[i]) if i < len(s1) else 0
+            b2 = int(s2[i]) if i < len(s2) else 0
+            total = b1 + b2 + carry
+            result.append(str(total % 2))
+            carry = total // 2
+        
+        if carry:
+            result.append('1')
+        
+        return ''.join(result[::-1]).lstrip('0') or '0'
+
