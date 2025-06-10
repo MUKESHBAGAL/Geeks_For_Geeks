@@ -1,0 +1,80 @@
+### IN C++
+
+class Solution {
+  public:
+    string makeEven(string s) {
+        int evenidx = -1;
+        int len = s.size() - 1;
+
+        for (int idx = 0; idx < len; idx++) {
+            if ((s[idx] - '0') % 2 == 0) {
+                evenidx = idx;
+                if (s[idx] < s[len]) {
+                    break;
+                }
+            }
+        }
+
+        if (evenidx != -1) {
+            swap(s[evenidx], s[len]);
+        }
+
+        return s;
+    }
+};
+    
+
+
+### IN JAVA
+
+class Solution {
+    public String makeEven(String s) {
+         int evenIdx = -1;
+        int len = s.length() - 1;
+
+        for (int idx = 0; idx < len; idx++) {
+            if ((s.charAt(idx) - '0') % 2 == 0) {
+                evenIdx = idx;
+                if (s.charAt(idx) < s.charAt(len)) {
+                    break;
+                }
+            }
+        }
+
+        if (evenIdx != -1) {
+            char[] chars = s.toCharArray();
+            char temp = chars[evenIdx];
+            chars[evenIdx] = chars[len];
+            chars[len] = temp;
+            return new String(chars);
+        }
+
+        return s;
+    }
+}
+
+
+### IN PYTHON
+
+class Solution:
+    def makeEven(self, s):
+        even_idx = -1
+        length = len(s) - 1
+
+        for idx in range(length):
+            if (int(s[idx]) % 2 == 0):
+                even_idx = idx
+                if s[idx] < s[length]:
+                    break
+
+        if even_idx != -1:
+            s = list(s)
+            s[even_idx], s[length] = s[length], s[even_idx]
+            return ''.join(s)
+
+        return s
+
+
+
+
+
