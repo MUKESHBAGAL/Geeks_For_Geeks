@@ -1,0 +1,57 @@
+####IN C++
+
+
+class Solution {
+  public:
+    string firstRepChar(string s) {
+        unordered_set<char> seen; // Use an unordered_set for efficient lookups
+        for (char ch : s) {
+            if (seen.find(ch) != seen.end()) {
+                return string(1, ch); // Return the first repeated character as a string
+            }
+            seen.insert(ch);
+        }
+        return "-1"; // Return an empty string if no repeated character is found
+    }
+};
+
+
+
+
+
+####IN JAVA
+
+
+// User function Template for Java
+class Solution {
+    String firstRepChar(String s) {
+        HashSet<Character> seen = new HashSet<>();
+        for (char ch : s.toCharArray()) {
+            if (seen.contains(ch)) {
+                return String.valueOf(ch);
+            }
+            seen.add(ch);
+        }
+        return "-1";
+        
+    }
+}
+
+
+####IN PYTHON
+
+
+class Solution:
+    def firstRepChar(self, s):
+        seen = set()  # Use a set for efficient lookups
+        for ch in s:
+            if ch in seen:
+                return ch  # Return the first repeated character
+            seen.add(ch)
+        return "-1" 
+
+
+
+
+
+
