@@ -1,0 +1,57 @@
+####IN C++
+
+
+class Solution {
+  public:
+
+    string removeDups(string &str) {
+        unordered_set<char> seen;
+        string ans = "";
+        for (char ch : str) {
+            if (seen.find(ch) == seen.end()) {
+                seen.insert(ch);
+                ans += ch;
+            }
+        }
+        return ans;
+    }
+};
+
+
+
+
+
+####IN JAVA
+
+
+class Solution {
+    String removeDups(String str) {
+        HashSet<Character> seen = new HashSet<>();
+        StringBuilder ans = new StringBuilder();
+
+        for (char ch : str.toCharArray()) {
+            if (!seen.contains(ch)) {
+                seen.add(ch);
+                ans.append(ch);
+            }
+        }
+
+        return ans.toString();
+        
+    }
+}
+
+
+####IN PYTHON
+
+class Solution:
+    def removeDups(self, str):
+        ans=""
+        for ch in str:
+            if ch not in ans:
+                ans+=ch
+        return ans
+
+
+
+
