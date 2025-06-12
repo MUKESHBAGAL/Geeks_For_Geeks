@@ -1,0 +1,72 @@
+####IN C++
+
+
+class Solution {
+  public:
+    // Function to reverse words in a given string.
+    string reverseWords(string &s) {
+        stringstream ss(s);
+        string word;
+        vector<string> words;
+
+        while (ss >> word) {
+            words.push_back(word);
+        }
+
+        reverse(words.begin(), words.end());
+        string result;
+        for (size_t i = 0; i < words.size(); ++i) {
+            result += words[i];
+            if (i < words.size() - 1) {
+                result += " ";
+            }
+        }
+
+        return result;
+        
+    }
+};
+
+
+
+####IN JAVA
+
+
+class Solution {
+  public:
+    // Function to reverse words in a given string.
+    string reverseWords(string &s) {
+        stringstream ss(s);
+        string word;
+        vector<string> words;
+
+        while (ss >> word) {
+            words.push_back(word);
+        }
+
+        reverse(words.begin(), words.end());
+        string result;
+        for (size_t i = 0; i < words.size(); ++i) {
+            result += words[i];
+            if (i < words.size() - 1) {
+                result += " ";
+            }
+        }
+
+        return result;
+        
+    }
+};
+
+
+####IN PYTHON
+
+class Solution:
+    # Function to reverse words in a given string.
+    def reverseWords(self, s):
+        s = s.strip().split()
+        s = " ".join(s[::-1])
+        return s
+    
+    
+
