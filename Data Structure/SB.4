@@ -1,0 +1,50 @@
+####IN C++
+
+class Solution {
+  public:
+    string removeDuplicates(string &s) {
+        unordered_set<char> seen;
+        string ans = "";
+
+        for (char ch : s) {
+            if (seen.find(ch) == seen.end()) {
+                seen.insert(ch);
+                ans += ch;
+            }
+        }
+        return ans;
+        
+    }
+};
+
+####IN JAVA
+
+class Solution {
+    String removeDuplicates(String s) {
+        HashSet<Character> seen = new HashSet<>();
+        StringBuilder ans = new StringBuilder();
+
+        for (char ch : s.toCharArray()) {
+            if (!seen.contains(ch)) {
+                seen.add(ch);
+                ans.append(ch);
+            }
+        }
+        return ans.toString();
+    }
+}
+
+
+####IN PYTHON
+
+class Solution:
+	def removeDuplicates(self, s):
+        ans=""
+        for ch in s:
+            if ch not in ans:
+                ans+=ch
+        return ans
+    
+    
+    
+
