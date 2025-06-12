@@ -1,0 +1,59 @@
+####IN C
+
+bool isPalindrome(char s[]) {
+    // code here
+    int right=0,left=strlen(s)-1;
+       while(left>right){
+           if(s[left]!=s[right])
+                return false;
+            left--;
+            right++;
+       }
+       return true;
+}
+
+
+####IN C++
+
+class Solution {
+  public:
+    // Function to check if a string is a palindrome.
+    bool isPalindrome(string& s) {
+       int right=0,left=s.size()-1;
+       while(left>right){
+           if(s[left]!=s[right])
+                return false;
+            left--;
+            right++;
+       }
+       return true;
+        
+    }
+};
+
+####IN JAVA
+
+class Solution {
+    boolean isPalindrome(String s) {
+        // code here
+        int left = 0, right = s.length() - 1;
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+}
+
+
+####IN PYTHON
+
+class Solution:
+    def isPalindrome(self, s):
+        return s==s[::-1]
+    
+    
+
