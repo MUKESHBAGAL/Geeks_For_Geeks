@@ -175,7 +175,7 @@ SB.2    Parenthesis Checker
 SB.3    Remove Consecutive Characters
 SB.4	String Duplicates Removal
 SB.5    Reverse Using Stack
-
+SB.6    Palindrome String
 C]Medium
 
 SC.1	Add Binary Strings
