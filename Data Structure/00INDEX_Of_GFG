@@ -171,10 +171,10 @@ SA.54	Odd to Even
 B]Easy
 
 SB.1	Non Repeating Character.
-SB.2	String Duplicates Removal
-
-
-
+SB.2    Parenthesis Checker
+SB.3    Remove Consecutive Characters
+SB.4	String Duplicates Removal
+SB.5    Reverse Using Stack
 
 C]Medium
 
@@ -188,12 +188,7 @@ C++ Strings
 Check if divisible by 4
 Split Strings
 
-B]Easy 
-SB.1    Reverse Using Stack
-SB.2    Parenthesis Checker
-SB.3    Remove Consecutive Characters
 
-C]Medium
 
 D]Hard
 
