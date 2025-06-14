@@ -1,0 +1,41 @@
+###IN C++
+
+class Solution {
+public:
+    int kthSmallest(vector<vector<int>> &matrix, int k) {
+        vector<int> result;
+        for (const auto &row : matrix) {
+            result.insert(result.end(), row.begin(), row.end());
+        }
+        sort(result.begin(), result.end());
+        return result[k - 1];
+    }
+};
+
+
+###IN JAVA
+
+class Solution {
+    public int kthSmallest(int[][] matrix, int k) {
+        List<Integer> result = new ArrayList<>();
+        for (int[] row : matrix) {
+            for (int num : row) {
+                result.add(num);
+            }
+        }
+        Collections.sort(result);
+        return result.get(k - 1);
+        
+    }
+}
+
+
+###IN PYTHON
+
+class Solution:
+    def kthSmallest(self, matrix, k):
+        result = []
+        for row in matrix:
+            result.extend(row)
+        result.sort()
+        return result[k - 1]
