@@ -1,0 +1,99 @@
+###IN C
+
+// Function to return sum of upper and lower triangles of a matrix.
+int* sumTriangles(int n, int matrix[][n]) {
+     int* result = (int*)malloc(2 * sizeof(int));
+    int upper_sum = 0, lower_sum = 0;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (i <= j) {
+                upper_sum += matrix[i][j];
+            }
+            if (i >= j) {
+                lower_sum += matrix[i][j];
+            }
+        }
+    }
+
+    result[0] = upper_sum;
+    result[1] = lower_sum;
+    return result;
+}
+
+
+
+
+
+###IN C++
+
+class Solution {
+public:
+    vector<int> sumTriangles(const vector<vector<int>>& matrix, int n) {
+        vector<int> ans;
+        int upper_sum = 0, lower_sum = 0;
+        
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i <= j) {
+                    upper_sum += matrix[i][j];
+                }
+                if (i >= j) {
+                    lower_sum += matrix[i][j];
+                }
+            }
+        }
+        
+        ans.push_back(upper_sum);
+        ans.push_back(lower_sum);
+        return ans;
+    }
+};
+
+
+
+
+###IN JAVA
+
+class Solution {
+    // Function to return sum of upper and lower triangles of a matrix.
+    static ArrayList<Integer> sumTriangles(int matrix[][], int n) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        int upperSum = 0, lowerSum = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i <= j) {
+                    upperSum += matrix[i][j];
+                }
+                if (i >= j) {
+                    lowerSum += matrix[i][j];
+                }
+            }
+        }
+
+        ans.add(upperSum);
+        ans.add(lowerSum);
+        return ans;
+        
+    }
+}
+
+
+###IN PYTHON
+
+class Solution:
+    
+    #Function to return sum of upper and lower triangles of a matrix.
+    def sumTriangles(self,matrix, n):
+        upper_sum = 0
+        lower_sum = 0
+
+        for i in range(n):
+            for j in range(n):
+                if i <= j:
+                    upper_sum += matrix[i][j]
+                if i >= j:
+                    lower_sum += matrix[i][j]
+
+        return [upper_sum, lower_sum]
