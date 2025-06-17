@@ -1,0 +1,74 @@
+###IN C++
+
+class Solution {
+  public:
+    int minRow(vector<vector<int>> &a) {
+        int minOnes = INT_MAX;
+        int ans = -1;
+        
+        for (int i = 0; i < a.size(); i++) {
+            int onesCount = 0;
+            for (int j = 0; j < a[i].size(); j++) {
+                if (a[i][j] == 1) {
+                    onesCount++;
+                }
+            }
+            if (onesCount < minOnes) {
+                minOnes = onesCount;
+                ans = i;
+            }
+        }
+        
+        return ans + 1;
+        
+    }
+};
+
+
+
+
+###IN JAVA
+
+class Solution {
+    int minRow(int a[][]) {
+        int minOnes = Integer.MAX_VALUE;
+        int ans = -1;
+        
+        for (int i = 0; i < a.length; i++) {
+            int onesCount = 0;
+            for (int j = 0; j < a[i].length; j++) {
+                if (a[i][j] == 1) {
+                    onesCount++;
+                }
+            }
+            if (onesCount < minOnes) {
+                minOnes = onesCount;
+                ans = i;
+            }
+        }
+        
+        return ans + 1;
+        
+    }
+};
+
+
+
+###IN PYTHON
+
+class Solution:
+    def minRow(self, a):
+        min_1s = float('inf')
+        ans = -1
+        count = 0
+        
+        for row in a:
+            ones_count = row.count(1)
+            if ones_count < min_1s:
+                min_1s = ones_count
+                ans = count
+            count += 1
+            
+        return ans+1
+
+
