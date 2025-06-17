@@ -346,6 +346,9 @@ MB.5	Print Matrix in snake Pattern
 MB.6	Transpose of Matrix
 MB.7	Sum of upper and lower triangles
 MB.8	Reversing the columns of a Matrix
+MB.9	Row with Minimum 1s
+
+
 
 
 C]Medium
