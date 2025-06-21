@@ -350,6 +350,7 @@ MB.9	Row with Minimum 1s
 MB.10	Maximum no of 1's row
 MB.11	Search in a row-wise sorted matrix
 MB.12	Interchanging the rows of a Matrix
+MB.13	Transpose of Matrix
 
 
 
