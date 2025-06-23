@@ -1,0 +1,40 @@
+####IN C++
+
+class Solution {
+  public:
+    int isdivisible7(string num) {
+         int rem = 0;
+        for (char digit : num) {
+            rem = (rem * 10 + (digit - '0')) % 7;
+        }
+        return rem == 0 ? 1 : 0;
+    }
+};
+
+
+####IN JAVA
+
+class Solution {
+    int isdivisible7(String num) {
+        int rem = 0;
+        for (char digit : num.toCharArray()) {
+            rem = (rem * 10 + Character.getNumericValue(digit)) % 7;
+        }
+        return rem == 0 ? 1 : 0;
+    }
+}
+
+
+####IN PYTHON
+
+class Solution:
+    def isdivisible7(self, num):
+        rem = 0
+        for digit in num:
+            rem = (rem * 10 + int(digit)) % 7
+        return 1 if rem == 0 else 0
+    
+    
+    
+    
+
