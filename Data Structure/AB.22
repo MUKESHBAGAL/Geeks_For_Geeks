@@ -1,0 +1,115 @@
+###IN C++
+
+class Solution {
+  public:
+    pair<long, long> indexes(vector<long long> v, long long x) {
+        long first = -1, last = -1;
+        long low = 0, high = v.size() - 1;
+
+        while (low <= high) {
+            long mid = low + (high - low) / 2;
+            if (v[mid] == x) {
+                first = mid;
+                high = mid - 1;
+            } else if (v[mid] < x) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+
+        low = 0, high = v.size() - 1;
+
+        while (low <= high) {
+            long mid = low + (high - low) / 2;
+            if (v[mid] == x) {
+                last = mid;
+                low = mid + 1;
+            } else if (v[mid] < x) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+
+        return {first, last};
+    }
+};
+
+
+
+###IN JAVA
+
+
+class Solution {
+
+    public pair indexes(long v[], long x) {
+        long first = -1, last = -1;
+        int low = 0, high = v.length - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (v[mid] == x) {
+                first = mid;
+                high = mid - 1;
+            } else if (v[mid] < x) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+
+        low = 0;
+        high = v.length - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (v[mid] == x) {
+                last = mid;
+                low = mid + 1;
+            } else if (v[mid] < x) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+
+        return new pair(first, last);
+    }
+}
+
+
+###IN PYTHON3
+
+#User function Template for python3
+
+class Solution:
+    def indexes(self, v, x):
+        first, last = -1, -1
+        low, high = 0, len(v) - 1
+
+        while low <= high:
+            mid = low + (high - low) // 2
+            if v[mid] == x:
+                first = mid
+                high = mid - 1
+            elif v[mid] < x:
+                low = mid + 1
+            else:
+                high = mid - 1
+
+        low, high = 0, len(v) - 1
+
+        while low <= high:
+            mid = low + (high - low) // 2
+            if v[mid] == x:
+                last = mid
+                low = mid + 1
+            elif v[mid] < x:
+                low = mid + 1
+            else:
+                high = mid - 1
+
+        return (first, last)
+    
+        
