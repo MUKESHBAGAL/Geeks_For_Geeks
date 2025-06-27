@@ -1,32 +1,67 @@
 ###IN C++
 
+
 class Solution {
-  public:
-    int findElement(vector<int> &arr) {
-        int n = arr.size();
-        if (n < 3) return -1;
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        vector<int> v1 = listToVector(l1);
+        vector<int> v2 = listToVector(l2);
 
-        vector<int> leftMax(n, INT_MIN);
-        vector<int> rightMin(n, INT_MAX);
+        reverse(v1.begin(), v1.end());
+        reverse(v2.begin(), v2.end());
 
-        for (int i = 1; i < n; ++i) {
-            leftMax[i] = max(leftMax[i - 1], arr[i - 1]);
+        vector<int> result = addVectors(v1, v2);
+
+        reverse(result.begin(), result.end());
+
+        return vectorToList(result);
+    }
+
+private:
+    vector<int> listToVector(ListNode* head) {
+        vector<int> result;
+        while (head != nullptr) {
+            result.push_back(head->val);
+            head = head->next;
+        }
+        return result;
+    }
+
+    vector<int> addVectors(const vector<int>& v1, const vector<int>& v2) {
+        int n = max(v1.size(), v2.size());
+        vector<int> result;
+        int carry = 0;
+
+        for (int i = 0; i < n; ++i) {
+            int num1 = (i < v1.size()) ? v1[i] : 0;
+            int num2 = (i < v2.size()) ? v2[i] : 0;
+
+            int sum = num1 + num2 + carry;
+            result.push_back(sum % 10);
+            carry = sum / 10;
         }
 
-        for (int i = n - 2; i >= 0; --i) {
-            rightMin[i] = min(rightMin[i + 1], arr[i + 1]);
+        if (carry > 0) {
+            result.push_back(carry);
         }
 
-        for (int i = 1; i < n - 1; ++i) {
-            if (leftMax[i] < arr[i] && arr[i] < rightMin[i]) {
-                return arr[i];
-            }
+        return result;
+    }
+
+    ListNode* vectorToList(const vector<int>& vec) {
+        ListNode* dummy = new ListNode(0);
+        ListNode* current = dummy;
+
+        for (int num : vec) {
+            current->next = new ListNode(num);
+            current = current->next;
         }
 
-        return -1;
-        
+        return dummy->next;
     }
 };
+
+
 
 
 
@@ -34,57 +69,59 @@ class Solution {
 
 
 class Solution {
-    public int findElement(int[] arr) {
-        int n = arr.length;
-        if (n < 3) return -1;
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        List<Integer> v1 = listToVector(l1);
+        List<Integer> v2 = listToVector(l2);
 
-        int[] leftMax = new int[n];
-        int[] rightMin = new int[n];
-        leftMax[0] = Integer.MIN_VALUE;
-        rightMin[n - 1] = Integer.MAX_VALUE;
+        Collections.reverse(v1);
+        Collections.reverse(v2);
 
-        for (int i = 1; i < n; i++) {
-            leftMax[i] = Math.max(leftMax[i - 1], arr[i - 1]);
+        List<Integer> result = addVectors(v1, v2);
+
+        Collections.reverse(result);
+
+        return vectorToList(result);
+    }
+
+    private List<Integer> listToVector(ListNode head) {
+        List<Integer> result = new ArrayList<>();
+        while (head != null) {
+            result.add(head.val);
+            head = head.next;
+        }
+        return result;
+    }
+
+    private List<Integer> addVectors(List<Integer> v1, List<Integer> v2) {
+        List<Integer> result = new ArrayList<>();
+        int carry = 0;
+        int n = Math.max(v1.size(), v2.size());
+
+        for (int i = 0; i < n; i++) {
+            int num1 = i < v1.size() ? v1.get(i) : 0;
+            int num2 = i < v2.size() ? v2.get(i) : 0;
+
+            int sum = num1 + num2 + carry;
+            result.add(sum % 10);
+            carry = sum / 10;
         }
 
-        for (int i = n - 2; i >= 0; i--) {
-            rightMin[i] = Math.min(rightMin[i + 1], arr[i + 1]);
+        if (carry > 0) {
+            result.add(carry);
         }
 
-        for (int i = 1; i < n - 1; i++) {
-            if (leftMax[i] < arr[i] && arr[i] < rightMin[i]) {
-                return arr[i];
-            }
+        return result;
+    }
+
+    private ListNode vectorToList(List<Integer> vec) {
+        ListNode dummy = new ListNode(0);
+        ListNode current = dummy;
+
+        for (int num : vec) {
+            current.next = new ListNode(num);
+            current = current.next;
         }
 
-        return -1;
-        
+        return dummy.next;
     }
 }
-
-
-###IN PYTHON3
-
-
-class Solution:
-    def findElement(self, arr):
-        n = len(arr)
-        if n < 3:
-            return -1
-    
-        left_max = [-float('inf')] * n
-        right_min = [float('inf')] * n
-    
-        for i in range(1, n):
-            left_max[i] = max(left_max[i - 1], arr[i - 1])
-    
-        for i in range(n - 2, -1, -1):
-            right_min[i] = min(right_min[i + 1], arr[i + 1])
-    
-        for i in range(1, n - 1):
-            if left_max[i] < arr[i] < right_min[i]:
-                return arr[i]
-    
-        return -1
-    
-        
