@@ -1,0 +1,43 @@
+### IN C++
+
+int isSquare(string S) {
+    int asciiSum = 0;
+    for (char ch : S) {
+        asciiSum += (int) ch;
+    }
+    int sqrtValue = (int) sqrt(asciiSum);
+    return (sqrtValue * sqrtValue == asciiSum) ? 1 : 0;
+}
+
+
+### IN JAVA
+
+class Solution {
+    static int isSquare(String S)
+    {
+        int asciiSum = 0;
+        for (char ch : S.toCharArray()) {
+            asciiSum += (int) ch;
+        }
+        int sqrt = (int) Math.sqrt(asciiSum);
+        return (sqrt * sqrt == asciiSum) ? 1 : 0;
+        
+    }
+}
+
+
+### IN PYTHON
+
+class Solution:
+    def isSquare(self, S): 
+        ascii_sum = sum(ord(char) for char in S)
+        sqrt = int(ascii_sum**0.5)
+        if sqrt * sqrt == ascii_sum:
+            return 1
+        return 0
+
+
+
+
+
+
