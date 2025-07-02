@@ -356,6 +356,7 @@ MB.11	Search in a row-wise sorted matrix
 MB.12	Interchanging the rows of a Matrix
 MB.13	Transpose of Matrix
 MB.14	Multiply Matrices
+MB.15	Rotate by 90 degree
 
 
 
