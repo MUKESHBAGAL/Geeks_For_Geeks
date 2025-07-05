@@ -1,0 +1,68 @@
+###IN C++
+
+class Solution {
+  public:
+    void rotateMatrix(vector<vector<int>>& mat) {
+        int n = mat.size();
+        int m = mat[0].size();
+        vector<vector<int>> rotated(m, vector<int>(n));
+        for(int k=0;k<2;k++){
+            for(int i = 0; i < n; ++i) {
+                for(int j = 0; j < m; ++j) {
+                    rotated[m - j - 1][i] = mat[i][j];
+                }
+            }
+            mat = rotated;
+        }
+    }
+};
+
+
+
+###IN JAVA
+
+
+class Solution {
+    public void rotateMatrix(int[][] mat) {
+        int n = mat.length;
+        int m = mat[0].length;
+        int[][] rotated = new int[m][n];
+
+        for (int k = 0; k < 2; k++) {
+            for (int i = 0; i < n; ++i) {
+                for (int j = 0; j < m; ++j) {
+                    rotated[m - j - 1][i] = mat[i][j];
+                }
+            }
+            for (int i = 0; i < n; ++i) {
+                for (int j = 0; j < m; ++j) {
+                    mat[i][j] = rotated[i][j];
+                }
+            }
+        }
+        
+    }
+}
+
+
+
+###IN PYTHON 
+
+
+class Solution:
+	def rotateMatrix(self, mat):
+		n = len(mat)
+        m = len(mat[0])
+        rotated = [[0 for _ in range(n)] for _ in range(m)]
+
+        for _ in range(2):
+            for i in range(n):
+                for j in range(m):
+                    rotated[m - j - 1][i] = mat[i][j]
+
+            for i in range(n):
+                for j in range(m):
+                    mat[i][j] = rotated[i][j]
+
+
+            
