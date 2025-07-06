@@ -1,0 +1,137 @@
+###IN C++
+
+class Solution {
+public:
+    string pattern(vector<vector<int>> &arr) {
+        int n = arr.size();
+        int m = arr[0].size();
+
+        // Check rows
+        for (int i = 0; i < n; i++) {
+            int left = 0, right = m - 1;
+            bool isPalindrome = true;
+            while (left < right) {
+                if (arr[i][left] != arr[i][right]) {
+                    isPalindrome = false;
+                    break;
+                }
+                left++;
+                right--;
+            }
+            if (isPalindrome) {
+                return to_string(i) + " R";
+            }
+        }
+
+        // Check columns
+        for (int j = 0; j < m; j++) {
+            int top = 0, bottom = n - 1;
+            bool isPalindrome = true;
+            while (top < bottom) {
+                if (arr[top][j] != arr[bottom][j]) {
+                    isPalindrome = false;
+                    break;
+                }
+                top++;
+                bottom--;
+            }
+            if (isPalindrome) {
+                return to_string(j) + " C";
+            }
+        }
+
+        return "-1";
+    }
+};
+
+
+
+###IN JAVA
+
+
+// User function Template for Java
+
+class Solution {
+    public String pattern(int[][] arr) {
+        int n = arr.length;
+        int m = arr[0].length;
+
+        // Check rows
+        for (int i = 0; i < n; i++) {
+            int left = 0, right = m - 1;
+            boolean isPalindrome = true;
+            while (left < right) {
+                if (arr[i][left] != arr[i][right]) {
+                    isPalindrome = false;
+                    break;
+                }
+                left++;
+                right--;
+            }
+            if (isPalindrome) {
+                return i + " R";
+            }
+        }
+
+        // Check columns
+        for (int j = 0; j < m; j++) {
+            int top = 0, bottom = n - 1;
+            boolean isPalindrome = true;
+            while (top < bottom) {
+                if (arr[top][j] != arr[bottom][j]) {
+                    isPalindrome = false;
+                    break;
+                }
+                top++;
+                bottom--;
+            }
+            if (isPalindrome) {
+                return j + " C";
+            }
+        }
+
+        return "-1";
+        
+    }
+}
+
+
+
+###IN PYTHON 
+
+
+class Solution:
+    def pattern (self, arr):
+        n = len(arr)
+        m = len(arr[0])
+
+        # Check rows
+        for i in range(n):
+            left, right = 0, m - 1
+            is_palindrome = True
+            while left < right:
+                if arr[i][left] != arr[i][right]:
+                    is_palindrome = False
+                    break
+                left += 1
+                right -= 1
+            if is_palindrome:
+                return f"{i} R"
+
+        # Check columns
+        for j in range(m):
+            top, bottom = 0, n - 1
+            is_palindrome = True
+            while top < bottom:
+                if arr[top][j] != arr[bottom][j]:
+                    is_palindrome = False
+                    break
+                top += 1
+                bottom -= 1
+            if is_palindrome:
+                return f"{j} C"
+
+        return "-1"
+
+
+            
