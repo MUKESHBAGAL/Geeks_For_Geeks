@@ -1,0 +1,106 @@
+###IN C++
+
+class Solution {
+  public:
+    int findK(int a[MAX][MAX], int n, int m, int k) {
+        vector<int> result;
+        int top = 0, bottom = n;
+        int left = 0, right = m;
+
+        while (top < bottom && left < right) {
+            for (int i = left; i < right; ++i)
+                result.push_back(a[top][i]);
+            top++;
+
+            for (int i = top; i < bottom; ++i)
+                result.push_back(a[i][right - 1]);
+            right--;
+
+            if (top < bottom) {
+                for (int i = right - 1; i >= left; --i)
+                    result.push_back(a[bottom - 1][i]);
+                bottom--;
+            }
+
+            if (left < right) {
+                for (int i = bottom - 1; i >= top; --i)
+                    result.push_back(a[i][left]);
+                left++;
+            }
+        }
+
+        return result[k - 1];
+    }
+};
+
+
+
+
+###IN JAVA
+
+import java.util.*;
+
+class Solution {
+    int findK(int A[][], int n, int m, int k) {
+        List<Integer> result = new ArrayList<>();
+        int top = 0, bottom = n;
+        int left = 0, right = m;
+
+        while (top < bottom && left < right) {
+            for (int i = left; i < right; i++)
+                result.add(A[top][i]);
+            top++;
+
+            for (int i = top; i < bottom; i++)
+                result.add(A[i][right - 1]);
+            right--;
+
+            if (top < bottom) {
+                for (int i = right - 1; i >= left; i--)
+                    result.add(A[bottom - 1][i]);
+                bottom--;
+            }
+
+            if (left < right) {
+                for (int i = bottom - 1; i >= top; i--)
+                    result.add(A[i][left]);
+                left++;
+            }
+        }
+
+        return result.get(k - 1);
+    }
+}
+
+
+
+###IN PYTHON
+
+class Solution:
+    def findK(self, a, n, m, k):
+        result = []
+        top, bottom = 0, n
+        left, right = 0, m
+
+        while top < bottom and left < right:
+            for i in range(left, right):
+                result.append(a[top][i])
+            top += 1
+
+            for i in range(top, bottom):
+                result.append(a[i][right - 1])
+            right -= 1
+
+            if top < bottom:
+                for i in range(right - 1, left - 1, -1):
+                    result.append(a[bottom - 1][i])
+                bottom -= 1
+
+            if left < right:
+                for i in range(bottom - 1, top - 1, -1):
+                    result.append(a[i][left])
+                left += 1
+
+        return result[k - 1]
+
+
