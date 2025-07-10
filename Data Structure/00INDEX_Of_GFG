@@ -371,4 +371,5 @@ MC.2	Kth element in Matrix
 MC.3	Rotate by 90 degree(90 degrees in clockwise)
 MC.4	Spirally traversing a matrix
 MC.5	Find kth element of spiral matrix
+MC.6	Spiral Matrix(Given a matrix of size N x M. You have to find the Kth element )
 
