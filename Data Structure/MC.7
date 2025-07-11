@@ -1,0 +1,112 @@
+###IN C++
+
+class Solution {
+  public:
+    vector<int> reverseSpiral(int R, int C, vector<vector<int>>& a) {
+        vector<int> result;
+        int top = 0, bottom = R;
+        int left = 0, right = C;
+
+        while (top < bottom && left < right) {
+            for (int i = left; i < right; ++i)
+                result.push_back(a[top][i]);
+            top++;
+
+            for (int i = top; i < bottom; ++i)
+                result.push_back(a[i][right - 1]);
+            right--;
+
+            if (top < bottom) {
+                for (int i = right - 1; i >= left; --i)
+                    result.push_back(a[bottom - 1][i]);
+                bottom--;
+            }
+
+            if (left < right) {
+                for (int i = bottom - 1; i >= top; --i)
+                    result.push_back(a[i][left]);
+                left++;
+            }
+        }
+
+        reverse(result.begin(), result.end());
+        return result;
+    }
+};
+
+
+
+
+###IN JAVA
+
+class Solution {
+    public int[] reverseSpiral(int R, int C, int[][] a) {
+        List<Integer> res = new ArrayList<>();
+        int top = 0, bottom = R;
+        int left = 0, right = C;
+
+        while (top < bottom && left < right) {
+
+            for (int i = left; i < right; ++i)
+                res.add(a[top][i]);
+            top++;
+
+            for (int i = top; i < bottom; ++i)
+                res.add(a[i][right - 1]);
+            right--;
+
+            if (top < bottom) {
+                for (int i = right - 1; i >= left; --i)
+                    res.add(a[bottom - 1][i]);
+                bottom--;
+            }
+
+            if (left < right) {
+                for (int i = bottom - 1; i >= top; --i)
+                    res.add(a[i][left]);
+                left++;
+            }
+        }
+
+        Collections.reverse(res);
+        int[] ans = new int[res.size()];
+        for (int i = 0; i < res.size(); i++) ans[i] = res.get(i);
+        return ans;
+        
+    }
+}
+
+
+
+###IN PYTHON
+
+class Solution:
+	def reverseSpiral(self, R, C, a):
+		res = []
+        top, bottom = 0, R
+        left, right = 0, C
+    
+        while top < bottom and left < right:
+            for i in range(left, right):
+                res.append(a[top][i])
+            top += 1
+    
+            for i in range(top, bottom):
+                res.append(a[i][right - 1])
+            right -= 1
+    
+            if top < bottom:
+                for i in range(right - 1, left - 1, -1):
+                    res.append(a[bottom - 1][i])
+                bottom -= 1
+    
+            if left < right:
+                for i in range(bottom - 1, top - 1, -1):
+                    res.append(a[i][left])
+                left += 1
+    
+        res.reverse()
+        return res
+
+
+
