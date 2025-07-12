@@ -1,0 +1,86 @@
+###IN C
+
+int* BoundaryElements(int n, int matrix[][n]){
+    int* res = (int*)malloc(sizeof(int) * (4 * n - 4));
+    int idx = 0;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (i == 0 || i == n - 1)
+                res[idx++] = matrix[i][j];
+            else if (j == 0 || j == n - 1)
+                res[idx++] = matrix[i][j];
+        }
+    }
+
+    return res;
+}
+
+
+
+
+###IN C++
+
+class Solution {
+public:
+    vector<int> BoundaryElements(vector<vector<int>>& matrix) {
+        vector<int> res;
+        int n =matrix.size();
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(i==0 || i==n-1)
+                    res.push_back(matrix[i][j]);
+                else if(j==0 || j==n-1)
+                    res.push_back(matrix[i][j]);
+            }
+        }
+        return res;
+    }
+};
+
+
+
+
+###IN JAVA
+
+class Solution {
+    public int[] BoundaryElements(int[][] matrix) {
+        int n = matrix.length;
+
+        if (n == 1)
+            return new int[] { matrix[0][0] };
+
+        int[] res = new int[4 * n - 4];
+        int idx = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == 0 || i == n - 1)
+                    res[idx++] = matrix[i][j];
+                else if (j == 0 || j == n - 1)
+                    res[idx++] = matrix[i][j];
+            }
+        }
+
+        return res;
+    }
+}
+
+
+
+###IN PYTHON
+
+class Solution:
+	def BoundaryElements(self, matrix):
+		res = []
+        n = len(matrix)
+
+        for i in range(n):
+            for j in range(n):
+                if i == 0 or i == n - 1:
+                    res.append(matrix[i][j])
+                elif j == 0 or j == n - 1:
+                    res.append(matrix[i][j])
+        return res
+
+
