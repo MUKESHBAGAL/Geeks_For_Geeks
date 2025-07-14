@@ -1,0 +1,31 @@
+### IN C++
+
+string sort(string s){
+   sort(s.begin(),s.end());
+   return s;
+}
+
+
+### IN JAVA
+
+class Solution 
+{ 
+    String sort(String s) 
+    {
+        char[] chars = s.toCharArray();
+        Arrays.sort(chars);
+        return new String(chars);
+    }
+} 
+
+
+### IN PYTHON
+
+class Solution:
+    def sort(self, s): 
+        return ''.join(sorted(s))
+
+
+
+
+
