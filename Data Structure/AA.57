@@ -1,0 +1,17 @@
+###c++
+
+class Solution {
+    public String average(int arr[]) {
+        if (arr == null || arr.length == 0) return "0.00";
+        
+        double sum = 0;
+        for (int num : arr) {
+            sum += num;
+        }
+        
+        double avg = sum / arr.length;
+        
+        return String.format("%.2f", avg);
+    }
+}
+
