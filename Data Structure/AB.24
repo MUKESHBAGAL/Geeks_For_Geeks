@@ -1,0 +1,29 @@
+###IN C++
+
+class Solution {
+  public:
+    vector<int> sortArray(vector<int>& arr) {
+        sort(arr.begin(), arr.end());
+        return arr;
+    }
+};
+
+
+###IN JAVA
+
+
+class Solution {
+    int[] sortArray(int arr[]) {
+        Arrays.sort(arr);
+        return arr;
+    }
+}
+
+
+###IN PYTHON3
+
+class Solution:
+    def sortArray(self, arr):
+        arr.sort()
+        return arr
+        
