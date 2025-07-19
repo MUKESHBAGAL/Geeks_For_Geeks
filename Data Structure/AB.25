@@ -1,0 +1,44 @@
+###IN C++
+
+class Solution {
+  public:
+    // arr[] is the array
+    long long int product(vector<int> &arr) {
+        // code here
+        long long int prodct=1;
+        int mod = 1e9 + 7;
+        for (int num : arr) {
+            prodct = (prodct * num) % mod;
+        }
+        return prodct;
+    }
+};
+
+
+###IN JAVA
+
+
+class Solution {
+    public static long product(long arr[]) {
+        long product = 1;
+        int mod = 1000000007;
+        for (long num : arr) {
+            product = (product * num) % mod;
+        }
+        return product;
+    }
+}
+
+
+###IN PYTHON3
+
+class Solution:
+    # arr is the array
+    def product(self, arr):
+        product = 1
+        mod = 10**9 + 7
+        for num in arr:
+            product = (product * num) % mod
+        return product
+
+        
