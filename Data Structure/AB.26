@@ -1,0 +1,39 @@
+###IN C++
+
+class Solution {
+  public:
+    // Function to swap elements of the array
+    void swapElements(vector<int> &arr) {
+        int n = arr.size();
+        for (int i = 0; i < n - 2; i++) {
+            swap(arr[i], arr[i + 2]);
+        }
+    }
+};
+
+
+
+###IN JAVA
+
+class Solution {
+    public void swapElements(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[i + 2];
+            arr[i + 2] = temp;
+        }
+    }
+}
+
+
+###IN PYTHON3
+
+class Solution:
+	def swapElements(self, arr):
+	    n = len(arr)
+        for i in range(n - 2):
+            arr[i], arr[i + 2] = arr[i + 2], arr[i]
+
+
+        
