@@ -1,0 +1,54 @@
+###IN C++
+
+
+class Solution {
+  public:
+    int firstNonRepeating(vector<int>& arr) {
+        unordered_map<int, int> freq;
+        for (int num : arr) {
+            freq[num]++;
+        }
+        for (int num : arr) {
+            if (freq[num] == 1)
+                return num;
+        }
+        return 0;
+    }
+};
+
+
+
+
+
+###IN JAVA
+
+class Solution {
+    public int firstNonRepeating(int[] arr) {
+        Map<Integer, Integer> freq = new HashMap<>();
+        for (int num : arr) {
+            freq.put(num, freq.getOrDefault(num, 0) + 1);
+        }
+        for (int num : arr) {
+            if (freq.get(num) == 1) {
+                return num;
+            }
+        }
+        return 0;
+    }
+}
+
+
+
+###IN PYTHON3
+
+from collections import Counter
+
+class Solution:
+    def firstNonRepeating(self, arr): 
+        freq = Counter(arr)
+        for num in arr:
+            if freq[num] == 1:
+                return num
+        return 0
+
+        
