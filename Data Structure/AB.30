@@ -1,0 +1,44 @@
+###IN C++
+
+class Solution {
+  public:
+    int leftElement(vector<int>& arr) {
+        sort(arr.begin(), arr.end());
+        int n = arr.size();
+        if(n % 2 == 0)
+            return arr[n/2 - 1];
+        else
+            return arr[n/2];
+    }
+};
+
+
+###IN JAVA
+
+class Solution {
+    public static int leftElement(int[] arr) {
+        Arrays.sort(arr);
+        int n = arr.length;
+        if (n % 2 == 0)
+            return arr[n / 2 - 1];
+        else
+            return arr[n / 2];
+    }
+}
+
+
+
+###IN PYTHON3
+
+class Solution:
+    def leftElement(self,arr) -> int:
+        arr.sort()
+        n = len(arr)
+        if n % 2 == 0:
+            return arr[n // 2 - 1]
+        else:
+            return arr[n // 2]
+            
+
+
+        
