@@ -1,0 +1,53 @@
+###IN C++
+
+class Solution {
+  public:
+    vector<int> findUnion(vector<int> &a, vector<int> &b) {
+        set<int> temp;
+        vector<int> ans;
+
+        for (int num : a)
+            temp.insert(num);
+        for (int num : b)
+            temp.insert(num);
+
+        for (int num : temp)
+            ans.push_back(num);
+
+        return ans;
+    }
+};
+
+
+
+###IN JAVA
+
+import java.util.*;
+
+class Solution {
+    public static ArrayList<Integer> findUnion(int a[], int b[]) {
+        Set<Integer> temp = new TreeSet<>();
+
+        for (int num : a)
+            temp.add(num);
+        for (int num : b)
+            temp.add(num);
+
+        return new ArrayList<>(temp);
+    }
+}
+
+
+
+
+###IN PYTHON3
+
+class Solution:
+    #Function to return a list containing the union of the two arrays.
+    def findUnion(self,a,b):
+        ans = list(set(a).union(set(b)))
+        return sorted(ans)
+            
+
+
+        
