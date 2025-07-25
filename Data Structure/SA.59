@@ -1,0 +1,46 @@
+### IN C++
+
+class Solution {
+  public:
+
+    int divisibleBy4(string N) {
+        int n = N.size();
+        const char *c = N.c_str();
+
+        return ( ( ( (c[n-1]-'0') + (c[n-2]-'0')*10 ) % 4 ) == 0 );
+        
+    }
+};
+
+
+### IN JAVA
+
+class Sol {
+    int divisibleBy4(String N) {
+        int n = N.length();
+        int lastTwoDigits;
+
+        if (n == 1) {
+            lastTwoDigits = N.charAt(n - 1) - '0';
+        } else {
+            lastTwoDigits = (N.charAt(n - 2) - '0') * 10 + (N.charAt(n - 1) - '0');
+        }
+
+        return (lastTwoDigits % 4 == 0) ? 1 : 0;
+    }
+} 
+
+
+### IN PYTHON
+
+class Solution:
+    def divisibleBy4 (self, N):
+        if(int(N)%4==0):
+            return 1
+        return 0
+
+
+
+
+
+
