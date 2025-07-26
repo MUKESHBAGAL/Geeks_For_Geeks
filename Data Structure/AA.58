@@ -1,0 +1,55 @@
+###C
+
+int largest(int arr[], int n) {
+        int max = arr[0];
+        for (int i = 1; i < n; ++i) {
+            if (arr[i] > max)
+                max = arr[i];
+        }
+        return max;
+    
+}
+
+
+###C++
+
+class Solution {
+  public:
+    int largest(int arr[], int n) {
+        int max = arr[0];
+        for (int i = 1; i < n; ++i) {
+            if (arr[i] > max)
+                max = arr[i];
+        }
+        return max;
+    }
+};
+
+
+
+
+###JAVA
+
+class Solution {
+    public static int largest(int[] arr) {
+        int max = arr[0];
+        for (int i = 1; i < arr.length; ++i) {
+            if (arr[i] > max)
+                max = arr[i];
+        }
+        return max;
+    }
+}
+
+
+
+###PYTHON
+
+
+from typing import List
+class Solution:
+    def largest(self, arr : List[int]) -> int:
+        return max(arr)
+        
+
+
