@@ -1,0 +1,50 @@
+###IN C++
+
+class Solution {
+  public:
+    vector<int> findUnion(vector<int> &a, vector<int> &b) {
+        for (int num : b)
+            a.push_back(num);
+
+        unordered_set<int> temp(a.begin(), a.end());
+
+        vector<int> result(temp.begin(), temp.end());
+        sort(result.begin(), result.end());
+
+        return result;
+    }
+};
+
+
+
+
+###IN JAVA
+
+// User function Template for Java
+import java.util.*;
+
+class Solution {
+    ArrayList<Integer> findUnion(int[] a, int[] b) {
+        Set<Integer> set = new HashSet<>();
+
+        for (int num : a)
+            set.add(num);
+
+        for (int num : b)
+            set.add(num);
+
+        ArrayList<Integer> result = new ArrayList<>(set);
+        Collections.sort(result);
+
+        return result;
+    }
+}
+
+
+
+###IN PYTHON3
+
+class Solution:
+    def findUnion(self,a, b):
+        union_set = set(a + b)
+        return sorted(union_set)
