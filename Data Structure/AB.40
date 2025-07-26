@@ -1,0 +1,80 @@
+###IN C++
+
+class Solution {
+  public:
+    void rearrangeArray(vector<int>& arr) {
+        vector<int> dupli(arr.begin(), arr.end());
+        sort(dupli.begin(), dupli.end());
+        int left=0, right=dupli.size()-1, idx=0;
+        while(left<=right){
+            if(left==right){
+                arr[idx++] = dupli[left];
+                break;
+            }
+            else {
+                arr[idx++] = dupli[left++];
+                arr[idx++] = dupli[right--];
+            }
+        }
+        
+    }
+};
+
+
+
+###IN JAVA
+
+import java.util.*;
+
+class Solution {
+    public void rearrangeArray(int[] arr) {
+        if (arr.length == 0) return;
+
+        int[] dupli = Arrays.copyOf(arr, arr.length);
+        Arrays.sort(dupli);
+
+        int left = 0, right = dupli.length - 1;
+        int idx = 0;
+
+        while (left <= right) {
+            if (left == right) {
+                arr[idx++] = dupli[left];
+                break;
+            } else {
+                arr[idx++] = dupli[left++];
+                arr[idx++] = dupli[right--];
+            }
+        }
+    }
+}
+
+
+
+###IN PYTHON3
+
+class Solution:
+    def rearrangeArray(self, arr):
+        if not arr:
+            return
+
+        dupli = sorted(arr)
+        left = 0
+        right = len(dupli) - 1
+        idx = 0
+        result = [0] * len(arr)
+
+        while left <= right:
+            if left == right:
+                result[idx] = dupli[left]
+                idx += 1
+            else:
+                result[idx] = dupli[left]
+                idx += 1
+                result[idx] = dupli[right]
+                idx += 1
+            left += 1
+            right -= 1
+
+        # Copy result back into original array
+        for i in range(len(arr)):
+            arr[i] = result[i]
