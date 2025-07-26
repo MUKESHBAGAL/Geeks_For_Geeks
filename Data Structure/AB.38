@@ -1,0 +1,93 @@
+###IN C++
+
+class Solution {
+  public:
+    // Function to find nth number made of only prime digits.
+    int primeDigits(int n) {
+        int count = 0;
+        int num = 1;
+
+        while (true) {
+            num++;
+            int temp = num;
+            bool isValid = true;
+
+            // Check if all digits are prime digits
+            while (temp > 0) {
+                int digit = temp % 10;
+                if (digit != 2 && digit != 3 && digit != 5 && digit != 7) {
+                    isValid = false;
+                    break;
+                }
+                temp /= 10;
+            }
+
+            if (isValid) {
+                count++;
+                if (count == n) return num;
+            }
+        }
+        
+    }
+};
+
+
+###IN JAVA
+
+class Solution {
+  public:
+    // Function to find nth number made of only prime digits.
+    int primeDigits(int n) {
+        int count = 0;
+        int num = 1;
+
+        while (true) {
+            num++;
+            int temp = num;
+            bool isValid = true;
+
+            // Check if all digits are prime digits
+            while (temp > 0) {
+                int digit = temp % 10;
+                if (digit != 2 && digit != 3 && digit != 5 && digit != 7) {
+                    isValid = false;
+                    break;
+                }
+                temp /= 10;
+            }
+
+            if (isValid) {
+                count++;
+                if (count == n) return num;
+            }
+        }
+        
+    }
+};
+
+
+###IN PYTHON3
+
+class Solution:
+    #Function to find nth number made of only prime digits.
+    def primeDigits(self,n):
+        count = 0
+        num = 1
+
+        while True:
+            num += 1
+            temp = num
+            isValid = True
+            while temp > 0:
+                digit = temp % 10
+                if digit not in [2, 3, 5, 7]:
+                    isValid = False
+                    break
+                temp //= 10
+
+            if isValid:
+                count += 1
+                if count == n:
+                    return num
+
+        
