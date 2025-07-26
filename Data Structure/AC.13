@@ -1,0 +1,58 @@
+###IN C++
+
+class Solution {
+  public:
+    void mergeArrays(vector<int>& a, vector<int>& b) {
+        vector<int>dupli(a.begin(),a.end());
+        for(int num:b){
+            dupli.push_back(num);
+        }
+        sort(dupli.begin(),dupli.end());
+        int idx=0;
+        for(int i=0;i<a.size();i++)
+            a[i]=dupli[idx++];
+        for(int i=0;i<b.size();i++)
+            b[i]=dupli[idx++];
+        
+    }
+};
+
+
+
+
+###IN JAVA
+
+class Solution {
+    public void mergeArrays(int a[], int b[]) {
+        int[] dupli = new int[a.length + b.length];
+        int idx = 0;
+
+        for (int num : a)
+            dupli[idx++] = num;
+        for (int num : b)
+            dupli[idx++] = num;
+
+        Arrays.sort(dupli);
+        idx = 0;
+
+        for (int i = 0; i < a.length; i++)
+            a[i] = dupli[idx++];
+        for (int i = 0; i < b.length; i++)
+            b[i] = dupli[idx++];
+        
+    }
+}
+
+
+
+
+###IN PYTHON3
+
+class Solution:
+    def mergeArrays(self, a, b):
+        dupli = a + b
+        dupli.sort()
+        for i in range(len(a)):
+            a[i] = dupli[i]
+        for i in range(len(b)):
+            b[i] = dupli[len(a) + i]
