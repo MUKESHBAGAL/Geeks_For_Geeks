@@ -1,0 +1,74 @@
+###IN C++
+
+class Solution {
+  public:
+    void rearrange(vector<int>& arr) {
+        vector<int> dupli(arr.begin(), arr.end());
+        sort(dupli.begin(), dupli.end());
+        int left=0, right=dupli.size()-1, idx=0;
+        while(left<=right){
+            if(left==right){
+                arr[idx++] = dupli[left];
+                break;
+            }
+            else {
+                arr[idx++] = dupli[right--];
+                arr[idx++] = dupli[left++];
+            }
+        }
+    }
+};
+
+
+
+
+###IN JAVA
+
+import java.util.*;
+class Solution {
+    public void rearrange(int[] arr) {
+        int[] dupli = Arrays.copyOf(arr, arr.length);
+        Arrays.sort(dupli);
+
+        int left = 0, right = dupli.length - 1;
+        int idx = 0;
+
+        while (left <= right) {
+            if (left == right) {
+                arr[idx++] = dupli[left];
+                break;
+            } else {
+                arr[idx++] = dupli[right--];
+                arr[idx++] = dupli[left++];
+            }
+        }
+    }
+}
+
+
+
+
+
+###IN PYTHON3
+
+class Solution:
+    def rearrange(self, arr):
+        dupli = sorted(arr)
+        left, right = 0, len(dupli) - 1
+        idx = 0
+        result = [0] * len(arr)
+
+        while left <= right:
+            if left == right:
+                result[idx] = dupli[left]
+                break
+            else:
+                result[idx] = dupli[right]
+                idx += 1
+                result[idx] = dupli[left]
+                idx += 1
+                left += 1
+                right -= 1
+
+        for i in range(len(arr)):
+            arr[i] = result[i]
