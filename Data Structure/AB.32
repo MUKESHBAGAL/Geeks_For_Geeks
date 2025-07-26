@@ -1,0 +1,87 @@
+###IN C++
+
+class Solution {
+  public:
+    vector<int> intersection(vector<int>& a, vector<int>& b) {
+        sort(a.begin(), a.end());
+        sort(b.begin(), b.end());
+        
+        vector<int> result;
+        int i = 0, j = 0;
+        
+        while (i < a.size() && j < b.size()) {
+            if (a[i] == b[j]) {
+                if (result.empty() || result.back() != a[i])
+                    result.push_back(a[i]);
+                i++;
+                j++;
+            } else if (a[i] < b[j]) {
+                i++;
+            } else {
+                j++;
+            }
+        }
+        return result;
+        
+    }
+};
+
+
+
+###IN JAVA
+
+import java.util.*;
+
+class Solution {
+    ArrayList<Integer> intersection(int[] a, int[] b) {
+        Arrays.sort(a);
+        Arrays.sort(b);
+        
+        ArrayList<Integer> result = new ArrayList<>();
+        int i = 0, j = 0;
+        
+        while (i < a.length && j < b.length) {
+            if (a[i] == b[j]) {
+                if (result.isEmpty() || result.get(result.size() - 1) != a[i]) {
+                    result.add(a[i]);
+                }
+                i++;
+                j++;
+            } else if (a[i] < b[j]) {
+                i++;
+            } else {
+                j++;
+            }
+        }
+        
+        return result;
+    }
+}
+
+
+
+
+###IN PYTHON3
+
+class Solution:
+    def intersection(self, a, b):
+        a.sort()
+        b.sort()
+        result = []
+        i = j = 0
+        
+        while i < len(a) and j < len(b):
+            if a[i] == b[j]:
+                if not result or result[-1] != a[i]:
+                    result.append(a[i])
+                i += 1
+                j += 1
+            elif a[i] < b[j]:
+                i += 1
+            else:
+                j += 1
+        return result
+            
+
+
+        
