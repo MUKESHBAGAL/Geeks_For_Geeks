@@ -1,0 +1,36 @@
+###IN C++
+
+class Solution {
+  public:
+    bool search(vector<int>& arr, int key) {
+        for (int num : arr) {
+            if (num == key)
+                return true;
+        }
+        return false;
+    }
+};
+
+
+
+###IN JAVA
+
+class Solution {
+    public boolean search(int[] arr, int key) {
+        for (int num : arr) {
+            if (num == key)
+                return true;
+        }
+        return false;
+    }
+}
+
+
+###IN PYTHON3
+
+class Solution:
+    def search(self, arr, key):
+        if key not in arr:
+            return False
+        return True
+        
