@@ -1,0 +1,45 @@
+###IN C++
+
+class Solution {
+  public:
+    void sortedMerge(vector<int>& arr1, vector<int>& arr2, vector<int>& res) {
+        res.clear();
+        for (int num : arr1)
+            res.push_back(num);
+        for (int num : arr2)
+            res.push_back(num);
+        sort(res.begin(), res.end());
+    }
+};
+
+
+
+###IN JAVA
+
+class Solution {
+    public void sortedMerge(int[] arr1, int[] arr2, int[] res) {
+        int k = 0;
+
+        for (int i = 0; i < arr1.length; i++) {
+            res[k++] = arr1[i];
+        }
+
+        for (int i = 0; i < arr2.length; i++) {
+            res[k++] = arr2[i];
+        }
+
+        Arrays.sort(res);
+        
+    }
+}
+
+###IN PYTHON3
+
+class Solution:
+    def sortedMerge(self, arr1,arr2,res):
+        res.clear()
+        for num in arr1:
+            res.append(num)
+        for num in arr2:
+            res.append(num)
+        res.sort()
