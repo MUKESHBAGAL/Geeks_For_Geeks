@@ -1,0 +1,75 @@
+### IN C++
+
+// User function Template for C++
+
+class Solution {
+  public:
+    vector<string> splitString(string S) {
+        string s1 = "", s2 = "", s3 = "";
+        for(char ch : S) {
+            if(isalpha(ch)) 
+                s1 += ch;
+            else if(isdigit(ch)) 
+                s2 += ch;
+            else 
+                s3 += ch;
+        }
+        return {s1, s2, s3};
+        
+    }
+};
+
+
+
+### IN JAVA
+
+// User function Template for Java
+
+class Solution {
+    static List<String> splitString(String S) {
+        StringBuilder s1 = new StringBuilder();
+        StringBuilder s2 = new StringBuilder();
+        StringBuilder s3 = new StringBuilder();
+        
+        for(char ch : S.toCharArray()) {
+            if(Character.isLetter(ch))
+                s1.append(ch);
+            else if(Character.isDigit(ch))
+                s2.append(ch);
+            else
+                s3.append(ch);
+        }
+        
+        String str1 = s1.length() > 0 ? s1.toString() : "-1";
+        String str2 = s2.length() > 0 ? s2.toString() : "-1";
+        String str3 = s3.length() > 0 ? s3.toString() : "-1";
+        
+        return Arrays.asList(str1, str2, str3);
+    }
+}
+
+
+
+
+### IN PYTHON
+
+#User function Template for python3
+
+class Solution:
+    def splitString(ob, S): 
+        s1,s2,s3="","",""
+        for i in S:
+            if i.isalpha():
+                s1+=i
+            elif i.isdigit():
+                s2+=i
+            else:
+                s3+=i
+        return s1,s2,s3
+       
+
+
+
+
+
+
