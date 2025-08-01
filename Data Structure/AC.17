@@ -1,0 +1,67 @@
+###IN C
+
+bool findTriplets(int arr[], int n) {
+    for (int i = 0; i < n - 2; i++) {
+        for (int j = i + 1; j < n - 1; j++) {
+            for (int k = j + 1; k < n; k++) {
+                if (arr[i] + arr[j] + arr[k] == 0) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+    
+}
+
+
+###IN C++
+
+class Solution {
+  public:
+    bool findTriplets(vector<int> &arr) {
+        int n = arr.size();
+        for (int i = 0; i < n - 2; i++) {
+            for (int j = i + 1; j < n - 1; j++) {
+                for (int k = j + 1; k < n; k++) {
+                    if (arr[i] + arr[j] + arr[k] == 0) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+};
+
+###IN JAVA
+
+class Solution {
+    public boolean findTriplets(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 2; i++) {
+            for (int j = i + 1; j < n - 1; j++) {
+                for (int k = j + 1; k < n; k++) {
+                    if (arr[i] + arr[j] + arr[k] == 0) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+}
+
+
+###IN PYTHON3
+
+class Solution:
+    def findTriplets(self, arr):
+        n = len(arr)
+        for i in range(n - 2):
+            for j in range(i + 1, n - 1):
+                for k in range(j + 1, n):
+                    if arr[i] + arr[j] + arr[k] == 0:
+                        return True
+        return False
+        
