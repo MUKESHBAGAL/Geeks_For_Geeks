@@ -1,0 +1,66 @@
+###IN C++
+
+class Solution {
+  public:
+    void sortIt(vector<int>& arr) {
+        vector<int> odd, even;
+        for (int num : arr) {
+            if (num % 2 == 0) even.push_back(num);
+            else odd.push_back(num);
+        }
+
+        sort(odd.begin(), odd.end(), greater<int>());
+        sort(even.begin(), even.end());
+
+        int idx = 0;
+        for (int x : odd) arr[idx++] = x;
+        for (int x : even) arr[idx++] = x;
+    }
+};
+
+
+###IN JAVA
+
+class Solution {
+    public void sortIt(int[] arr) {
+        ArrayList<Integer> odd = new ArrayList<>();
+        ArrayList<Integer> even = new ArrayList<>();
+
+        for (int num : arr) {
+            if (num % 2 == 0) even.add(num);
+            else odd.add(num);
+        }
+
+        odd.sort(Collections.reverseOrder());
+        Collections.sort(even);
+
+        int idx = 0;
+        for (int x : odd) arr[idx++] = x;
+        for (int x : even) arr[idx++] = x;
+        
+    }
+}
+
+
+###IN PYTHON3
+
+class Solution:
+    def sortIt(self, arr):
+        odd = [x for x in arr if x % 2 == 1]
+        even = [x for x in arr if x % 2 == 0]
+
+        odd.sort(reverse=True)
+        even.sort()
+
+        idx = 0
+        for x in odd:
+            arr[idx] = x
+            idx += 1
+        for x in even:
+            arr[idx] = x
+            idx += 1
+        
+    
+
+
+
