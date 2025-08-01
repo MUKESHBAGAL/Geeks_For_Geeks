@@ -1,0 +1,50 @@
+###IN C++
+
+class Solution {
+  public:
+    typedef long long int ll;
+
+    long long int minValue(vector<int> &arr1, vector<int> &arr2) {
+        sort(arr1.begin(),arr1.end());
+        sort(arr2.begin(),arr2.end());
+        int n=arr1.size()-1;
+        long long int sum=0;
+        for(int i=0;i<=n;i++){
+            sum+=arr1[i]*arr2[n-i];
+        }
+        return sum;
+    }
+};
+
+
+###IN JAVA
+
+class Solution {
+    public long minValue(List<Integer> arr1, List<Integer> arr2) {
+        Collections.sort(arr1);
+        Collections.sort(arr2);
+        int n = arr1.size() - 1;
+        long sum = 0;
+        for (int i = 0; i <= n; i++) {
+            sum += (long)arr1.get(i) * arr2.get(n - i);
+        }
+        return sum;
+    }
+}
+
+
+###IN PYTHON3
+
+class Solution:
+    def minValue(self, arr1, arr2):
+        arr1.sort()
+        arr2.sort()
+        n = len(arr1) - 1
+        total = 0
+        for i in range(n + 1):
+            total += arr1[i] * arr2[n - i]
+        return total
+        
+
+
+
