@@ -1,0 +1,77 @@
+###IN C++
+
+class Solution {
+  public:
+    vector<int> findTwoElement(vector<int>& arr) {
+        int n = arr.size();
+        vector<int> ans(2, -1);
+        set<int> temp;
+        long long actualSum = 0;
+
+        for (int num : arr) {
+            if (temp.find(num) != temp.end()) {
+                ans[0] = num;
+            }
+            temp.insert(num);
+            actualSum += num;
+        }
+
+        long long expectedSum = (1LL * n * (n + 1)) / 2;
+        ans[1] = expectedSum - (actualSum - ans[0]);
+
+        return ans;
+        
+    }
+};
+
+
+
+###IN JAVA
+
+class Solution {
+    ArrayList<Integer> findTwoElement(int arr[]) {
+        int n = arr.length;
+        ArrayList<Integer> ans = new ArrayList<>(Arrays.asList(-1, -1));
+        Set<Integer> seen = new HashSet<>();
+        long actualSum = 0;
+
+        for (int num : arr) {
+            if (seen.contains(num)) {
+                ans.set(0, num);
+            }
+            seen.add(num);
+            actualSum += num;
+        }
+
+        long expectedSum = (1L * n * (n + 1)) / 2;
+        ans.set(1, (int)(expectedSum - (actualSum - ans.get(0))));
+
+        return ans;
+        
+    }
+}
+
+
+
+
+###IN PYTHON3
+
+class Solution:
+    def findTwoElement(self, arr):
+        n = len(arr)
+        ans = [-1, -1]
+        seen = set()
+        actual_sum = 0
+
+        for num in arr:
+            if num in seen:
+                ans[0] = num
+            seen.add(num)
+            actual_sum += num
+
+        expected_sum = (n * (n + 1)) // 2
+        ans[1] = expected_sum - (actual_sum - ans[0])
+
+        return ans
+
+
