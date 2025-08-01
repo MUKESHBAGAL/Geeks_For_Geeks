@@ -1,0 +1,54 @@
+###IN C++
+
+class Solution {
+  public:
+    /* Function to replace every element with the
+    next greatest element */
+    vector<int> nextGreatest(vector<int> arr) {
+        int n = arr.size();
+        vector<int> ans(n);
+        int greatest = -1;
+        for (int i = n - 1; i >= 0; i--) {
+            ans[i] = greatest;
+            greatest = max(greatest, arr[i]);
+        }
+        return ans;
+    }
+};
+
+
+###IN JAVA
+
+// User function Template for Java
+class Solution {
+    static ArrayList<Integer> nextGreatest(int arr[]) {
+        int n = arr.length;
+        ArrayList<Integer> ans = new ArrayList<>(n);
+        for (int i = 0; i < n; i++) ans.add(-1);
+
+        int greatest = -1;
+        for (int i = n - 1; i >= 0; i--) {
+            ans.set(i, greatest);
+            greatest = Math.max(greatest, arr[i]);
+        }
+
+        return ans;
+    }
+}
+
+
+###IN PYTHON3
+
+class Solution:
+
+	def nextGreatest(self,arr):
+		n = len(arr)
+        ans = [-1] * n
+        greatest = -1
+        for i in range(n - 1, -1, -1):
+            ans[i] = greatest
+            greatest = max(greatest, arr[i])
+        return ans
+
+
+
