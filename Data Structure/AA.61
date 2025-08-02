@@ -1,0 +1,50 @@
+###IN C++
+
+
+class Solution {
+  public:
+    vector<int> dupLastIndex(vector<int>& arr) {
+        vector<int>ans(2,-1);
+        for(int i=0;i<arr.size()-1;i++){
+            if(arr[i]==arr[i+1]){
+                ans[0]=i+1;
+                ans[1]=arr[i];
+            }
+        }
+        return ans;
+    }
+};
+
+
+
+
+###IN JAVA
+
+class Solution {
+    public int[] dupLastIndex(int[] arr) {
+        int[] ans = {-1, -1};
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] == arr[i + 1]) {
+                ans[0] = i + 1;
+                ans[1] = arr[i];
+            }
+        }
+        return ans;
+    }
+}
+
+
+
+###PYTHON 
+
+class Solution:
+    def dupLastIndex(self, arr):
+        ans = [-1, -1]
+        for i in range(len(arr) - 1):
+            if arr[i] == arr[i + 1]:
+                ans[0] = i + 1
+                ans[1] = arr[i]
+        return ans
+    
+
+
