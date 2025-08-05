@@ -1,0 +1,60 @@
+###IN C++
+
+
+class Solution {
+  public:
+    int specialIntegers(int n, vector<int> &arr) {
+        unordered_set<int> uset(arr.begin(), arr.end());
+        int count = 0;
+        
+        for (int num : uset) {
+            if (uset.find(num - 1) != uset.end() && 
+                uset.find(num + 1) != uset.end()) {
+                count++;
+            }
+        }
+        return count;
+    }
+};
+
+
+
+
+###IN JAVA
+
+
+class Solution {
+    public static int specialIntegers(int n, int[] arr) {
+        Set<Integer> set = new HashSet<>();
+        for (int num : arr) {
+            set.add(num);
+        }
+        
+        int count = 0;
+        for (int num : set) {
+            if (set.contains(num - 1) && set.contains(num + 1)) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+        
+
+
+
+###PYTHON 
+
+
+from typing import List
+class Solution:
+    def specialIntegers(self, n : int, arr : List[int]) -> int:
+        uset = set(arr)
+        count = 0
+        for num in uset:
+            if (num - 1 in uset) and (num + 1 in uset):
+                count += 1
+        return count
+        
+
+
