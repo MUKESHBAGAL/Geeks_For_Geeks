@@ -1,0 +1,84 @@
+###IN C++
+
+
+class Solution {
+
+  public:
+    void leftRotate(vector<int>& arr, int k) {
+        if (arr.empty()) return; 
+        if (k % arr.size() == 0)
+            return;
+            
+        int n = arr.size();
+        k = k % n;
+        
+        vector<int> temp(k);  
+        for (int i = 0; i < k; i++) {
+            temp[i] = arr[i]; 
+        }
+
+        for (int i = 0; i < n - k; i++) {
+            arr[i] = arr[i + k];
+        }
+
+        for (int i = 0; i < k; i++) {
+            arr[n - k + i] = temp[i];
+        }
+    }
+};
+
+
+
+
+
+
+###IN JAVA
+
+class Solution {
+    void leftRotate(int arr[], int k) {
+        int d=k;
+        if (arr.length == 0) return;
+        if (d % arr.length == 0) return;
+
+        int n = arr.length;
+        d = d % n;
+
+        int[] temp = new int[d];
+        for (int i = 0; i < d; i++) {
+            temp[i] = arr[i];
+        }
+
+        for (int i = 0; i < n - d; i++) {
+            arr[i] = arr[i + d];
+        }
+
+        for (int i = 0; i < d; i++) 
+            arr[n - d + i] = temp[i];
+    }
+}
+
+
+###PYTHON 
+
+class Solution:
+    def leftRotate(self, arr, k):
+        d=k
+        if not arr:
+            return
+        if d % len(arr) == 0:
+            return
+        
+        n = len(arr)
+        d = d % n
+
+        temp = [0] * d
+        for i in range(d):
+            temp[i] = arr[i]
+
+        for i in range(n - d):
+            arr[i] = arr[i + d]
+
+        for i in range(d):
+            arr[n - d + i] = temp[i]
+
+
