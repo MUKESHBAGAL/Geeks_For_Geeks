@@ -1,0 +1,32 @@
+### IN C++
+
+class Solution {
+  public:
+    Node *pairwiseSwap(Node *head) {
+        Node *slow = head;
+        while (slow != NULL && slow->next != NULL) {
+            swap(slow->data, slow->next->data);
+            slow = slow->next->next;
+        }
+        return head;
+    }
+};
+
+
+
+### IN JAVA 
+
+
+class Solution {
+    public Node pairwiseSwap(Node head) {
+        Node current = head;
+        while (current != null && current.next != null) {
+            int temp = current.data;
+            current.data = current.next.data;
+            current.next.data = temp;
+            current = current.next.next;
+        }
+        return head;
+        
+    }
+}
