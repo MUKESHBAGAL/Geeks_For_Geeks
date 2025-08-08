@@ -1,0 +1,73 @@
+###IN C++
+
+class Solution {
+  public:
+    vector<int> Rearrange(vector<int> arr) {
+        vector<int> result;
+        sort(arr.begin(),arr.end());
+        int left = 0, right = arr.size() - 1;
+        
+        while (left <= right) {
+            if (left == right) {
+                result.push_back(arr[left]);
+            } else {
+                result.push_back(arr[left]);
+                result.push_back(arr[right]);
+            }
+            left++;
+            right--;
+        }
+        return result;
+        
+    }
+};
+
+
+###IN JAVA
+
+class Solution {
+    public static ArrayList<Integer> Rearrange(int[] arr) {
+        Arrays.sort(arr);  // Sort the array first
+
+        ArrayList<Integer> result = new ArrayList<>();
+        int left = 0, right = arr.length - 1;
+
+        while (left <= right) {
+            if (left == right) {
+                result.add(arr[left]);
+            } else {
+                result.add(arr[left]);
+                result.add(arr[right]);
+            }
+            left++;
+            right--;
+        }
+
+        return result;
+        
+    }
+}
+
+
+###PYTHON 
+
+class Solution:    
+    def Rearrange(self, arr):
+        arr.sort()  # Sort the array first
+        result = []
+        left, right = 0, len(arr) - 1
+
+        while left <= right:
+            if left == right:
+                result.append(arr[left])
+            else:
+                result.append(arr[left])
+                result.append(arr[right])
+            left += 1
+            right -= 1
+
+        return result
+    
+
+
+
