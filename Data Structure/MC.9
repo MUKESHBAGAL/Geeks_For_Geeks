@@ -1,0 +1,58 @@
+###IN C++
+
+class Solution {
+  public:
+    int countOccurrences(vector<vector<int>> &mat, int x) {
+        int count=0;
+        for(int i=0;i<mat.size();i++){
+            for(int j=0;j<mat[0].size();j++){
+                if(mat[i][j]==x)
+                    count++;
+            }
+        }
+        return count;
+        
+    }
+};
+
+
+
+
+###IN JAVA
+
+class Solution {
+    public int countOccurrences(int[][] mat, int x) {
+        int count = 0;
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[0].length; j++) {
+                if (mat[i][j] == x) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+}
+
+
+
+###IN PYTHON
+
+class Solution:
+    def countOccurrences(self, mat, x): 
+    	count = 0
+        for i in range(len(mat)):
+            for j in range(len(mat[0])):
+                if mat[i][j] == x:
+                    count += 1
+        return count
+
+
+    	
+    	
+    	
+
+
+
+
+
