@@ -1,0 +1,151 @@
+###IN C++
+
+class Solution {
+  public:
+    static string magicSquare(vector<vector<int>>& mat) {
+        int n = mat.size();
+        if (n == 0) return "Not a Magic Square";
+
+        // Check if matrix is square
+        for (auto &row : mat) {
+            if ((int)row.size() != n) return "Not a Magic Square";
+        }
+
+        // Check distinctness and range
+        unordered_set<int> seen;
+        for (auto &row : mat) {
+            for (int num : row) {
+                if (num < 1 || num > n * n || !seen.insert(num).second) {
+                    return "Not a Magic Square"; // out of range or duplicate
+                }
+            }
+        }
+
+        // Calculate target sum from first row
+        int targetSum = 0;
+        for (int j = 0; j < n; j++) targetSum += mat[0][j];
+
+        // Check all rows
+        for (int i = 0; i < n; i++) {
+            int rowSum = 0;
+            for (int j = 0; j < n; j++) rowSum += mat[i][j];
+            if (rowSum != targetSum) return "Not a Magic Square";
+        }
+
+        // Check all columns
+        for (int j = 0; j < n; j++) {
+            int colSum = 0;
+            for (int i = 0; i < n; i++) colSum += mat[i][j];
+            if (colSum != targetSum) return "Not a Magic Square";
+        }
+
+        // Check diagonals
+        int diag1 = 0, diag2 = 0;
+        for (int i = 0; i < n; i++) {
+            diag1 += mat[i][i];
+            diag2 += mat[i][n - i - 1];
+        }
+        if (diag1 != targetSum || diag2 != targetSum) return "Not a Magic Square";
+
+        return "Magic Square";
+        
+    }
+};
+
+
+
+
+###IN JAVA
+
+import java.util.HashSet;
+
+class Solution {
+    public static String magicSquare(int mat[][]) {
+        int n = mat.length;
+        if (n == 0) return "Not a Magic Square";
+
+        // Check if matrix is square
+        for (int[] row : mat) {
+            if (row.length != n) return "Not a Magic Square";
+        }
+
+        // Check distinctness and range
+        HashSet<Integer> seen = new HashSet<>();
+        for (int[] row : mat) {
+            for (int num : row) {
+                if (num < 1 || num > n * n || !seen.add(num)) {
+                    return "Not a Magic Square";
+                }
+            }
+        }
+
+        // Calculate target sum from first row
+        int targetSum = 0;
+        for (int j = 0; j < n; j++) targetSum += mat[0][j];
+
+        // Check all rows
+        for (int i = 0; i < n; i++) {
+            int rowSum = 0;
+            for (int j = 0; j < n; j++) rowSum += mat[i][j];
+            if (rowSum != targetSum) return "Not a Magic Square";
+        }
+
+        // Check all columns
+        for (int j = 0; j < n; j++) {
+            int colSum = 0;
+            for (int i = 0; i < n; i++) colSum += mat[i][j];
+            if (colSum != targetSum) return "Not a Magic Square";
+        }
+
+        // Check diagonals
+        int diag1 = 0, diag2 = 0;
+        for (int i = 0; i < n; i++) {
+            diag1 += mat[i][i];
+            diag2 += mat[i][n - i - 1];
+        }
+        if (diag1 != targetSum || diag2 != targetSum) return "Not a Magic Square";
+
+        return "Magic Square";
+    }
+}
+
+
+
+###IN PYTHON
+
+class Solution:
+    def magicSquare(self, mat):
+        n = len(mat)
+        if n == 0:
+            return "Not a Magic Square"
+        for row in mat:
+            if len(row) != n:
+                return "Not a Magic Square"
+        seen = set()
+        for row in mat:
+            for num in row:
+                if num < 1 or num > n * n or num in seen:
+                    return "Not a Magic Square"
+                seen.add(num)
+        target_sum = sum(mat[0])
+        for i in range(n):
+            if sum(mat[i]) != target_sum:
+                return "Not a Magic Square"
+        for j in range(n):
+            if sum(mat[i][j] for i in range(n)) != target_sum:
+                return "Not a Magic Square"
+        if sum(mat[i][i] for i in range(n)) != target_sum:
+            return "Not a Magic Square"
+        if sum(mat[i][n - i - 1] for i in range(n)) != target_sum:
+            return "Not a Magic Square"
+        return "Magic Square"
+
+
+    	
+    	
+    	
+
+
+
+
+
