@@ -420,4 +420,5 @@ MC.4	Spirally traversing a matrix
 MC.5	Find kth element of spiral matrix
 MC.6	Spiral Matrix(Given a matrix of size N x M. You have to find the Kth element )
 MC.7	Reverse Spiral Form of Matrix
+MC.8	Row with Max 1s
 
