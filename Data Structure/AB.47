@@ -1,0 +1,51 @@
+###IN C++
+
+class Solution {
+  public:
+    long long sumBetweenTwoKth(long long A[], long long N, long long K1, long long K2) {
+        sort(A, A + N);
+        long long sum = 0;
+
+        for (long long i = K1; i < K2 - 1; i++) {
+            sum += A[i];
+        }
+
+        return sum;
+    }
+};
+
+
+
+
+###IN JAVA
+
+class Solution {
+    public static long sumBetweenTwoKth(long A[], long N, long K1, long K2) {
+         Arrays.sort(A);
+        long sum = 0;
+
+        for (long i = K1; i < K2 - 1; i++) {
+            sum += A[(int) i];
+        }
+
+        return sum;
+    }
+}
+
+
+
+###IN PYTHON
+
+class Solution:
+    def sumBetweenTwoKth(self, A, N, K1, K2):
+        A.sort()
+        return sum(A[K1:K2 - 1])
+
+    	
+    	
+    	
+
+
+
+
+
