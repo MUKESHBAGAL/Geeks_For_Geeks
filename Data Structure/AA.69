@@ -1,0 +1,35 @@
+###IN C++
+
+class Solution {
+  public:
+    int maxProduct(vector<int>& arr) {
+        sort(arr.begin(),arr.end());
+        int n=arr.size()-1;
+        return arr[n]*arr[n-1];
+    }
+};
+
+
+
+###IN JAVA
+
+
+class Solution {
+    public static int maxProduct(int[] arr) {
+        Arrays.sort(arr);
+        int n = arr.length - 1;
+        return arr[n] * arr[n - 1];
+        
+    }
+}
+
+
+
+###PYTHON 
+
+class Solution:
+	def maxProduct(self,arr):
+        arr.sort()
+        n = len(arr) - 1
+        return arr[n] * arr[n - 1]
+
