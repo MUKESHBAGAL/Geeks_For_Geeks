@@ -1,0 +1,100 @@
+### IN C++
+
+class Solution {
+public:
+    void rearrangeEvenOdd(Node *head) {
+        if (!head || !head->next) return;
+
+        vector<int> oddVals;
+        vector<int> evenVals;
+
+        Node *temp = head;
+        int pos = 1;
+
+        while (temp != nullptr) {
+            if (pos % 2 != 0) {
+                oddVals.push_back(temp->data);
+if (head == null || head.next == null) return;
+
+        ArrayList<Integer> oddVals = new ArrayList<>();
+        ArrayList<Integer> evenVals = new ArrayList<>();
+
+        Node temp = head;
+        int pos = 1;
+
+        while (temp != null) {
+            if (pos % 2 != 0) {
+                oddVals.add(temp.data);
+            } else {
+                evenVals.add(temp.data);
+            }
+            temp = temp.next;
+            pos++;
+        }
+
+        temp = head;
+        for (int val : oddVals) {
+            temp.data = val;
+            temp = temp.next;
+        }
+        for (int val : evenVals) {
+            temp.data = val;
+            temp = temp.next;
+        }                evenVals.push_back(temp->data);
+            }
+            temp = temp->next;
+            pos++;
+        }
+
+        temp = head;
+        for (int val : oddVals) {
+            temp->data = val;
+            temp = temp->next;
+        }
+        for (int val : evenVals) {
+            temp->data = val;
+            temp = temp->next;
+        }
+    }
+};
+
+
+
+### IN JAVA 
+
+
+class Solution {
+
+    // Should rearrange given linked list such that all even
+    // positioned Nodes are before odd positioned.
+    // Returns nothing
+    void rearrangeEvenOdd(Node head) {
+        if (head == null || head.next == null) return;
+
+        ArrayList<Integer> oddVals = new ArrayList<>();
+        ArrayList<Integer> evenVals = new ArrayList<>();
+
+        Node temp = head;
+        int pos = 1;
+
+        while (temp != null) {
+            if (pos % 2 != 0) {
+                oddVals.add(temp.data);
+            } else {
+                evenVals.add(temp.data);
+            }
+            temp = temp.next;
+            pos++;
+        }
+
+        temp = head;
+        for (int val : oddVals) {
+            temp.data = val;
+            temp = temp.next;
+        }
+        for (int val : evenVals) {
+            temp.data = val;
+            temp = temp.next;
+        }
+    }
+}
