@@ -1,0 +1,59 @@
+###IN C++
+
+class Solution {
+  public:
+    int minProduct(vector<int> &arr, int k) {
+        sort(arr.begin(), arr.end());
+        long long mod = 1000000007;
+        long long product = 1;
+
+        for (int i = 0; i < arr.size() && i < k; i++) {
+            product = (product * arr[i]) % mod;
+        }
+
+        return (int)product;
+    }
+};
+
+
+
+###IN JAVA
+
+
+class Solution {
+
+    int minProduct(int arr[], int k) {
+        Arrays.sort(arr);
+        
+        // take a large long modulus for large product
+        long n = 1000000007;
+        
+        long product = 1l;
+        
+        for(int i = 0; i < arr.length && i < k; i++){
+            product = ((long)product * (long)arr[i]) % n;
+            // product = (long)product % (long)n;
+        }
+        
+        return (int)product;
+    }
+}
+
+
+
+
+###PYTHON 
+
+class Solution:
+    def minProduct(self, arr, k): 
+        arr.sort()
+        mod = 1000000007
+        product = 1
+
+        for i in range(min(len(arr), k)):
+            product = (product * arr[i]) % mod
+
+        return product
+      
+
+
