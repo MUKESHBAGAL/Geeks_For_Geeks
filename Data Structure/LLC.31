@@ -1,0 +1,61 @@
+### IN C++
+
+class Solution {
+  public:
+    struct Node* modifyTheList(struct Node* head) {
+        Node *ptr=head;
+        vector<int>temp;
+        while(ptr!=NULL){
+            temp.push_back(ptr->data);
+            ptr=ptr->next;
+        }
+        int left=0,right=temp.size()-1;
+        while(left<right){
+            int tmp=temp[left];
+            temp[left]=temp[right]-temp[left];
+            temp[right]=tmp;
+            right--;
+            left++;
+        }
+        ptr=head;
+        for(int num:temp){
+            ptr->data=num;
+            ptr=ptr->next;
+        }
+        return head;
+    }
+};
+
+
+
+### IN JAVA 
+
+
+class Solution {
+    public static Node modifyTheList(Node head) {
+        Node ptr = head;
+        java.util.ArrayList<Integer> temp = new java.util.ArrayList<>();
+        while (ptr != null) {
+            temp.add(ptr.data);
+            ptr = ptr.next;
+        }
+
+        int left = 0, right = temp.size() - 1;
+        while (left < right) {
+            int tmp = temp.get(left);
+            temp.set(left, temp.get(right) - temp.get(left));
+            temp.set(right, tmp);
+            right--;
+            left++;
+        }
+
+        ptr = head;
+        for (int num : temp) {
+            ptr.data = num;
+            ptr = ptr.next;
+        }
+
+        return head;
+        
+    }
+}
