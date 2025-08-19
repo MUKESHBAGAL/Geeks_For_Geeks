@@ -1,0 +1,71 @@
+							 ### IN C		
+
+if (!head || !head->next) return 1; // true
+    
+    int nonDecreasing = 1;
+    int nonIncreasing = 1;
+    
+    struct Node* temp = head;
+    while (temp->next != NULL) {
+        if (temp->data < temp->next->data) {
+            nonIncreasing = 0;
+        } 
+        else if (temp->data > temp->next->data) {
+            nonDecreasing = 0;
+        }
+        temp = temp->next;
+    }
+    
+    return (nonIncreasing || nonDecreasing);
+
+
+							 
+							 ### IN C++							
+
+class Solution {
+  public:
+    bool isSorted(Node* head) {
+        if (!head || !head->next) return true;
+        
+        bool nonDecreasing = true;
+        bool nonIncreasing = true;
+        
+        Node* temp = head;
+        while (temp->next != NULL) {
+            if (temp->data < temp->next->data) {
+                nonIncreasing = false;
+            } 
+            else if (temp->data > temp->next->data) {
+                nonDecreasing = false;
+            }
+            temp = temp->next;
+        }
+        
+        return nonIncreasing || nonDecreasing;
+    }
+};
+
+
+
+							### IN JAVA
+							
+class Solution {
+    public boolean isSorted(Node head) {
+        if (head == null || head.next == null) return true;
+
+        boolean nonDecreasing = true;
+        boolean nonIncreasing = true;
+
+        Node temp = head;
+        while (temp.next != null) {
+            if (temp.data < temp.next.data) {
+                nonIncreasing = false;
+            } else if (temp.data > temp.next.data) {
+                nonDecreasing = false;
+            }
+            temp = temp.next;
+        }
+
+        return nonDecreasing || nonIncreasing;
+    }
+}
