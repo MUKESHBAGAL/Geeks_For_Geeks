@@ -1,0 +1,119 @@
+### IN C++
+
+class Solution {
+  public:
+    void rearrange(Node* head) {
+        if (!head) return;
+
+        Node *evenIndexHead = NULL, *evenIndextail = NULL;
+        Node *oddIndexHead = NULL, *oddIndextail = NULL;
+
+        int count = 0;
+        Node *temp = head;
+
+        while (temp != NULL) {
+            Node* newNode = new Node(temp->data);
+            if (count % 2 == 0) {
+                if (!evenIndexHead) {
+                    evenIndexHead = newNode;
+                    evenIndextail = newNode;
+                } else {
+                    evenIndextail->next = newNode;
+                    evenIndextail = newNode;
+                }
+            } else {
+                if (!oddIndexHead) {
+                    oddIndexHead = newNode;
+                    oddIndextail = newNode;
+                } else {
+                    oddIndextail->next = newNode;
+                    oddIndextail = newNode;
+                }
+            }
+            temp = temp->next;
+            count++;
+        }
+
+        Node* prev = NULL;
+        Node* curr = oddIndexHead;
+        while (curr) {
+            Node* nextNode = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+
+        if (evenIndextail) {
+            evenIndextail->next = prev;
+        }
+
+        Node* newHead = evenIndexHead;
+        temp = head;
+        while (newHead && temp) {
+            temp->data = newHead->data;
+            newHead = newHead->next;
+            temp = temp->next;
+        }
+    }
+};
+
+
+
+### IN JAVA 
+
+
+class Solution {
+    public static void rearrange(Node head) {
+        if (head == null) return;
+
+        Node evenIndexHead = null, evenIndextail = null;
+        Node oddIndexHead = null, oddIndextail = null;
+
+        int count = 0;
+        Node temp = head;
+
+        while (temp != null) {
+            Node newNode = new Node(temp.data);
+            if (count % 2 == 0) {
+                if (evenIndexHead == null) {
+                    evenIndexHead = newNode;
+                    evenIndextail = newNode;
+                } else {
+                    evenIndextail.next = newNode;
+                    evenIndextail = newNode;
+                }
+            } else {
+                if (oddIndexHead == null) {
+                    oddIndexHead = newNode;
+                    oddIndextail = newNode;
+                } else {
+                    oddIndextail.next = newNode;
+                    oddIndextail = newNode;
+                }
+            }
+            temp = temp.next;
+            count++;
+        }
+
+        Node prev = null, curr = oddIndexHead;
+        while (curr != null) {
+            Node nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+
+        if (evenIndextail != null) {
+            evenIndextail.next = prev;
+        }
+
+        Node newHead = evenIndexHead;
+        temp = head;
+        while (newHead != null && temp != null) {
+            temp.data = newHead.data;
+            newHead = newHead.next;
+            temp = temp.next;
+        }
+    }
+}
+
