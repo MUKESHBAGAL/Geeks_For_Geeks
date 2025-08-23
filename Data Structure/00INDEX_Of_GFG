@@ -315,6 +315,7 @@ LLB.40  Delete Head of Linked List
 LLB.41  Delete in a Doubly Linked List
 LLB.42  Delete N nodes after M nodes of a linked list
 LLB.43	Is Linked List Sorted
+LLB.44	Deletion at the end of a Linked List
 
 
 
