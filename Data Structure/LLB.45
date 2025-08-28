@@ -1,0 +1,66 @@
+							 ### IN C++							
+
+class Solution {
+  public:
+    Node *insertPos(Node *head, int pos, int val) {
+        Node* newNode = new Node(val);
+
+        // Case 1: Insert at head
+        if (pos == 1) {
+            newNode->next = head;
+            return newNode;
+        }
+
+        Node* curr = head;
+        int count = 1;
+
+        // Traverse to (pos-1)-th node
+        while (curr != NULL && count < pos - 1) {
+            curr = curr->next;
+            count++;
+        }
+
+        // If position is valid
+        if (curr != NULL) {
+            newNode->next = curr->next;
+            curr->next = newNode;
+        }
+
+        return head;
+        
+    }
+};
+
+
+
+							### IN JAVA
+							
+class Solution {
+    public Node insertPos(Node head, int pos, int val) {
+        Node newNode = new Node(val);
+
+        // Case 1: Insert at head
+        if (pos == 1) {
+            newNode.next = head;
+            return newNode;
+        }
+
+        Node curr = head;
+        int count = 1;
+
+        // Traverse to (pos-1)-th node
+        while (curr != null && count < pos - 1) {
+            curr = curr.next;
+            count++;
+        }
+
+        // If position is valid
+        if (curr != null) {
+            newNode.next = curr.next;
+            curr.next = newNode;
+        }
+
+        return head;
+        
+    }
+}
