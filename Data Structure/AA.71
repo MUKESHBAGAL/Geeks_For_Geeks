@@ -1,0 +1,80 @@
+###IN C++
+
+class Solution {
+  public:
+    vector<int> getDigitDiff1AndLessK(vector<int>& arr, int k) {
+        vector<int> result;
+        for (int num : arr) {
+            if (num >= k || num < 10) continue; 
+            int n = num;
+            bool valid = true;
+            while (n >= 10) {
+                int last = n % 10;
+                int secondLast = (n / 10) % 10;
+                if (abs(last - secondLast) != 1) {
+                    valid = false;
+                    break;
+                }
+                n /= 10;
+            }
+            if (valid) result.push_back(num);
+        }
+        return result;
+    }
+};
+
+
+
+
+###IN JAVA
+
+
+import java.util.*;
+
+class Solution {
+    public ArrayList<Integer> getDigitDiff1AndLessK(int[] arr, int k) {
+        ArrayList<Integer> result = new ArrayList<>();
+        for (int num : arr) {
+            if (num >= k || num < 10) continue;  // skip >=k and single-digit numbers
+            int n = num;
+            boolean valid = true;
+            while (n >= 10) {
+                int last = n % 10;
+                int secondLast = (n / 10) % 10;
+                if (Math.abs(last - secondLast) != 1) {
+                    valid = false;
+                    break;
+                }
+                n /= 10;
+            }
+            if (valid) result.add(num);
+        }
+        return result;
+    }
+}
+
+
+
+
+
+###PYTHON 
+
+class Solution:
+    def getDigitDiff1AndLessK(self, arr, k):
+        result = []
+        for num in arr:
+            if num >= k or num < 10:  
+                continue
+            n = num
+            valid = True
+            while n >= 10:
+                last = n % 10
+                second_last = (n // 10) % 10
+                if abs(last - second_last) != 1:
+                    valid = False
+                    break
+                n //= 10
+            if valid:
+                result.append(num)
+        return result
+
